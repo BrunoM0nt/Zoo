@@ -20,13 +20,21 @@ public class principal extends javax.swing.JFrame {
      * Creates new form principal
      */
     public principal() {
-        initComponents(); 
-        btnPrincipal.setBackground(new Color(0,0,0,0));
-        btnPerfil.setBackground(new Color(0,0,0,0));
-        btnSupp.setBackground(new Color(0,0,0,0));
-        btnZoo.setBackground(new Color(0,0,0,0));
-        Sair.setBackground(new Color(0,0,0,0));  
-  
+        initComponents();
+        btnPrincipal.setBackground(new Color(0, 0, 0, 0));
+        btnPerfil.setBackground(new Color(0, 0, 0, 0));
+        btnSupp.setBackground(new Color(0, 0, 0, 0));
+        btnZoo.setBackground(new Color(0, 0, 0, 0));
+        Sair.setBackground(new Color(0, 0, 0, 0));
+        botaoPesquisar.setBackground(new Color(0, 0, 0, 0));
+
+        botaoBug.setBackground(new Color(0, 0, 0, 0));
+        botaoDenuncia.setBackground(new Color(0, 0, 0, 0));
+        botaoDuvida.setBackground(new Color(0, 0, 0, 0));
+
+        jTextFieldSuporte.setVisible(false);
+        jLabelEnviar.setVisible(false);
+
     }
 
     /**
@@ -58,16 +66,25 @@ public class principal extends javax.swing.JFrame {
         jPanelP4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanelZoo1 = new javax.swing.JPanel();
-        jPanelP3 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        botaoPesquisar = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         jPanelZoo = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         jPanelP = new javax.swing.JPanel();
+        botaoDenuncia = new javax.swing.JButton();
+        botaoBug = new javax.swing.JButton();
+        botaoDuvida = new javax.swing.JButton();
+        jLabelEnviar = new javax.swing.JLabel();
+        jTextFieldSuporte = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -206,21 +223,10 @@ public class principal extends javax.swing.JFrame {
         jPanelZoo2.setBackground(new Color(0,0,0,0));
 
         jPanelP4.setBackground(new Color(0,0,0,0));
+        jPanelP4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Bruno\\Downloads\\fundo (1).png")); // NOI18N
-
-        javax.swing.GroupLayout jPanelP4Layout = new javax.swing.GroupLayout(jPanelP4);
-        jPanelP4.setLayout(jPanelP4Layout);
-        jPanelP4Layout.setHorizontalGroup(
-            jPanelP4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 555, Short.MAX_VALUE)
-        );
-        jPanelP4Layout.setVerticalGroup(
-            jPanelP4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelP4Layout.createSequentialGroup()
-                .addComponent(jLabel3)
-                .addGap(0, 22, Short.MAX_VALUE))
-        );
+        jPanelP4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout jPanelZoo2Layout = new javax.swing.GroupLayout(jPanelZoo2);
         jPanelZoo2.setLayout(jPanelZoo2Layout);
@@ -236,88 +242,45 @@ public class principal extends javax.swing.JFrame {
         jfPainel.addTab("", jPanelZoo2);
 
         jPanelZoo1.setBackground(new Color(0,0,0,0));
+        jPanelZoo1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanelP3.setBackground(new Color(0,0,0,0));
+        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
+        jPanelZoo1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 220, 30));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel9.setText("Nome");
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel10.setText("Sobrenome");
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel11.setText("Email");
-
-        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel13.setText("CPF");
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel4.setText("Alterar Senha");
+        jLabel4.setText("Localizar Zoológico");
+        jPanelZoo1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel14.setText("Alterar Foto do Perfil");
+        botaoPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/icone_lupa.png"))); // NOI18N
+        jPanelZoo1.add(botaoPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, 30, 30));
 
-        javax.swing.GroupLayout jPanelP3Layout = new javax.swing.GroupLayout(jPanelP3);
-        jPanelP3.setLayout(jPanelP3Layout);
-        jPanelP3Layout.setHorizontalGroup(
-            jPanelP3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelP3Layout.createSequentialGroup()
-                .addGroup(jPanelP3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelP3Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(jPanelP3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel9)))
-                    .addGroup(jPanelP3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel14))
-                    .addGroup(jPanelP3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel4)))
-                .addContainerGap(396, Short.MAX_VALUE))
-        );
-        jPanelP3Layout.setVerticalGroup(
-            jPanelP3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelP3Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel9)
-                .addGap(31, 31, 31)
-                .addComponent(jLabel10)
-                .addGap(29, 29, 29)
-                .addComponent(jLabel11)
-                .addGap(37, 37, 37)
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel14)
-                .addGap(29, 29, 29))
-        );
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 102, 0));
+        jLabel8.setText("UF");
+        jPanelZoo1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
 
-        javax.swing.GroupLayout jPanelZoo1Layout = new javax.swing.GroupLayout(jPanelZoo1);
-        jPanelZoo1.setLayout(jPanelZoo1Layout);
-        jPanelZoo1Layout.setHorizontalGroup(
-            jPanelZoo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelZoo1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanelP3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanelZoo1Layout.setVerticalGroup(
-            jPanelZoo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelZoo1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanelP3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+        jPanelZoo1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 50, 30));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 102, 0));
+        jLabel2.setText("Pesquisa Por Filtro");
+        jPanelZoo1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 102, 0));
+        jLabel9.setText("Cidade");
+        jPanelZoo1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, -1, -1));
+        jPanelZoo1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 140, 30));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Bruno\\Downloads\\fundo (1).png")); // NOI18N
+        jPanelZoo1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jfPainel.addTab("", jPanelZoo1);
 
@@ -327,20 +290,46 @@ public class principal extends javax.swing.JFrame {
         jButton2.setText("jButton2");
         jPanelZoo.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 139, -1, -1));
 
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Bruno\\Downloads\\fundo (1).png")); // NOI18N
+        jPanelZoo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         jfPainel.addTab("", jPanelZoo);
 
         jPanelP.setBackground(new Color(0,0,0,0));
+        jPanelP.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanelPLayout = new javax.swing.GroupLayout(jPanelP);
-        jPanelP.setLayout(jPanelPLayout);
-        jPanelPLayout.setHorizontalGroup(
-            jPanelPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 555, Short.MAX_VALUE)
-        );
-        jPanelPLayout.setVerticalGroup(
-            jPanelPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 422, Short.MAX_VALUE)
-        );
+        botaoDenuncia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/icone_denuncia.png"))); // NOI18N
+        botaoDenuncia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoDenunciaActionPerformed(evt);
+            }
+        });
+        jPanelP.add(botaoDenuncia, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 100, 120));
+
+        botaoBug.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/icone_bugs.png"))); // NOI18N
+        botaoBug.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoBugActionPerformed(evt);
+            }
+        });
+        jPanelP.add(botaoBug, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 110, 110));
+
+        botaoDuvida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/icone_duvidas.png"))); // NOI18N
+        botaoDuvida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoDuvidaActionPerformed(evt);
+            }
+        });
+        jPanelP.add(botaoDuvida, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 120, 90));
+
+        jLabelEnviar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabelEnviar.setForeground(new java.awt.Color(0, 102, 0));
+        jLabelEnviar.setText("Enviar");
+        jPanelP.add(jLabelEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, -1, -1));
+        jPanelP.add(jTextFieldSuporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 480, 140));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Bruno\\Downloads\\fundo (1).png")); // NOI18N
+        jPanelP.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jfPainel.addTab("", jPanelP);
 
@@ -358,7 +347,7 @@ public class principal extends javax.swing.JFrame {
         btnPerfil.setBackground(new Color(0, 0, 0, 0));
         btnSupp.setBackground(new Color(0, 0, 0, 0));
         btnZoo.setBackground(new Color(0, 0, 0, 0));
-      
+
 
     }//GEN-LAST:event_btnPrincipalActionPerformed
 
@@ -389,6 +378,26 @@ public class principal extends javax.swing.JFrame {
     private void SairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SairActionPerformed
         System.exit(0);
     }//GEN-LAST:event_SairActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void botaoDenunciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDenunciaActionPerformed
+        jTextFieldSuporte.setVisible(true);
+        jLabelEnviar.setVisible(true);
+    }//GEN-LAST:event_botaoDenunciaActionPerformed
+
+    private void botaoBugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoBugActionPerformed
+        jTextFieldSuporte.setVisible(true);
+        jLabelEnviar.setVisible(true);
+    }//GEN-LAST:event_botaoBugActionPerformed
+
+    private void botaoDuvidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDuvidaActionPerformed
+        // TODO add your handling code here:
+        jTextFieldSuporte.setVisible(true);
+        jLabelEnviar.setVisible(true);
+    }//GEN-LAST:event_botaoDuvidaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -428,6 +437,10 @@ public class principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Sair;
+    private javax.swing.JButton botaoBug;
+    private javax.swing.JButton botaoDenuncia;
+    private javax.swing.JButton botaoDuvida;
+    private javax.swing.JButton botaoPesquisar;
     private javax.swing.JButton btnPerfil;
     private javax.swing.JButton btnPrincipal;
     private javax.swing.JButton btnSupp;
@@ -435,25 +448,30 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelEnviar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanelP;
-    private javax.swing.JPanel jPanelP3;
     private javax.swing.JPanel jPanelP4;
     private javax.swing.JPanel jPanelZoo;
     private javax.swing.JPanel jPanelZoo1;
     private javax.swing.JPanel jPanelZoo2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextFieldSuporte;
     private javax.swing.JTabbedPane jfPainel;
     // End of variables declaration//GEN-END:variables
 
