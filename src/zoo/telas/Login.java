@@ -107,6 +107,11 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("Criar Conta");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 80, 20));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/tela_login.png"))); // NOI18N
@@ -116,7 +121,7 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void campo_emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_emailActionPerformed
-               
+
     }//GEN-LAST:event_campo_emailActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
@@ -124,12 +129,16 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void campo_emailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_campo_emailMouseClicked
-       
+
     }//GEN-LAST:event_campo_emailMouseClicked
 
     private void campo_emailMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_campo_emailMousePressed
-        campo_email.setText(""); 
+        campo_email.setText("");
     }//GEN-LAST:event_campo_emailMousePressed
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+            // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments
