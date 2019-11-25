@@ -31,10 +31,10 @@ public class Login extends javax.swing.JFrame {
         jDialog2 = new javax.swing.JDialog();
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         campo_email = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
         jCheckBox1 = new javax.swing.JCheckBox();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jPasswordField1 = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
@@ -68,7 +68,7 @@ public class Login extends javax.swing.JFrame {
         campo_email.setBackground(new java.awt.Color(204, 204, 204));
         campo_email.setForeground(new java.awt.Color(102, 102, 102));
         campo_email.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        campo_email.setText("Email");
+        campo_email.setText("Senha");
         campo_email.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 campo_emailMouseClicked(evt);
@@ -83,12 +83,6 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(campo_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 110, 30));
-
-        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField1.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("Senha");
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 110, 30));
 
         jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
         jCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -113,6 +107,12 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 80, 20));
+
+        jPasswordField1.setBackground(new java.awt.Color(204, 204, 204));
+        jPasswordField1.setForeground(new java.awt.Color(102, 102, 102));
+        jPasswordField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPasswordField1.setText("********");
+        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 110, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/tela_login.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 450));
@@ -184,7 +184,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JDialog jDialog2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,7 +5,10 @@
  */
 package zoo.telas;
 
+import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import zoo.usuarios.Usuarios;
 
 /**
  *
@@ -29,61 +32,67 @@ public class CadUsuarios extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        jTextFieldNome = new javax.swing.JTextField();
+        jTextFieldSobrenome = new javax.swing.JTextField();
+        jTextFieldCPF = new javax.swing.JTextField();
+        jTextFieldEmail = new javax.swing.JTextField();
+        jButtonConfirmarCadastro = new javax.swing.JButton();
+        jPasswordFieldConfirmarSenha = new javax.swing.JPasswordField();
+        jPasswordFieldSenha = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField1.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("Nome");
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 130, 30));
-
-        jTextField2.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField2.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField2.setText("Sobrenome");
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 130, 30));
-
-        jTextField3.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField3.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField3.setText("CPF");
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 130, 30));
-
-        jTextField4.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField4.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField4.setText("Email");
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 130, 30));
-
-        jTextField5.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField5.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField5.setText("Senha");
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 130, 30));
-
-        jTextField6.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField6.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField6.setText("Confirma Senha");
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, 130, 30));
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/botao_confirmar_cadastro.png"))); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNome.setBackground(new java.awt.Color(204, 204, 204));
+        jTextFieldNome.setForeground(new java.awt.Color(102, 102, 102));
+        jTextFieldNome.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldNome.setText("Nome");
+        jTextFieldNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jTextFieldNomeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, 70, 60));
+        getContentPane().add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 130, 30));
+
+        jTextFieldSobrenome.setBackground(new java.awt.Color(204, 204, 204));
+        jTextFieldSobrenome.setForeground(new java.awt.Color(102, 102, 102));
+        jTextFieldSobrenome.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldSobrenome.setText("Sobrenome");
+        getContentPane().add(jTextFieldSobrenome, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 130, 30));
+
+        jTextFieldCPF.setBackground(new java.awt.Color(204, 204, 204));
+        jTextFieldCPF.setForeground(new java.awt.Color(102, 102, 102));
+        jTextFieldCPF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldCPF.setText("CPF");
+        getContentPane().add(jTextFieldCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 130, 30));
+
+        jTextFieldEmail.setBackground(new java.awt.Color(204, 204, 204));
+        jTextFieldEmail.setForeground(new java.awt.Color(102, 102, 102));
+        jTextFieldEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldEmail.setText("Email");
+        getContentPane().add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 130, 30));
+
+        jButtonConfirmarCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/botao_confirmar_cadastro.png"))); // NOI18N
+        jButtonConfirmarCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConfirmarCadastroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonConfirmarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, 70, 60));
+
+        jPasswordFieldConfirmarSenha.setBackground(new java.awt.Color(204, 204, 204));
+        jPasswordFieldConfirmarSenha.setForeground(new java.awt.Color(102, 102, 102));
+        getContentPane().add(jPasswordFieldConfirmarSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 320, 130, 30));
+
+        jPasswordFieldSenha.setBackground(new java.awt.Color(204, 204, 204));
+        jPasswordFieldSenha.setForeground(new java.awt.Color(102, 102, 102));
+        jPasswordFieldSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordFieldSenhaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jPasswordFieldSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 130, 30));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/tela_cadastro.png"))); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 450));
@@ -91,9 +100,26 @@ public class CadUsuarios extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void jButtonConfirmarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarCadastroActionPerformed
+        Usuarios usuario = new Usuarios();
+
+        usuario.setNome(jTextFieldNome.getText());
+        usuario.setSobrenome(jTextFieldSobrenome.getText());
+        usuario.setCpf(jTextFieldCPF.getText());
+        usuario.setEmail(jTextFieldEmail.getText());
+        usuario.setSenha(jPasswordFieldSenha.getText());
+        usuario.setConfirmaSenha(jPasswordFieldConfirmarSenha.getText());
+        JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
+    }//GEN-LAST:event_jButtonConfirmarCadastroActionPerformed
+
+    private void jPasswordFieldSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldSenhaActionPerformed
+
+    }//GEN-LAST:event_jPasswordFieldSenhaActionPerformed
+
+    private void jTextFieldNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeActionPerformed
+
+
+    }//GEN-LAST:event_jTextFieldNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -131,13 +157,13 @@ public class CadUsuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtonConfirmarCadastro;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JPasswordField jPasswordFieldConfirmarSenha;
+    private javax.swing.JPasswordField jPasswordFieldSenha;
+    private javax.swing.JTextField jTextFieldCPF;
+    private javax.swing.JTextField jTextFieldEmail;
+    private javax.swing.JTextField jTextFieldNome;
+    private javax.swing.JTextField jTextFieldSobrenome;
     // End of variables declaration//GEN-END:variables
 }
