@@ -7,26 +7,38 @@ package zoo.telas;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.LayoutStyle;
+import javax.swing.border.*;
 
 /**
  *
  * @author Bruno
  */
 public class principal extends javax.swing.JFrame {
-
     /**
      * Creates new form principal
      */
     public principal() {
+        CompoundBorder innerCompound = null;
+        CompoundBorder outerCompound = null;
+        
+        innerCompound = new CompoundBorder(new EmptyBorder(0, 8, 0, 8), new EmptyBorder(0,0,0,0));
+        outerCompound = new CompoundBorder(new LineBorder(new Color(211, 211, 211), 1), innerCompound);        
+
         initComponents();
         btnPrincipal.setBackground(new Color(0, 0, 0, 0));
         btnPerfil.setBackground(new Color(0, 0, 0, 0));
         btnSupp.setBackground(new Color(0, 0, 0, 0));
         btnZoo.setBackground(new Color(0, 0, 0, 0));
         Sair.setBackground(new Color(0, 0, 0, 0));
-        botaoPesquisar.setBackground(new Color(0, 0, 0, 0));
+        
+        selectImg_Principal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/Selected.png")));
+        selectImg_Suport.setIcon(null);
+        selectImg_Zoo.setIcon(null);
+        selectImg_Perfil.setIcon(null);
 
         botaoBug.setBackground(new Color(0, 0, 0, 0));
         botaoDenuncia.setBackground(new Color(0, 0, 0, 0));
@@ -34,6 +46,10 @@ public class principal extends javax.swing.JFrame {
 
         jTextFieldSuporte.setVisible(false);
         jLabelEnviar.setVisible(false);
+        
+        locateByUf_tbx.setBorder(outerCompound);
+        locateByCity_tbx.setBorder(outerCompound);
+        locateByZoo_tbx.setBorder(outerCompound);
 
     }
 
@@ -61,30 +77,38 @@ public class principal extends javax.swing.JFrame {
         btnSupp = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         Sair = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        selectImg_Principal = new javax.swing.JLabel();
+        selectImg_Zoo = new javax.swing.JLabel();
+        selectImg_Perfil = new javax.swing.JLabel();
+        selectImg_Suport = new javax.swing.JLabel();
         jfPainel = new javax.swing.JTabbedPane();
         jPanelZoo2 = new javax.swing.JPanel();
         jPanelP4 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
         jPanelZoo1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        botaoPesquisar = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jPanel6 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        locateByZoo_tbx = new javax.swing.JTextField();
+        botaoPesquisar = new javax.swing.JButton();
+        locateByUf_tbx = new javax.swing.JTextField();
+        locateByCity_tbx = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jPanelZoo = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jPanelP = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabelEnviar = new javax.swing.JLabel();
+        jTextFieldSuporte = new javax.swing.JTextField();
         botaoDenuncia = new javax.swing.JButton();
         botaoBug = new javax.swing.JButton();
         botaoDuvida = new javax.swing.JButton();
-        jLabelEnviar = new javax.swing.JLabel();
-        jTextFieldSuporte = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -126,7 +150,6 @@ public class principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(200, 200));
-        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -174,7 +197,7 @@ public class principal extends javax.swing.JFrame {
                 btnZooActionPerformed(evt);
             }
         });
-        getContentPane().add(btnZoo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 220, 30));
+        getContentPane().add(btnZoo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 220, 30));
 
         btnPerfil.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnPerfil.setForeground(new java.awt.Color(255, 255, 255));
@@ -184,7 +207,7 @@ public class principal extends javax.swing.JFrame {
                 btnPerfilActionPerformed(evt);
             }
         });
-        getContentPane().add(btnPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(-7, 273, 230, 30));
+        getContentPane().add(btnPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 260, 230, 30));
 
         btnSupp.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnSupp.setForeground(new java.awt.Color(255, 255, 255));
@@ -194,7 +217,7 @@ public class principal extends javax.swing.JFrame {
                 btnSuppActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSupp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 220, 30));
+        getContentPane().add(btnSupp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 220, 30));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -218,15 +241,53 @@ public class principal extends javax.swing.JFrame {
         });
         getContentPane().add(Sair, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 50, 60));
 
+        jLabel3.setBackground(new Color(0,0,0,0));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("SAIR");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, -1, -1));
+
+        selectImg_Principal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/Selected.png"))); // NOI18N
+        getContentPane().add(selectImg_Principal, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 150, 250, 50));
+
+        selectImg_Zoo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/Selected.png"))); // NOI18N
+        getContentPane().add(selectImg_Zoo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 200, 250, 50));
+
+        selectImg_Perfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/Selected.png"))); // NOI18N
+        getContentPane().add(selectImg_Perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 250, 250, 50));
+
+        selectImg_Suport.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/Selected.png"))); // NOI18N
+        getContentPane().add(selectImg_Suport, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 300, 250, 50));
+
         jfPainel.setBackground(new Color (0,0,0,0));
+        jfPainel.setEnabled(false);
 
         jPanelZoo2.setBackground(new Color(0,0,0,0));
 
         jPanelP4.setBackground(new Color(0,0,0,0));
+        jPanelP4.setEnabled(false);
         jPanelP4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Bruno\\Downloads\\fundo (1).png")); // NOI18N
-        jPanelP4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(0, 280, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addGap(0, 280, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(0, 215, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addGap(0, 215, Short.MAX_VALUE))
+        );
+
+        jPanelP4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 430));
 
         javax.swing.GroupLayout jPanelZoo2Layout = new javax.swing.GroupLayout(jPanelZoo2);
         jPanelZoo2.setLayout(jPanelZoo2Layout);
@@ -244,43 +305,99 @@ public class principal extends javax.swing.JFrame {
         jPanelZoo1.setBackground(new Color(0,0,0,0));
         jPanelZoo1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
-        jPanelZoo1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 220, 30));
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel4.setText("Localizar Zoológico");
-        jPanelZoo1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+        locateByZoo_tbx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
 
+        botaoPesquisar.setBackground(new java.awt.Color(255, 255, 255));
         botaoPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/icone_lupa.png"))); // NOI18N
-        jPanelZoo1.add(botaoPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, 30, 30));
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel8.setText("UF");
-        jPanelZoo1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
-
-        jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        botaoPesquisar.setOpaque(false);
+        botaoPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                botaoPesquisarActionPerformed(evt);
             }
         });
-        jPanelZoo1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 50, 30));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel2.setText("Pesquisa Por Filtro");
-        jPanelZoo1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
+        locateByUf_tbx.setBorder(javax.swing.BorderFactory.createLineBorder(new Color(211,211,211, 60)));
+        locateByUf_tbx.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                locateByUf_tbxKeyTyped(evt);
+            }
+        });
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 102, 0));
+        locateByCity_tbx.setBorder(javax.swing.BorderFactory.createLineBorder(new Color(211,211,211, 60)));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 102, 0));
         jLabel9.setText("Cidade");
-        jPanelZoo1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, -1, -1));
-        jPanelZoo1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 140, 30));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Bruno\\Downloads\\fundo (1).png")); // NOI18N
-        jPanelZoo1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(51, 102, 0));
+        jLabel8.setText("UF");
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 102, 0));
+        jLabel4.setText("Localizar Zoológico");
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(51, 102, 0));
+        jLabel11.setText("Ou escolha");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(locateByZoo_tbx, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botaoPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel4)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(locateByUf_tbx, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(locateByCity_tbx, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel11))
+                .addContainerGap(294, Short.MAX_VALUE))
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel5)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(locateByZoo_tbx, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botaoPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9)
+                    .addComponent(locateByUf_tbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(locateByCity_tbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(317, Short.MAX_VALUE))
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel5)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jPanelZoo1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 430));
 
         jfPainel.addTab("", jPanelZoo1);
 
@@ -289,8 +406,6 @@ public class principal extends javax.swing.JFrame {
 
         jButton2.setText("jButton2");
         jPanelZoo.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 139, -1, -1));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Bruno\\Downloads\\fundo (1).png")); // NOI18N
         jPanelZoo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jfPainel.addTab("", jPanelZoo);
@@ -298,13 +413,18 @@ public class principal extends javax.swing.JFrame {
         jPanelP.setBackground(new Color(0,0,0,0));
         jPanelP.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabelEnviar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabelEnviar.setForeground(new java.awt.Color(0, 102, 0));
+        jLabelEnviar.setText("Enviar");
+
         botaoDenuncia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/icone_denuncia.png"))); // NOI18N
         botaoDenuncia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoDenunciaActionPerformed(evt);
             }
         });
-        jPanelP.add(botaoDenuncia, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 100, 120));
 
         botaoBug.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/icone_bugs.png"))); // NOI18N
         botaoBug.addActionListener(new java.awt.event.ActionListener() {
@@ -312,7 +432,6 @@ public class principal extends javax.swing.JFrame {
                 botaoBugActionPerformed(evt);
             }
         });
-        jPanelP.add(botaoBug, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 110, 110));
 
         botaoDuvida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/icone_duvidas.png"))); // NOI18N
         botaoDuvida.addActionListener(new java.awt.event.ActionListener() {
@@ -320,21 +439,54 @@ public class principal extends javax.swing.JFrame {
                 botaoDuvidaActionPerformed(evt);
             }
         });
-        jPanelP.add(botaoDuvida, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 120, 90));
 
-        jLabelEnviar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabelEnviar.setForeground(new java.awt.Color(0, 102, 0));
-        jLabelEnviar.setText("Enviar");
-        jPanelP.add(jLabelEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, -1, -1));
-        jPanelP.add(jTextFieldSuporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 480, 140));
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(0, 280, Short.MAX_VALUE)
+                .addComponent(jLabel13)
+                .addGap(0, 280, Short.MAX_VALUE))
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelEnviar)
+                    .addComponent(jTextFieldSuporte, javax.swing.GroupLayout.DEFAULT_SIZE, 526, Short.MAX_VALUE)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(botaoDenuncia, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(70, 70, 70)
+                        .addComponent(botaoBug, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54)
+                        .addComponent(botaoDuvida, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botaoDenuncia, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(botaoDuvida, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botaoBug, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldSuporte, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(jLabelEnviar)
+                .addGap(29, 29, 29))
+        );
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Bruno\\Downloads\\fundo (1).png")); // NOI18N
-        jPanelP.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanelP.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 430));
 
         jfPainel.addTab("", jPanelP);
 
         getContentPane().add(jfPainel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 560, 450));
 
+        jLabel1.setBackground(new Color(0,0,0,0));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/tela_principal.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 450));
 
@@ -343,45 +495,50 @@ public class principal extends javax.swing.JFrame {
 
     private void btnPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrincipalActionPerformed
         jfPainel.setSelectedIndex(0);
-        btnPrincipal.setBackground(new Color(0, 10, 0, 255));
-        btnPerfil.setBackground(new Color(0, 0, 0, 0));
-        btnSupp.setBackground(new Color(0, 0, 0, 0));
-        btnZoo.setBackground(new Color(0, 0, 0, 0));
-
-
+        selectImg_Principal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/Selected.png")));
+        selectImg_Zoo.setIcon(null);
+        selectImg_Perfil.setIcon(null);
+        selectImg_Suport.setIcon(null);        
     }//GEN-LAST:event_btnPrincipalActionPerformed
 
     private void btnZooActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnZooActionPerformed
         jfPainel.setSelectedIndex(1);
-        btnPrincipal.setBackground(new Color(0, 0, 0, 0));
-        btnPerfil.setBackground(new Color(0, 0, 0, 0));
-        btnSupp.setBackground(new Color(0, 0, 0, 0));
-        btnZoo.setBackground(new Color(0, 10, 0, 255));
+        selectImg_Principal.setIcon(null);
+        selectImg_Zoo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/Selected.png")));
+        selectImg_Perfil.setIcon(null);
+        selectImg_Suport.setIcon(null);
     }//GEN-LAST:event_btnZooActionPerformed
 
     private void btnPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerfilActionPerformed
         jfPainel.setSelectedIndex(2);
-        btnPrincipal.setBackground(new Color(0, 0, 0, 0));
-        btnPerfil.setBackground(new Color(0, 10, 0, 255));
-        btnSupp.setBackground(new Color(0, 0, 0, 0));
-        btnZoo.setBackground(new Color(0, 0, 0, 0));
+        selectImg_Principal.setIcon(null);
+        selectImg_Zoo.setIcon(null);
+        selectImg_Perfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/Selected.png")));
+        selectImg_Suport.setIcon(null);       
     }//GEN-LAST:event_btnPerfilActionPerformed
 
     private void btnSuppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuppActionPerformed
         jfPainel.setSelectedIndex(3);
-        btnPrincipal.setBackground(new Color(0, 0, 0, 0));
-        btnPerfil.setBackground(new Color(0, 0, 0, 0));
-        btnSupp.setBackground(new Color(0, 10, 0, 255));
-        btnZoo.setBackground(new Color(0, 0, 0, 0));
+        selectImg_Principal.setIcon(null);
+        selectImg_Zoo.setIcon(null);
+        selectImg_Perfil.setIcon(null);
+        selectImg_Suport.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/Selected.png")));
     }//GEN-LAST:event_btnSuppActionPerformed
 
     private void SairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SairActionPerformed
         System.exit(0);
     }//GEN-LAST:event_SairActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    private void locateByUf_tbxKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_locateByUf_tbxKeyTyped
+        if(locateByUf_tbx.getText().length() >= 2){
+            evt.consume();
+        }
+    }//GEN-LAST:event_locateByUf_tbxKeyTyped
+
+    private void botaoPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisarActionPerformed
+        jTextFieldSuporte.setVisible(true);
+        jLabelEnviar.setVisible(true);
+    }//GEN-LAST:event_botaoPesquisarActionPerformed
 
     private void botaoDenunciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDenunciaActionPerformed
         jTextFieldSuporte.setVisible(true);
@@ -394,7 +551,6 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoBugActionPerformed
 
     private void botaoDuvidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDuvidaActionPerformed
-        // TODO add your handling code here:
         jTextFieldSuporte.setVisible(true);
         jLabelEnviar.setVisible(true);
     }//GEN-LAST:event_botaoDuvidaActionPerformed
@@ -448,13 +604,14 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelEnviar;
@@ -463,16 +620,23 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JPanel jPanelP;
     private javax.swing.JPanel jPanelP4;
     private javax.swing.JPanel jPanelZoo;
     private javax.swing.JPanel jPanelZoo1;
     private javax.swing.JPanel jPanelZoo2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextFieldSuporte;
     private javax.swing.JTabbedPane jfPainel;
+    private javax.swing.JTextField locateByCity_tbx;
+    private javax.swing.JTextField locateByUf_tbx;
+    private javax.swing.JTextField locateByZoo_tbx;
+    private javax.swing.JLabel selectImg_Perfil;
+    private javax.swing.JLabel selectImg_Principal;
+    private javax.swing.JLabel selectImg_Suport;
+    private javax.swing.JLabel selectImg_Zoo;
     // End of variables declaration//GEN-END:variables
 
 }
