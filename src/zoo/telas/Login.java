@@ -32,8 +32,8 @@ public class Login extends javax.swing.JFrame {
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         campo_email = new javax.swing.JTextField();
         jCheckBox1 = new javax.swing.JCheckBox();
-        jButton2 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jButtonEntrar = new javax.swing.JButton();
+        jLabelCriarConta = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
 
@@ -95,23 +95,32 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 120, 30));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/botao_login.png"))); // NOI18N
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, 70, 70));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel2.setText("Criar Conta");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButtonEntrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/botao_login.png"))); // NOI18N
+        jButtonEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                jButtonEntrarMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 80, 20));
+        jButtonEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEntrarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, 70, 70));
+
+        jLabelCriarConta.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelCriarConta.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelCriarConta.setText("Criar Conta");
+        jLabelCriarConta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelCriarContaMouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabelCriarConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 80, 20));
 
         jPasswordField1.setBackground(new java.awt.Color(204, 204, 204));
         jPasswordField1.setForeground(new java.awt.Color(102, 102, 102));
         jPasswordField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPasswordField1.setText("********");
         getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 110, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/tela_login.png"))); // NOI18N
@@ -136,9 +145,29 @@ public class Login extends javax.swing.JFrame {
         campo_email.setText("");
     }//GEN-LAST:event_campo_emailMousePressed
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-            // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel2MouseClicked
+    private void jLabelCriarContaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelCriarContaMouseClicked
+
+        CadUsuarios CadUsu = new CadUsuarios();
+        Login login = new Login();
+        login.setVisible(false);
+        CadUsu.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jLabelCriarContaMouseClicked
+
+    private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
+        principal princ = new principal();
+        Login login = new Login();
+        princ.setVisible(true);
+        login.setVisible(false);
+
+        dispose();
+
+
+    }//GEN-LAST:event_jButtonEntrarActionPerformed
+
+    private void jButtonEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEntrarMouseClicked
+
+    }//GEN-LAST:event_jButtonEntrarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -178,12 +207,12 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField campo_email;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtonEntrar;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JDialog jDialog2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabelCriarConta;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     // End of variables declaration//GEN-END:variables

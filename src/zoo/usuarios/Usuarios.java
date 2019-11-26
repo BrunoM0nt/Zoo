@@ -7,6 +7,15 @@ public class Usuarios {
     private String cpf;
     private String senha;
     private String email;
+    private String ConfirmaSenha;
+
+    public String getConfirmaSenha() {
+        return ConfirmaSenha;
+    }
+
+    public void setConfirmaSenha(String ConfirmaSenha) {
+        this.ConfirmaSenha = ConfirmaSenha;
+    }
 
     public String getEmail() {
         return email;

@@ -5,7 +5,11 @@
  */
 package zoo.telas;
 
+import java.awt.Color;
+import static java.awt.Color.green;
 import java.util.ArrayList;
+import static javafx.scene.paint.Color.color;
+import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import zoo.usuarios.Usuarios;
@@ -110,6 +114,42 @@ public class CadUsuarios extends javax.swing.JFrame {
         usuario.setSenha(jPasswordFieldSenha.getText());
         usuario.setConfirmaSenha(jPasswordFieldConfirmarSenha.getText());
         JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
+
+        if (usuario.getNome().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "O Nome deve Ser Preenchido");
+            jTextFieldNome.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+            if (usuario.getSobrenome().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "O Sobreno deve Ser Preenchido");
+                jTextFieldSobrenome.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+
+            }
+            if (usuario.getCpf().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "O CPF deve Ser Preenchido");
+                jTextFieldCPF.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+
+            }
+            if (usuario.getEmail().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "O Email deve Ser Preenchido");
+                jTextFieldEmail.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+
+            }
+            if (usuario.getSenha().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "A Senha deve Ser Preenchido");
+                jPasswordFieldSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+
+            }
+            if (usuario.getConfirmaSenha().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Confirmar senha deve Ser Preenchido");
+                jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+
+            }
+        } else {
+            CadUsuarios CadUsu = new CadUsuarios();
+            Login login = new Login();
+            login.setVisible(true);
+            CadUsu.setVisible(false);
+            dispose();
+        }
     }//GEN-LAST:event_jButtonConfirmarCadastroActionPerformed
 
     private void jPasswordFieldSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldSenhaActionPerformed
