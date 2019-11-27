@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import zoo.usuarios.Usuarios;
@@ -37,7 +38,14 @@ public class CadUsuarios extends javax.swing.JFrame {
      */
     public CadUsuarios() {
         initComponents();
+        
+        //Icone
+        this.setIconImage(new ImageIcon(getClass().getResource("/zoo/Imagens/iCON.png")).getImage());
+        
+        //Background
         jButtonConfirmarCadastro.setBackground(new Color(0, 0, 0, 0));
+        
+        //Cursor
         jButtonConfirmarCadastro.setCursor(new Cursor(Cursor.HAND_CURSOR));
         
         jTextFieldNome.setText(" ");

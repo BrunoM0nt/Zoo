@@ -42,6 +42,7 @@ public class principal extends javax.swing.JFrame {
         perfil_CpfTbx.setBorder(outerCompound);
         perfil_NomeTbx.setBorder(outerCompound);
         perfil_EmailTbx.setBorder(outerCompound);
+        principal_locateByZooTbx.setBorder(outerCompound);
 
         //Configuração do Icone
         this.setIconImage(new ImageIcon(getClass().getResource("/zoo/Imagens/iCON.png")).getImage());
@@ -74,6 +75,9 @@ public class principal extends javax.swing.JFrame {
         perfil_EmailBtn.setBackground(new Color(0, 0, 0, 0));
         perfil_NomeBtn.setBackground(new Color(0, 0, 0, 0));
         perfil_CpfBtn.setBackground(new Color(0, 0, 0, 0));
+        
+        //PlaceHolder
+        
 
     }
 
@@ -112,11 +116,38 @@ public class principal extends javax.swing.JFrame {
         jPanelZoo2 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
+        principal_locateByZooTbx = new javax.swing.JTextField();
+        principal_PesquisaBtn = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
+        jPanel18 = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
+        jPanel24 = new javax.swing.JPanel();
+        jLabel28 = new javax.swing.JLabel();
+        jPanel13 = new javax.swing.JPanel();
+        jPanel25 = new javax.swing.JPanel();
+        jLabel29 = new javax.swing.JLabel();
+        jPanel14 = new javax.swing.JPanel();
+        jPanel26 = new javax.swing.JPanel();
+        jLabel30 = new javax.swing.JLabel();
+        jPanel15 = new javax.swing.JPanel();
+        jPanel27 = new javax.swing.JPanel();
+        jLabel32 = new javax.swing.JLabel();
+        jPanel16 = new javax.swing.JPanel();
+        jPanel28 = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
+        jPanel17 = new javax.swing.JPanel();
+        jPanel29 = new javax.swing.JPanel();
+        jLabel34 = new javax.swing.JLabel();
+        jPanel32 = new javax.swing.JPanel();
+        jPanel33 = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
         jPanelZoo1 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         zoo_locateByZooTbx = new javax.swing.JTextField();
-        botaoPesquisar = new javax.swing.JButton();
+        zoo_locateByZoo = new javax.swing.JButton();
         zoo_LocateByUfTbx = new javax.swing.JTextField();
         zoo_locateByCityTbx = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -124,6 +155,7 @@ public class principal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        zoo_locateByUfCity = new javax.swing.JButton();
         jPanelZoo = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabelAlterarImagem = new javax.swing.JLabel();
@@ -320,18 +352,259 @@ public class principal extends javax.swing.JFrame {
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/iCON50-50.png"))); // NOI18N
 
+        principal_locateByZooTbx.setText("Digite sua pesquisa!");
+        principal_locateByZooTbx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
+        principal_locateByZooTbx.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                principal_locateByZooTbxFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                principal_locateByZooTbxFocusLost(evt);
+            }
+        });
+        principal_locateByZooTbx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                principal_locateByZooTbxActionPerformed(evt);
+            }
+        });
+
+        principal_PesquisaBtn.setBackground(new java.awt.Color(255, 255, 255));
+        principal_PesquisaBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/icone_lupa.png"))); // NOI18N
+        principal_PesquisaBtn.setOpaque(false);
+        principal_PesquisaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                principal_PesquisaBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(51, 102, 0));
+        jLabel21.setText("Mais populares!");
+
+        jPanel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel11MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel11MouseExited(evt);
+            }
+        });
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel18.setBackground(new Color(0,0,0,70));
+        jPanel18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setText("Zoo01");
+        jPanel18.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 121, 27));
+
+        jPanel11.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jPanel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel12MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel12MouseExited(evt);
+            }
+        });
+        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel24.setBackground(new Color(0,0,0,70));
+        jPanel24.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel28.setText("Zoo01");
+        jPanel24.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 121, 27));
+
+        jPanel12.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jPanel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel13MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel13MouseExited(evt);
+            }
+        });
+        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel25.setBackground(new Color(0,0,0,70));
+        jPanel25.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel29.setText("Zoo01");
+        jPanel25.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 121, 27));
+
+        jPanel13.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jPanel14.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
+            public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
+                jPanel14MouseWheelMoved(evt);
+            }
+        });
+        jPanel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel14MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel14MouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jPanel14MouseReleased(evt);
+            }
+        });
+        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel26.setBackground(new Color(0,0,0,70));
+        jPanel26.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel30.setText("Zoo01");
+        jPanel26.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 121, 27));
+
+        jPanel14.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jPanel15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel15MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel15MouseExited(evt);
+            }
+        });
+        jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel27.setBackground(new Color(0,0,0,70));
+        jPanel27.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel32.setText("Zoo01");
+        jPanel27.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 121, 27));
+
+        jPanel15.add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jPanel16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel16MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel16MouseExited(evt);
+            }
+        });
+        jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel28.setBackground(new Color(0,0,0,70));
+        jPanel28.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel33.setText("Zoo01");
+        jPanel28.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 121, 27));
+
+        jPanel16.add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jPanel17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel17MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel17MouseExited(evt);
+            }
+        });
+        jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel29.setBackground(new Color(0,0,0,70));
+        jPanel29.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel34.setText("Zoo01");
+        jPanel29.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 121, 27));
+
+        jPanel17.add(jPanel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jPanel32.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel32MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel32MouseExited(evt);
+            }
+        });
+        jPanel32.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel33.setBackground(new Color(0,0,0,70));
+        jPanel33.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel35.setText("Zoo01");
+        jPanel33.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 121, 27));
+
+        jPanel32.add(jPanel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addGap(0, 500, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel15))
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(principal_locateByZooTbx, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(principal_PesquisaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel21)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel32, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addGap(0, 360, Short.MAX_VALUE)
+                .addContainerGap()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(principal_PesquisaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(principal_locateByZooTbx, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addComponent(jLabel21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel32, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel15))
         );
 
@@ -346,12 +619,12 @@ public class principal extends javax.swing.JFrame {
 
         zoo_locateByZooTbx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
 
-        botaoPesquisar.setBackground(new java.awt.Color(255, 255, 255));
-        botaoPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/icone_lupa.png"))); // NOI18N
-        botaoPesquisar.setOpaque(false);
-        botaoPesquisar.addActionListener(new java.awt.event.ActionListener() {
+        zoo_locateByZoo.setBackground(new java.awt.Color(255, 255, 255));
+        zoo_locateByZoo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/icone_lupa.png"))); // NOI18N
+        zoo_locateByZoo.setOpaque(false);
+        zoo_locateByZoo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoPesquisarActionPerformed(evt);
+                zoo_locateByZooActionPerformed(evt);
             }
         });
 
@@ -382,6 +655,15 @@ public class principal extends javax.swing.JFrame {
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/iCON50-50.png"))); // NOI18N
 
+        zoo_locateByUfCity.setBackground(new java.awt.Color(255, 255, 255));
+        zoo_locateByUfCity.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/icone_lupa.png"))); // NOI18N
+        zoo_locateByUfCity.setOpaque(false);
+        zoo_locateByUfCity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                zoo_locateByUfCityActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -392,18 +674,22 @@ public class principal extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(zoo_locateByZooTbx, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botaoPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(zoo_locateByZoo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel4)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(zoo_LocateByUfTbx, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(zoo_locateByCityTbx, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel11))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(zoo_LocateByUfTbx, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(zoo_locateByCityTbx, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel11))
-                .addContainerGap(282, Short.MAX_VALUE))
+                        .addComponent(zoo_locateByUfCity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(256, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel14))
@@ -419,18 +705,21 @@ public class principal extends javax.swing.JFrame {
                 .addGap(5, 5, 5)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(zoo_locateByZooTbx, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(zoo_locateByZoo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(zoo_locateByZooTbx, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(botaoPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9)
-                    .addComponent(zoo_LocateByUfTbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(zoo_locateByCityTbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9)
+                            .addComponent(zoo_LocateByUfTbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(zoo_locateByCityTbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(zoo_locateByUfCity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 245, Short.MAX_VALUE)
                 .addComponent(jLabel14))
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -675,10 +964,10 @@ public class principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_zoo_LocateByUfTbxKeyTyped
 
-    private void botaoPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisarActionPerformed
+    private void zoo_locateByZooActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zoo_locateByZooActionPerformed
         jTextFieldSuporte.setVisible(true);
         jLabelEnviar.setVisible(true);
-    }//GEN-LAST:event_botaoPesquisarActionPerformed
+    }//GEN-LAST:event_zoo_locateByZooActionPerformed
 
     private void botaoDenunciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDenunciaActionPerformed
         jTextFieldSuporte.setVisible(true);
@@ -715,6 +1004,104 @@ public class principal extends javax.swing.JFrame {
     private void perfil_EmailTbxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfil_EmailTbxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_perfil_EmailTbxActionPerformed
+
+    private void zoo_locateByUfCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zoo_locateByUfCityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_zoo_locateByUfCityActionPerformed
+
+    private void principal_PesquisaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_principal_PesquisaBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_principal_PesquisaBtnActionPerformed
+
+    private void jPanel11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel11MouseEntered
+        jPanel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
+    }//GEN-LAST:event_jPanel11MouseEntered
+
+    private void jPanel11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel11MouseExited
+        jPanel11.setBorder(null);
+    }//GEN-LAST:event_jPanel11MouseExited
+
+    private void jPanel12MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel12MouseEntered
+        jPanel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
+    }//GEN-LAST:event_jPanel12MouseEntered
+
+    private void jPanel12MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel12MouseExited
+        jPanel12.setBorder(null);
+    }//GEN-LAST:event_jPanel12MouseExited
+
+    private void jPanel13MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel13MouseEntered
+        jPanel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
+    }//GEN-LAST:event_jPanel13MouseEntered
+
+    private void jPanel13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel13MouseExited
+        jPanel13.setBorder(null);
+    }//GEN-LAST:event_jPanel13MouseExited
+
+    private void jPanel14MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel14MouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel14MouseReleased
+
+    private void jPanel14MouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_jPanel14MouseWheelMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel14MouseWheelMoved
+
+    private void jPanel14MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel14MouseExited
+        jPanel14.setBorder(null);
+    }//GEN-LAST:event_jPanel14MouseExited
+
+    private void jPanel14MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel14MouseEntered
+        jPanel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
+    }//GEN-LAST:event_jPanel14MouseEntered
+
+    private void jPanel15MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseEntered
+        jPanel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
+    }//GEN-LAST:event_jPanel15MouseEntered
+
+    private void jPanel15MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseExited
+        jPanel15.setBorder(null);
+    }//GEN-LAST:event_jPanel15MouseExited
+
+    private void jPanel16MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel16MouseEntered
+        jPanel16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
+    }//GEN-LAST:event_jPanel16MouseEntered
+
+    private void jPanel16MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel16MouseExited
+        jPanel16.setBorder(null);
+    }//GEN-LAST:event_jPanel16MouseExited
+
+    private void jPanel17MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel17MouseExited
+        jPanel17.setBorder(null);
+    }//GEN-LAST:event_jPanel17MouseExited
+
+    private void jPanel17MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel17MouseEntered
+        jPanel17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
+    }//GEN-LAST:event_jPanel17MouseEntered
+
+    private void jPanel32MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel32MouseEntered
+        jPanel32.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
+    }//GEN-LAST:event_jPanel32MouseEntered
+
+    private void jPanel32MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel32MouseExited
+        jPanel32.setBorder(null);
+    }//GEN-LAST:event_jPanel32MouseExited
+
+    private void principal_locateByZooTbxFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_principal_locateByZooTbxFocusGained
+        if (principal_locateByZooTbx.getText().equals("Digite sua pesquisa!")) {
+            principal_locateByZooTbx.setText("");
+            principal_locateByZooTbx.setForeground(Color.BLACK);
+        }
+    }//GEN-LAST:event_principal_locateByZooTbxFocusGained
+
+    private void principal_locateByZooTbxFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_principal_locateByZooTbxFocusLost
+       if (principal_locateByZooTbx.getText().isEmpty()) {
+            principal_locateByZooTbx.setForeground(Color.GRAY);
+            principal_locateByZooTbx.setText("Digite sua pesquisa!");
+        }
+    }//GEN-LAST:event_principal_locateByZooTbxFocusLost
+
+    private void principal_locateByZooTbxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_principal_locateByZooTbxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_principal_locateByZooTbxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -757,7 +1144,6 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JButton botaoBug;
     private javax.swing.JButton botaoDenuncia;
     private javax.swing.JButton botaoDuvida;
-    private javax.swing.JButton botaoPesquisar;
     private javax.swing.JButton btnPerfil;
     private javax.swing.JButton btnPrincipal;
     private javax.swing.JButton btnSupp;
@@ -775,7 +1161,21 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -786,8 +1186,31 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelAlterarSenha;
     private javax.swing.JLabel jLabelEnviar;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel30;
+    private javax.swing.JPanel jPanel31;
+    private javax.swing.JPanel jPanel32;
+    private javax.swing.JPanel jPanel33;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
@@ -806,12 +1229,16 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JTextField perfil_EmailTbx;
     private javax.swing.JButton perfil_NomeBtn;
     private javax.swing.JTextField perfil_NomeTbx;
+    private javax.swing.JButton principal_PesquisaBtn;
+    private javax.swing.JTextField principal_locateByZooTbx;
     private javax.swing.JLabel selectImg_Perfil;
     private javax.swing.JLabel selectImg_Principal;
     private javax.swing.JLabel selectImg_Suport;
     private javax.swing.JLabel selectImg_Zoo;
     private javax.swing.JTextField zoo_LocateByUfTbx;
     private javax.swing.JTextField zoo_locateByCityTbx;
+    private javax.swing.JButton zoo_locateByUfCity;
+    private javax.swing.JButton zoo_locateByZoo;
     private javax.swing.JTextField zoo_locateByZooTbx;
     // End of variables declaration//GEN-END:variables
 
