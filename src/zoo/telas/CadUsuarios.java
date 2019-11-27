@@ -8,11 +8,22 @@ package zoo.telas;
 import java.awt.Color;
 import static java.awt.Color.green;
 import java.awt.Cursor;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
+import java.io.Writer;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import static javafx.scene.paint.Color.color;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import jdk.jfr.events.FileWriteEvent;
 import zoo.usuarios.Usuarios;
 
 /**
@@ -20,6 +31,8 @@ import zoo.usuarios.Usuarios;
  * @author Pc27sala06
  */
 public class CadUsuarios extends javax.swing.JFrame {
+
+    ArrayList<Usuarios> usu = new ArrayList<>();
 
     /**
      * Creates new form CadUsuarios
@@ -152,6 +165,7 @@ public class CadUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldNomeActionPerformed
 
     private void jButtonConfirmarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarCadastroActionPerformed
+
         Usuarios usuario = new Usuarios();
 
         jButtonConfirmarCadastro.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -162,6 +176,7 @@ public class CadUsuarios extends javax.swing.JFrame {
         usuario.setEmail(jTextFieldEmail.getText());
         usuario.setSenha(jPasswordFieldSenha.getText());
         usuario.setConfirmaSenha(jPasswordFieldConfirmarSenha.getText());
+        usu.add(usuario);
 
         if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || usuario.getConfirmaSenha().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Todos Os Campos Devem Ser Preenchidos");
@@ -198,9 +213,11 @@ public class CadUsuarios extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
             CadUsuarios CadUsu = new CadUsuarios();
             Login login = new Login();
+            File file = new File("arq.txt");
             login.setVisible(true);
             CadUsu.setVisible(false);
             dispose();
+
         }
     }//GEN-LAST:event_jButtonConfirmarCadastroActionPerformed
 

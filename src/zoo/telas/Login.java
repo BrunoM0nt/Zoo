@@ -19,10 +19,10 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-        jButtonEntrar.setBackground(new Color (0,0,0,0));
-        
+        jButtonEntrar.setBackground(new Color(0, 0, 0, 0));
+
         jLabelCriarConta.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        
+
         jButtonEntrar.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
 
@@ -149,7 +149,7 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void campo_emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_emailActionPerformed
-        
+
     }//GEN-LAST:event_campo_emailActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
@@ -165,7 +165,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_campo_emailMousePressed
 
     private void jLabelCriarContaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelCriarContaMouseClicked
-        
+
         CadUsuarios CadUsu = new CadUsuarios();
         Login login = new Login();
         login.setVisible(false);
@@ -174,15 +174,15 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelCriarContaMouseClicked
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
-        
+
         principal princ = new principal();
         Login login = new Login();
-        
+
         princ.setVisible(true);
         login.setVisible(false);
-        
+
         dispose();
-        
+
 
     }//GEN-LAST:event_jButtonEntrarActionPerformed
 

@@ -1,5 +1,7 @@
 package zoo.usuarios;
 
+import java.util.ArrayList;
+
 public class Usuarios {
 
     private String nome;
@@ -8,6 +10,8 @@ public class Usuarios {
     private String senha;
     private String email;
     private String ConfirmaSenha;
+    
+   
 
     public String getConfirmaSenha() {
         return ConfirmaSenha;
