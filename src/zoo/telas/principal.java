@@ -36,9 +36,12 @@ public class principal extends javax.swing.JFrame {
         initComponents();
 
         //Aplicação das bordas default
-        locateByUf_tbx.setBorder(outerCompound);
-        locateByCity_tbx.setBorder(outerCompound);
-        locateByZoo_tbx.setBorder(outerCompound);
+        zoo_LocateByUfTbx.setBorder(outerCompound);
+        zoo_locateByCityTbx.setBorder(outerCompound);
+        zoo_locateByZooTbx.setBorder(outerCompound);
+        perfil_CpfTbx.setBorder(outerCompound);
+        perfil_NomeTbx.setBorder(outerCompound);
+        perfil_EmailTbx.setBorder(outerCompound);
 
         //Configuração do Icone
         this.setIconImage(new ImageIcon(getClass().getResource("/zoo/Imagens/iCON.png")).getImage());
@@ -65,12 +68,12 @@ public class principal extends javax.swing.JFrame {
         jLabelEnviar.setVisible(false);
 
         // configuração inicia de perfil
-        jButtonEditaCPf.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        perfil_CpfBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jLabelAlterarSenha.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jLabelAlterarImagem.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        jButtonEditarEmail.setBackground(new Color(0, 0, 0, 0));
-        jButtonEditarNome.setBackground(new Color(0, 0, 0, 0));
-        jButtonEditaCPf.setBackground(new Color(0, 0, 0, 0));
+        perfil_EmailBtn.setBackground(new Color(0, 0, 0, 0));
+        perfil_NomeBtn.setBackground(new Color(0, 0, 0, 0));
+        perfil_CpfBtn.setBackground(new Color(0, 0, 0, 0));
 
     }
 
@@ -112,10 +115,10 @@ public class principal extends javax.swing.JFrame {
         jPanelZoo1 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        locateByZoo_tbx = new javax.swing.JTextField();
+        zoo_locateByZooTbx = new javax.swing.JTextField();
         botaoPesquisar = new javax.swing.JButton();
-        locateByUf_tbx = new javax.swing.JTextField();
-        locateByCity_tbx = new javax.swing.JTextField();
+        zoo_LocateByUfTbx = new javax.swing.JTextField();
+        zoo_locateByCityTbx = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -123,18 +126,19 @@ public class principal extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jPanelZoo = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
-        jLabelAlterarSenha = new javax.swing.JLabel();
-        jButtonEditaCPf = new javax.swing.JButton();
-        jButtonEditarEmail = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
-        jButtonEditarNome = new javax.swing.JButton();
         jLabelAlterarImagem = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabelAlterarSenha = new javax.swing.JLabel();
+        perfil_CpfTbx = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        perfil_EmailTbx = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        perfil_NomeTbx = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        perfil_NomeBtn = new javax.swing.JButton();
+        perfil_EmailBtn = new javax.swing.JButton();
+        perfil_CpfBtn = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
         jPanelP = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
@@ -268,13 +272,13 @@ public class principal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel7)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 10, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel7)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 10, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 90, 90));
@@ -321,17 +325,17 @@ public class principal extends javax.swing.JFrame {
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addGap(0, 510, Short.MAX_VALUE)
+                .addGap(0, 500, Short.MAX_VALUE)
                 .addComponent(jLabel15))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addGap(0, 380, Short.MAX_VALUE)
+                .addGap(0, 360, Short.MAX_VALUE)
                 .addComponent(jLabel15))
         );
 
-        jPanelZoo2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 430));
+        jPanelZoo2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 410));
 
         jfPainel.addTab("", jPanelZoo2);
 
@@ -340,7 +344,7 @@ public class principal extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
-        locateByZoo_tbx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
+        zoo_locateByZooTbx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
 
         botaoPesquisar.setBackground(new java.awt.Color(255, 255, 255));
         botaoPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/icone_lupa.png"))); // NOI18N
@@ -351,14 +355,14 @@ public class principal extends javax.swing.JFrame {
             }
         });
 
-        locateByUf_tbx.setBorder(javax.swing.BorderFactory.createLineBorder(new Color(211,211,211, 60)));
-        locateByUf_tbx.addKeyListener(new java.awt.event.KeyAdapter() {
+        zoo_LocateByUfTbx.setBorder(javax.swing.BorderFactory.createLineBorder(new Color(211,211,211, 60)));
+        zoo_LocateByUfTbx.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                locateByUf_tbxKeyTyped(evt);
+                zoo_LocateByUfTbxKeyTyped(evt);
             }
         });
 
-        locateByCity_tbx.setBorder(javax.swing.BorderFactory.createLineBorder(new Color(211,211,211, 60)));
+        zoo_locateByCityTbx.setBorder(javax.swing.BorderFactory.createLineBorder(new Color(211,211,211, 60)));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(51, 102, 0));
@@ -386,28 +390,28 @@ public class principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(locateByZoo_tbx, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(zoo_locateByZooTbx, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel4)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(locateByUf_tbx, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(zoo_LocateByUfTbx, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(locateByCity_tbx, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(zoo_locateByCityTbx, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel11))
-                .addContainerGap(294, Short.MAX_VALUE))
+                .addContainerGap(282, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel14))
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel6Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 275, Short.MAX_VALUE)
                     .addComponent(jLabel5)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 275, Short.MAX_VALUE)))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -417,7 +421,7 @@ public class principal extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(locateByZoo_tbx, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(zoo_locateByZooTbx, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(botaoPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel11)
@@ -425,18 +429,18 @@ public class principal extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jLabel9)
-                    .addComponent(locateByUf_tbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(locateByCity_tbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 267, Short.MAX_VALUE)
+                    .addComponent(zoo_LocateByUfTbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(zoo_locateByCityTbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 245, Short.MAX_VALUE)
                 .addComponent(jLabel14))
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel6Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 205, Short.MAX_VALUE)
                     .addComponent(jLabel5)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 205, Short.MAX_VALUE)))
         );
 
-        jPanelZoo1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 430));
+        jPanelZoo1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 410));
 
         jfPainel.addTab("", jPanelZoo1);
 
@@ -446,58 +450,65 @@ public class principal extends javax.swing.JFrame {
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabelAlterarImagem.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabelAlterarImagem.setForeground(new java.awt.Color(0, 102, 0));
+        jLabelAlterarImagem.setText("Alterar Imagem do Perfil");
+        jPanel7.add(jLabelAlterarImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/iCON50-50.png"))); // NOI18N
+        jPanel7.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 360, -1, -1));
+
         jLabelAlterarSenha.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabelAlterarSenha.setForeground(new java.awt.Color(0, 102, 0));
         jLabelAlterarSenha.setText("Alterar Senha");
-        jPanel7.add(jLabelAlterarSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
-
-        jButtonEditaCPf.setIcon(new javax.swing.ImageIcon("F:\\IMG-ZOO\\IconeEdit30px.png")); // NOI18N
-        jButtonEditaCPf.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButtonEditaCPf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEditaCPfActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jButtonEditaCPf, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 30, 30));
-
-        jButtonEditarEmail.setIcon(new javax.swing.ImageIcon("F:\\IMG-ZOO\\IconeEdit30px.png")); // NOI18N
-        jButtonEditarEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEditarEmailActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jButtonEditarEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, 30, 30));
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/iCON50-50.png"))); // NOI18N
-        jPanel7.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 380, -1, -1));
-
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel16.setText("Nome");
-        jPanel7.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 35, -1, -1));
-
-        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel17.setText("Email");
-        jPanel7.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 80, -1, -1));
-        jPanel7.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 78, 308, 30));
+        jPanel7.add(jLabelAlterarSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
+        jPanel7.add(perfil_CpfTbx, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 160, 30));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(0, 102, 0));
         jLabel18.setText("CPF");
-        jPanel7.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
-        jPanel7.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 160, 30));
-        jPanel7.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 229, 30));
+        jPanel7.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
 
-        jButtonEditarNome.setIcon(new javax.swing.ImageIcon("F:\\IMG-ZOO\\IconeEdit30px.png")); // NOI18N
-        jPanel7.add(jButtonEditarNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 30, 30));
+        perfil_EmailTbx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                perfil_EmailTbxActionPerformed(evt);
+            }
+        });
+        jPanel7.add(perfil_EmailTbx, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 308, 30));
 
-        jLabelAlterarImagem.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jLabelAlterarImagem.setForeground(new java.awt.Color(0, 102, 0));
-        jLabelAlterarImagem.setText("Alterar Imagem do Perfil");
-        jPanel7.add(jLabelAlterarImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, -1));
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 102, 0));
+        jLabel17.setText("Email");
+        jPanel7.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+        jPanel7.add(perfil_NomeTbx, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 229, 30));
 
-        jPanelZoo.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 430));
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 102, 0));
+        jLabel16.setText("Nome");
+        jPanel7.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+        jPanel7.add(perfil_NomeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 30, 30));
+
+        perfil_EmailBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                perfil_EmailBtnActionPerformed(evt);
+            }
+        });
+        jPanel7.add(perfil_EmailBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 30, 30));
+
+        perfil_CpfBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        perfil_CpfBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                perfil_CpfBtnActionPerformed(evt);
+            }
+        });
+        jPanel7.add(perfil_CpfBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 30, 30));
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(51, 102, 0));
+        jLabel19.setText("Perfil");
+        jPanel7.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jPanelZoo.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 410));
 
         jfPainel.addTab("", jPanelZoo);
 
@@ -542,57 +553,54 @@ public class principal extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel13)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jTextFieldSuporte, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(botaoDenuncia, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(75, 75, 75)
-                        .addComponent(botaoBug, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(61, 61, 61)
-                        .addComponent(botaoDuvida, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(23, Short.MAX_VALUE))
-            .addGroup(jPanel9Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelEnviar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTextFieldSuporte, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(49, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel6))
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(botaoDenuncia, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(76, 76, 76)
+                .addComponent(botaoBug, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botaoDuvida, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botaoDuvida, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoDenuncia, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoBug, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 8, Short.MAX_VALUE)
+                    .addComponent(botaoBug, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoDuvida, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel13)
                 .addGap(18, 18, 18)
                 .addComponent(jTextFieldSuporte, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabelEnviar)
-                        .addGap(39, 39, 39))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelEnviar)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel6))
         );
 
-        jPanelP.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 430));
+        jPanelP.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 410));
 
         jfPainel.addTab("", jPanelP);
 
-        getContentPane().add(jfPainel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 560, 460));
+        getContentPane().add(jfPainel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 560, 440));
 
         jLabel1.setBackground(new Color(0,0,0,0));
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/tela_principal.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 450));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -661,11 +669,11 @@ public class principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_SairActionPerformed
 
-    private void locateByUf_tbxKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_locateByUf_tbxKeyTyped
-        if (locateByUf_tbx.getText().length() >= 2) {
+    private void zoo_LocateByUfTbxKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_zoo_LocateByUfTbxKeyTyped
+        if (zoo_LocateByUfTbx.getText().length() >= 2) {
             evt.consume();
         }
-    }//GEN-LAST:event_locateByUf_tbxKeyTyped
+    }//GEN-LAST:event_zoo_LocateByUfTbxKeyTyped
 
     private void botaoPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisarActionPerformed
         jTextFieldSuporte.setVisible(true);
@@ -696,13 +704,17 @@ public class principal extends javax.swing.JFrame {
         botaoDuvida.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
     }//GEN-LAST:event_botaoDuvidaActionPerformed
 
-    private void jButtonEditarEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarEmailActionPerformed
+    private void perfil_CpfBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfil_CpfBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonEditarEmailActionPerformed
+    }//GEN-LAST:event_perfil_CpfBtnActionPerformed
 
-    private void jButtonEditaCPfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditaCPfActionPerformed
+    private void perfil_EmailBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfil_EmailBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonEditaCPfActionPerformed
+    }//GEN-LAST:event_perfil_EmailBtnActionPerformed
+
+    private void perfil_EmailTbxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfil_EmailTbxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_perfil_EmailTbxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -750,9 +762,6 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JButton btnPrincipal;
     private javax.swing.JButton btnSupp;
     private javax.swing.JButton btnZoo;
-    private javax.swing.JButton jButtonEditaCPf;
-    private javax.swing.JButton jButtonEditarEmail;
-    private javax.swing.JButton jButtonEditarNome;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -764,6 +773,7 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -788,18 +798,21 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelZoo;
     private javax.swing.JPanel jPanelZoo1;
     private javax.swing.JPanel jPanelZoo2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextFieldSuporte;
     private javax.swing.JTabbedPane jfPainel;
-    private javax.swing.JTextField locateByCity_tbx;
-    private javax.swing.JTextField locateByUf_tbx;
-    private javax.swing.JTextField locateByZoo_tbx;
+    private javax.swing.JButton perfil_CpfBtn;
+    private javax.swing.JTextField perfil_CpfTbx;
+    private javax.swing.JButton perfil_EmailBtn;
+    private javax.swing.JTextField perfil_EmailTbx;
+    private javax.swing.JButton perfil_NomeBtn;
+    private javax.swing.JTextField perfil_NomeTbx;
     private javax.swing.JLabel selectImg_Perfil;
     private javax.swing.JLabel selectImg_Principal;
     private javax.swing.JLabel selectImg_Suport;
     private javax.swing.JLabel selectImg_Zoo;
+    private javax.swing.JTextField zoo_LocateByUfTbx;
+    private javax.swing.JTextField zoo_locateByCityTbx;
+    private javax.swing.JTextField zoo_locateByZooTbx;
     // End of variables declaration//GEN-END:variables
 
 }

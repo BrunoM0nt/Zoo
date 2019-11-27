@@ -19,11 +19,9 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import static javafx.scene.paint.Color.color;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import jdk.jfr.events.FileWriteEvent;
 import zoo.usuarios.Usuarios;
 
 /**
