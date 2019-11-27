@@ -39,6 +39,8 @@ public class CadUsuarios extends javax.swing.JFrame {
         initComponents();
         jButtonConfirmarCadastro.setBackground(new Color(0, 0, 0, 0));
         jButtonConfirmarCadastro.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        
+        jTextFieldNome.setText(" ");
     }
 
     /**
@@ -104,10 +106,12 @@ public class CadUsuarios extends javax.swing.JFrame {
 
         jPasswordFieldConfirmarSenha.setBackground(new java.awt.Color(204, 204, 204));
         jPasswordFieldConfirmarSenha.setForeground(new java.awt.Color(102, 102, 102));
-        getContentPane().add(jPasswordFieldConfirmarSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 130, 30));
+        jPasswordFieldConfirmarSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(jPasswordFieldConfirmarSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, 130, 30));
 
         jPasswordFieldSenha.setBackground(new java.awt.Color(204, 204, 204));
         jPasswordFieldSenha.setForeground(new java.awt.Color(102, 102, 102));
+        jPasswordFieldSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPasswordFieldSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordFieldSenhaActionPerformed(evt);
@@ -123,12 +127,12 @@ public class CadUsuarios extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Sobrenome");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("CPF");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
@@ -143,7 +147,7 @@ public class CadUsuarios extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 102, 102));
         jLabel6.setText("Conf. Senha");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(102, 102, 102));
@@ -167,47 +171,42 @@ public class CadUsuarios extends javax.swing.JFrame {
         Usuarios usuario = new Usuarios();
 
         jButtonConfirmarCadastro.setCursor(new Cursor(Cursor.HAND_CURSOR));
-
         usuario.setNome(jTextFieldNome.getText());
         usuario.setSobrenome(jTextFieldSobrenome.getText());
         usuario.setCpf(jTextFieldCPF.getText());
         usuario.setEmail(jTextFieldEmail.getText());
         usuario.setSenha(jPasswordFieldSenha.getText());
         usuario.setConfirmaSenha(jPasswordFieldConfirmarSenha.getText());
-        usu.add(usuario);
-
-        if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || usuario.getConfirmaSenha().isEmpty()) {
+        
+       if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || usuario.getConfirmaSenha().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Todos Os Campos Devem Ser Preenchidos");
             if (usuario.getNome().isEmpty()) {
-
                 jTextFieldNome.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
             if (usuario.getSobrenome().isEmpty()) {
-
                 jTextFieldSobrenome.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-
             }
             if (usuario.getCpf().isEmpty()) {
-
                 jTextFieldCPF.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-
             }
             if (usuario.getEmail().isEmpty()) {
-
                 jTextFieldEmail.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-
             }
             if (usuario.getSenha().isEmpty()) {
-
                 jPasswordFieldSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-
             }
             if (usuario.getConfirmaSenha().isEmpty()) {
-
                 jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-
             }
         } else {
+           if(usuario.getSenha().equals(usuario.getConfirmaSenha())){
+               usu.add(usuario);
+           }else{
+               JOptionPane.showMessageDialog(null, "Senhas nao coincidem!");
+               jPasswordFieldSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+               jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+               return;
+           }
             JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
             CadUsuarios CadUsu = new CadUsuarios();
             Login login = new Login();
