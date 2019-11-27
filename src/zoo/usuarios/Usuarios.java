@@ -1,7 +1,4 @@
 package zoo.usuarios;
-
-import java.util.ArrayList;
-
 public class Usuarios {
 
     private String nome;
