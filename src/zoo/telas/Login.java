@@ -7,7 +7,9 @@ package zoo.telas;
 
 import java.awt.Color;
 import java.awt.Cursor;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,10 +22,10 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-        
+
         //Icone
         this.setIconImage(new ImageIcon(getClass().getResource("/zoo/Imagens/iCON.png")).getImage());
-        
+
         //Background
         jButtonEntrar.setBackground(new Color(0, 0, 0, 0));
 
@@ -44,12 +46,11 @@ public class Login extends javax.swing.JFrame {
         jDialog1 = new javax.swing.JDialog();
         jDialog2 = new javax.swing.JDialog();
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
-        jCheckBox1 = new javax.swing.JCheckBox();
         jButtonEntrar = new javax.swing.JButton();
         jLabelCriarConta = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jLabelM = new javax.swing.JLabel();
+        loguinSenha = new javax.swing.JPasswordField();
         campo_email = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -81,17 +82,6 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jCheckBox1.setForeground(new java.awt.Color(102, 102, 102));
-        jCheckBox1.setText("Lembrar de Mim");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 140, 30));
-
         jButtonEntrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/botao_login.png"))); // NOI18N
         jButtonEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -114,19 +104,30 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(jLabelCriarConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 80, 20));
 
-        jPasswordField1.setBackground(new java.awt.Color(204, 204, 204));
-        jPasswordField1.setForeground(new java.awt.Color(102, 102, 102));
-        jPasswordField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 110, 30));
-
-        jLabelM.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabelM.setForeground(new java.awt.Color(102, 102, 102));
-        jLabelM.setText("Email");
-        getContentPane().add(jLabelM, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, -1, -1));
+        loguinSenha.setBackground(new java.awt.Color(204, 204, 204));
+        loguinSenha.setForeground(new java.awt.Color(102, 102, 102));
+        loguinSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        loguinSenha.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                loguinSenhaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                loguinSenhaFocusLost(evt);
+            }
+        });
+        getContentPane().add(loguinSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 110, 30));
 
         campo_email.setBackground(new java.awt.Color(204, 204, 204));
         campo_email.setForeground(new java.awt.Color(102, 102, 102));
         campo_email.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        campo_email.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                campo_emailFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                campo_emailFocusLost(evt);
+            }
+        });
         campo_email.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 campo_emailMouseClicked(evt);
@@ -142,11 +143,18 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(campo_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 110, 30));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setText("Email");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Senha");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, -1, -1));
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/tela_login.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 450));
 
@@ -156,10 +164,6 @@ public class Login extends javax.swing.JFrame {
     private void campo_emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_emailActionPerformed
 
     }//GEN-LAST:event_campo_emailActionPerformed
-
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void campo_emailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_campo_emailMouseClicked
 
@@ -179,21 +183,50 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelCriarContaMouseClicked
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
+        if (loguinSenha.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "O campo deve ser Preenchido");
+            if (loguinSenha.getText().equals("")) {
+                loguinSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
 
-        principal princ = new principal();
-        Login login = new Login();
+            }
+            if (campo_email.getText().equals("")) {
+                campo_email.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
 
-        princ.setVisible(true);
-        login.setVisible(false);
+            }
 
-        dispose();
+        } else {
+            principal princ = new principal();
+            Login login = new Login();
 
+            princ.setVisible(true);
+            login.setVisible(false);
+
+            dispose();
+        }
 
     }//GEN-LAST:event_jButtonEntrarActionPerformed
 
     private void jButtonEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEntrarMouseClicked
 
     }//GEN-LAST:event_jButtonEntrarMouseClicked
+
+    private void campo_emailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campo_emailFocusGained
+
+    
+    }//GEN-LAST:event_campo_emailFocusGained
+
+    private void campo_emailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campo_emailFocusLost
+
+    
+    }//GEN-LAST:event_campo_emailFocusLost
+
+    private void loguinSenhaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_loguinSenhaFocusGained
+
+    }//GEN-LAST:event_loguinSenhaFocusGained
+
+    private void loguinSenhaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_loguinSenhaFocusLost
+
+    }//GEN-LAST:event_loguinSenhaFocusLost
 
     /**
      * @param args the command line arguments
@@ -234,14 +267,13 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField campo_email;
     private javax.swing.JButton jButtonEntrar;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JDialog jDialog2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelCriarConta;
-    private javax.swing.JLabel jLabelM;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
+    private javax.swing.JPasswordField loguinSenha;
     // End of variables declaration//GEN-END:variables
 }

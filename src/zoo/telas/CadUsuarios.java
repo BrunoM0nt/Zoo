@@ -6,22 +6,10 @@
 package zoo.telas;
 
 import java.awt.Color;
-import static java.awt.Color.green;
 import java.awt.Cursor;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.PrintWriter;
-import java.io.Writer;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import zoo.usuarios.Usuarios;
 
@@ -38,17 +26,16 @@ public class CadUsuarios extends javax.swing.JFrame {
      */
     public CadUsuarios() {
         initComponents();
-        
+
         //Icone
         this.setIconImage(new ImageIcon(getClass().getResource("/zoo/Imagens/iCON.png")).getImage());
-        
+
         //Background
         jButtonConfirmarCadastro.setBackground(new Color(0, 0, 0, 0));
-        
+
         //Cursor
         jButtonConfirmarCadastro.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        
-        jTextFieldNome.setText(" ");
+
     }
 
     /**
@@ -81,7 +68,15 @@ public class CadUsuarios extends javax.swing.JFrame {
         jTextFieldNome.setBackground(new java.awt.Color(204, 204, 204));
         jTextFieldNome.setForeground(new java.awt.Color(102, 102, 102));
         jTextFieldNome.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldNome.setToolTipText("Nome");
+        jTextFieldNome.setToolTipText("");
+        jTextFieldNome.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextFieldNomeFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextFieldNomeFocusLost(evt);
+            }
+        });
         jTextFieldNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldNomeActionPerformed(evt);
@@ -92,11 +87,27 @@ public class CadUsuarios extends javax.swing.JFrame {
         jTextFieldSobrenome.setBackground(new java.awt.Color(204, 204, 204));
         jTextFieldSobrenome.setForeground(new java.awt.Color(102, 102, 102));
         jTextFieldSobrenome.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldSobrenome.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextFieldSobrenomeFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextFieldSobrenomeFocusLost(evt);
+            }
+        });
         getContentPane().add(jTextFieldSobrenome, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 130, 30));
 
         jTextFieldCPF.setBackground(new java.awt.Color(204, 204, 204));
         jTextFieldCPF.setForeground(new java.awt.Color(102, 102, 102));
         jTextFieldCPF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldCPF.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextFieldCPFFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextFieldCPFFocusLost(evt);
+            }
+        });
         getContentPane().add(jTextFieldCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 130, 30));
 
         jTextFieldEmail.setBackground(new java.awt.Color(204, 204, 204));
@@ -185,9 +196,10 @@ public class CadUsuarios extends javax.swing.JFrame {
         usuario.setEmail(jTextFieldEmail.getText());
         usuario.setSenha(jPasswordFieldSenha.getText());
         usuario.setConfirmaSenha(jPasswordFieldConfirmarSenha.getText());
-        
-       if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || usuario.getConfirmaSenha().isEmpty()) {
+
+        if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || usuario.getConfirmaSenha().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Todos Os Campos Devem Ser Preenchidos");
+
             if (usuario.getNome().isEmpty()) {
                 jTextFieldNome.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
@@ -207,24 +219,67 @@ public class CadUsuarios extends javax.swing.JFrame {
                 jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
         } else {
-           if(usuario.getSenha().equals(usuario.getConfirmaSenha())){
-               usu.add(usuario);
-           }else{
-               JOptionPane.showMessageDialog(null, "Senhas nao coincidem!");
-               jPasswordFieldSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-               jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-               return;
-           }
+            if (usuario.getSenha().equals(usuario.getConfirmaSenha())) {
+                usu.add(usuario);
+            } else {
+                JOptionPane.showMessageDialog(null, "Senhas nao coincidem!");
+                jPasswordFieldSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                return;
+            }
             JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
             CadUsuarios CadUsu = new CadUsuarios();
             Login login = new Login();
-            File file = new File("arq.txt");
-            login.setVisible(true);
             CadUsu.setVisible(false);
+            login.setVisible(true);
             dispose();
 
         }
     }//GEN-LAST:event_jButtonConfirmarCadastroActionPerformed
+
+// placeholder dos campos de cadastro 
+
+    private void jTextFieldNomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldNomeFocusGained
+        /*      if (jTextFieldNome.getText().equals("Nome")) {
+         jTextFieldNome.setText("");
+         jTextFieldNome.setForeground(Color.BLACK);
+         }*/
+    }//GEN-LAST:event_jTextFieldNomeFocusGained
+
+    private void jTextFieldNomeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldNomeFocusLost
+        /*    if (jTextFieldNome.getText().isEmpty()) {
+         jTextFieldNome.setForeground(Color.GRAY);
+         jTextFieldNome.setText("Nome");
+         }*/
+    }//GEN-LAST:event_jTextFieldNomeFocusLost
+
+    private void jTextFieldSobrenomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldSobrenomeFocusGained
+        /*  if (jTextFieldSobrenome.getText().equals("Sobrenome")) {
+         jTextFieldSobrenome.setText("");
+         jTextFieldSobrenome.setForeground(Color.BLACK);
+         }*/
+    }//GEN-LAST:event_jTextFieldSobrenomeFocusGained
+
+    private void jTextFieldSobrenomeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldSobrenomeFocusLost
+        /*  if (jTextFieldSobrenome.getText().isEmpty()) {
+         jTextFieldSobrenome.setForeground(Color.GRAY);
+         jTextFieldSobrenome.setText("Sobrenome");
+         }*/
+    }//GEN-LAST:event_jTextFieldSobrenomeFocusLost
+
+    private void jTextFieldCPFFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldCPFFocusGained
+        /*     if (jTextFieldCPF.getText().equals("Sobrenome")) {
+         jTextFieldCPF.setText("");
+         jTextFieldCPF.setForeground(Color.BLACK);
+         }*/
+    }//GEN-LAST:event_jTextFieldCPFFocusGained
+
+    private void jTextFieldCPFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldCPFFocusLost
+        /*    if (jTextFieldCPF.getText().isEmpty()) {
+         jTextFieldCPF.setForeground(Color.GRAY);
+         jTextFieldCPF.setText("Sobrenome");
+         }*/
+    }//GEN-LAST:event_jTextFieldCPFFocusLost
 
     /**
      * @param args the command line arguments
