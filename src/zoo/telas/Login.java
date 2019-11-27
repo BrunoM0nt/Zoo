@@ -7,6 +7,7 @@ package zoo.telas;
 
 import java.awt.Color;
 import java.awt.Cursor;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -19,10 +20,15 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        
+        //Icone
+        this.setIconImage(new ImageIcon(getClass().getResource("/zoo/Imagens/iCON.png")).getImage());
+        
+        //Background
         jButtonEntrar.setBackground(new Color(0, 0, 0, 0));
 
+        //Cursor
         jLabelCriarConta.setCursor(new Cursor(Cursor.HAND_CURSOR));
-
         jButtonEntrar.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
 
@@ -84,7 +90,7 @@ public class Login extends javax.swing.JFrame {
                 jCheckBox1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 120, 30));
+        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 140, 30));
 
         jButtonEntrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/botao_login.png"))); // NOI18N
         jButtonEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -100,7 +106,6 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, 70, 70));
 
         jLabelCriarConta.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelCriarConta.setForeground(new java.awt.Color(51, 51, 51));
         jLabelCriarConta.setText("Criar Conta");
         jLabelCriarConta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
