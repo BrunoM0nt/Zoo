@@ -107,6 +107,7 @@ public class Login extends javax.swing.JFrame {
         loguinSenha.setBackground(new java.awt.Color(204, 204, 204));
         loguinSenha.setForeground(new java.awt.Color(102, 102, 102));
         loguinSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        loguinSenha.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.lightGray));
         loguinSenha.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 loguinSenhaFocusGained(evt);
@@ -120,6 +121,7 @@ public class Login extends javax.swing.JFrame {
         campo_email.setBackground(new java.awt.Color(204, 204, 204));
         campo_email.setForeground(new java.awt.Color(102, 102, 102));
         campo_email.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        campo_email.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.lightGray));
         campo_email.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 campo_emailFocusGained(evt);
@@ -211,17 +213,16 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEntrarMouseClicked
 
     private void campo_emailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campo_emailFocusGained
-
-    
+        campo_email.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.LIGHT_GRAY));
     }//GEN-LAST:event_campo_emailFocusGained
 
     private void campo_emailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campo_emailFocusLost
 
-    
+
     }//GEN-LAST:event_campo_emailFocusLost
 
     private void loguinSenhaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_loguinSenhaFocusGained
-
+        loguinSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.LIGHT_GRAY));
     }//GEN-LAST:event_loguinSenhaFocusGained
 
     private void loguinSenhaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_loguinSenhaFocusLost
