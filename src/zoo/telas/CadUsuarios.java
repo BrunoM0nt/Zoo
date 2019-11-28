@@ -7,10 +7,10 @@ package zoo.telas;
 
 import java.awt.Color;
 import java.awt.Cursor;
-import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import zoo.usuarios.InicioProg;
 import zoo.usuarios.Usuarios;
 
 /**
@@ -18,8 +18,6 @@ import zoo.usuarios.Usuarios;
  * @author Pc27sala06
  */
 public class CadUsuarios extends javax.swing.JFrame {
-
-    ArrayList<Usuarios> usu = new ArrayList<>();
 
     /**
      * Creates new form CadUsuarios
@@ -47,23 +45,104 @@ public class CadUsuarios extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextFieldNome = new javax.swing.JTextField();
-        jTextFieldSobrenome = new javax.swing.JTextField();
-        jTextFieldCPF = new javax.swing.JTextField();
-        jTextFieldEmail = new javax.swing.JTextField();
         jButtonConfirmarCadastro = new javax.swing.JButton();
         jPasswordFieldConfirmarSenha = new javax.swing.JPasswordField();
-        jPasswordFieldSenha = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jPasswordFieldSenha = new javax.swing.JPasswordField();
+        jLabel4 = new javax.swing.JLabel();
+        jTextFieldEmail = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextFieldCPF = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jTextFieldSobrenome = new javax.swing.JTextField();
+        jTextFieldNome = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButtonConfirmarCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/botao_confirmar_cadastro.png"))); // NOI18N
+        jButtonConfirmarCadastro.setBorder(null);
+        jButtonConfirmarCadastro.setOpaque(false);
+        jButtonConfirmarCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConfirmarCadastroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonConfirmarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 70, 70));
+
+        jPasswordFieldConfirmarSenha.setBackground(new java.awt.Color(204, 204, 204));
+        jPasswordFieldConfirmarSenha.setForeground(new java.awt.Color(102, 102, 102));
+        jPasswordFieldConfirmarSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(jPasswordFieldConfirmarSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, 130, 30));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel6.setText("Conf. Senha");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, -1, -1));
+
+        jPasswordFieldSenha.setBackground(new java.awt.Color(204, 204, 204));
+        jPasswordFieldSenha.setForeground(new java.awt.Color(102, 102, 102));
+        jPasswordFieldSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPasswordFieldSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordFieldSenhaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jPasswordFieldSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 130, 30));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel4.setText("Senha");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, -1, -1));
+
+        jTextFieldEmail.setBackground(new java.awt.Color(204, 204, 204));
+        jTextFieldEmail.setForeground(new java.awt.Color(102, 102, 102));
+        jTextFieldEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 130, 30));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel5.setText("Email");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, -1, -1));
+
+        jTextFieldCPF.setBackground(new java.awt.Color(204, 204, 204));
+        jTextFieldCPF.setForeground(new java.awt.Color(102, 102, 102));
+        jTextFieldCPF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldCPF.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextFieldCPFFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextFieldCPFFocusLost(evt);
+            }
+        });
+        getContentPane().add(jTextFieldCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 130, 30));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setText("CPF");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setText("Sobrenome");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, -1, -1));
+
+        jTextFieldSobrenome.setBackground(new java.awt.Color(204, 204, 204));
+        jTextFieldSobrenome.setForeground(new java.awt.Color(102, 102, 102));
+        jTextFieldSobrenome.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldSobrenome.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextFieldSobrenomeFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextFieldSobrenomeFocusLost(evt);
+            }
+        });
+        getContentPane().add(jTextFieldSobrenome, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 130, 30));
 
         jTextFieldNome.setBackground(new java.awt.Color(204, 204, 204));
         jTextFieldNome.setForeground(new java.awt.Color(102, 102, 102));
@@ -84,89 +163,10 @@ public class CadUsuarios extends javax.swing.JFrame {
         });
         getContentPane().add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 130, 30));
 
-        jTextFieldSobrenome.setBackground(new java.awt.Color(204, 204, 204));
-        jTextFieldSobrenome.setForeground(new java.awt.Color(102, 102, 102));
-        jTextFieldSobrenome.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldSobrenome.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextFieldSobrenomeFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextFieldSobrenomeFocusLost(evt);
-            }
-        });
-        getContentPane().add(jTextFieldSobrenome, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 130, 30));
-
-        jTextFieldCPF.setBackground(new java.awt.Color(204, 204, 204));
-        jTextFieldCPF.setForeground(new java.awt.Color(102, 102, 102));
-        jTextFieldCPF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldCPF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextFieldCPFFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextFieldCPFFocusLost(evt);
-            }
-        });
-        getContentPane().add(jTextFieldCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 130, 30));
-
-        jTextFieldEmail.setBackground(new java.awt.Color(204, 204, 204));
-        jTextFieldEmail.setForeground(new java.awt.Color(102, 102, 102));
-        jTextFieldEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        getContentPane().add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 130, 30));
-
-        jButtonConfirmarCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/botao_confirmar_cadastro.png"))); // NOI18N
-        jButtonConfirmarCadastro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonConfirmarCadastroActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonConfirmarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 70, 70));
-
-        jPasswordFieldConfirmarSenha.setBackground(new java.awt.Color(204, 204, 204));
-        jPasswordFieldConfirmarSenha.setForeground(new java.awt.Color(102, 102, 102));
-        jPasswordFieldConfirmarSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        getContentPane().add(jPasswordFieldConfirmarSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, 130, 30));
-
-        jPasswordFieldSenha.setBackground(new java.awt.Color(204, 204, 204));
-        jPasswordFieldSenha.setForeground(new java.awt.Color(102, 102, 102));
-        jPasswordFieldSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPasswordFieldSenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordFieldSenhaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jPasswordFieldSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 130, 30));
-
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Nome");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, -1, -1));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel2.setText("Sobrenome");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel3.setText("CPF");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel4.setText("Senha");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel5.setText("Email");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel6.setText("Conf. Senha");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(102, 102, 102));
@@ -220,7 +220,11 @@ public class CadUsuarios extends javax.swing.JFrame {
             }
         } else {
             if (usuario.getSenha().equals(usuario.getConfirmaSenha())) {
-                usu.add(usuario);
+                
+                //Adição de um novo user
+                InicioProg.addUser(usuario);
+                InicioProg.cadUs.setVisible(false);
+                
             } else {
                 JOptionPane.showMessageDialog(null, "Senhas nao coincidem!");
                 jPasswordFieldSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
@@ -228,12 +232,8 @@ public class CadUsuarios extends javax.swing.JFrame {
                 return;
             }
             JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
-            CadUsuarios CadUsu = new CadUsuarios();
-            Login login = new Login();
-            CadUsu.setVisible(false);
-            login.setVisible(true);
+            InicioProg.login.setVisible(true);
             dispose();
-
         }
     }//GEN-LAST:event_jButtonConfirmarCadastroActionPerformed
 

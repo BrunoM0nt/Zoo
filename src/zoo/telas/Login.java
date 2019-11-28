@@ -9,7 +9,11 @@ import java.awt.Color;
 import java.awt.Cursor;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
+import javax.swing.ListModel;
+import zoo.usuarios.*;
+import static zoo.usuarios.InicioProg.listUsers;
 
 /**
  *
@@ -32,6 +36,9 @@ public class Login extends javax.swing.JFrame {
         //Cursor
         jLabelCriarConta.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jButtonEntrar.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        
+        //ADM
+        painelUser.setVisible(false);
     }
 
     /**
@@ -47,11 +54,16 @@ public class Login extends javax.swing.JFrame {
         jDialog2 = new javax.swing.JDialog();
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jButtonEntrar = new javax.swing.JButton();
-        jLabelCriarConta = new javax.swing.JLabel();
         loguinSenha = new javax.swing.JPasswordField();
+        jLabel3 = new javax.swing.JLabel();
         campo_email = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabelCriarConta = new javax.swing.JLabel();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        painelUser = new javax.swing.JPanel();
+        scrollPainel = new javax.swing.JScrollPane();
+        jList = new javax.swing.JList();
+        jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
@@ -83,6 +95,8 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonEntrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/botao_login.png"))); // NOI18N
+        jButtonEntrar.setBorder(null);
+        jButtonEntrar.setOpaque(false);
         jButtonEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonEntrarMouseClicked(evt);
@@ -94,15 +108,6 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, 70, 70));
-
-        jLabelCriarConta.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelCriarConta.setText("Criar Conta");
-        jLabelCriarConta.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelCriarContaMouseClicked(evt);
-            }
-        });
-        getContentPane().add(jLabelCriarConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 80, 20));
 
         loguinSenha.setBackground(new java.awt.Color(204, 204, 204));
         loguinSenha.setForeground(new java.awt.Color(102, 102, 102));
@@ -116,6 +121,11 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(loguinSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 110, 30));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setText("Senha");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, -1, -1));
 
         campo_email.setBackground(new java.awt.Color(204, 204, 204));
         campo_email.setForeground(new java.awt.Color(102, 102, 102));
@@ -143,15 +153,62 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(campo_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 110, 30));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Email");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel3.setText("Senha");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, -1, -1));
+        jLabelCriarConta.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelCriarConta.setText("Criar Conta");
+        jLabelCriarConta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelCriarContaMouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabelCriarConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 80, 20));
+
+        jToggleButton1.setText("Ver total de contas criadas! (ADM_OPTION)");
+        jToggleButton1.setToolTipText("Necessario o TOKEN");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, -1, -1));
+
+        jList.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        scrollPainel.setViewportView(jList);
+
+        jLabel7.setText("NOME");
+
+        javax.swing.GroupLayout painelUserLayout = new javax.swing.GroupLayout(painelUser);
+        painelUser.setLayout(painelUserLayout);
+        painelUserLayout.setHorizontalGroup(
+            painelUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelUserLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(painelUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(scrollPainel)
+                    .addGroup(painelUserLayout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(0, 131, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        painelUserLayout.setVerticalGroup(
+            painelUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelUserLayout.createSequentialGroup()
+                .addContainerGap(13, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(scrollPainel, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        getContentPane().add(painelUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 180, 420));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
@@ -174,11 +231,8 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_campo_emailMousePressed
 
     private void jLabelCriarContaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelCriarContaMouseClicked
-
-        CadUsuarios CadUsu = new CadUsuarios();
-        Login login = new Login();
-        login.setVisible(false);
-        CadUsu.setVisible(true);
+        InicioProg.login.setVisible(false);
+        InicioProg.cadUs.setVisible(true);
         dispose();
     }//GEN-LAST:event_jLabelCriarContaMouseClicked
 
@@ -191,16 +245,10 @@ public class Login extends javax.swing.JFrame {
             }
             if (campo_email.getText().equals("")) {
                 campo_email.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-
+                
             }
-
+            
         } else {
-            principal princ = new principal();
-            Login login = new Login();
-
-            princ.setVisible(true);
-            login.setVisible(false);
-
             dispose();
         }
 
@@ -227,6 +275,22 @@ public class Login extends javax.swing.JFrame {
     private void loguinSenhaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_loguinSenhaFocusLost
 
     }//GEN-LAST:event_loguinSenhaFocusLost
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        String TOKEN;        
+        TOKEN = JOptionPane.showInputDialog("Digite o TOKEN:");
+        if(TOKEN.equals("token")){
+            try{
+                jList.setListData(listUsers);
+                scrollPainel.setViewportView(jList);
+                painelUser.setVisible(true);
+            }catch (Exception e){
+                JOptionPane.showMessageDialog(null, "Erro!");        
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Token Incorreto!\nContate o ADM"); 
+        }
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -272,8 +336,13 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabelCriarConta;
+    private javax.swing.JList jList;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JPasswordField loguinSenha;
+    private javax.swing.JPanel painelUser;
+    private javax.swing.JScrollPane scrollPainel;
     // End of variables declaration//GEN-END:variables
 }
