@@ -218,6 +218,10 @@ public class CadUsuarios extends javax.swing.JFrame {
             if (usuario.getConfirmaSenha().isEmpty()) {
                 jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
+            if (usuario.getSenha().length() < 8) {
+                JOptionPane.showMessageDialog(null, "A senha dever ter 8 ou mais Caracteres!");
+            }
+
         } else {
             if (usuario.getSenha().equals(usuario.getConfirmaSenha())) {
                 usu.add(usuario);
