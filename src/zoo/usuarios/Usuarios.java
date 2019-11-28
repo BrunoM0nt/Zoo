@@ -2,6 +2,7 @@ package zoo.usuarios;
 
 public class Usuarios {
 
+    private int id;
     private String nome;
     private String sobrenome;
     private String cpf;
@@ -57,5 +58,11 @@ public class Usuarios {
         return senha;
     }
 
-  
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
 }

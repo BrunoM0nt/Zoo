@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.LayoutStyle;
 import javax.swing.border.*;
+import zoo.usuarios.InicioProg;
 
 /**
  *
@@ -75,9 +76,6 @@ public class Principal extends javax.swing.JFrame {
         perfil_EmailBtn.setBackground(new Color(0, 0, 0, 0));
         perfil_NomeBtn.setBackground(new Color(0, 0, 0, 0));
         perfil_CpfBtn.setBackground(new Color(0, 0, 0, 0));
-        
-        //PlaceHolder
-        
 
     }
 
@@ -180,6 +178,7 @@ public class Principal extends javax.swing.JFrame {
         botaoBug = new javax.swing.JButton();
         botaoDuvida = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        principal_UserName = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -224,6 +223,11 @@ public class Principal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
         setResizable(false);
+        addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                formFocusGained(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -255,6 +259,7 @@ public class Principal extends javax.swing.JFrame {
         btnPrincipal.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnPrincipal.setForeground(new java.awt.Color(255, 255, 255));
         btnPrincipal.setText("Principal");
+        btnPrincipal.setBorder(null);
         btnPrincipal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrincipalActionPerformed(evt);
@@ -265,6 +270,7 @@ public class Principal extends javax.swing.JFrame {
         btnZoo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnZoo.setForeground(new java.awt.Color(255, 255, 255));
         btnZoo.setText("Zoológicos");
+        btnZoo.setBorder(null);
         btnZoo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnZooActionPerformed(evt);
@@ -275,6 +281,7 @@ public class Principal extends javax.swing.JFrame {
         btnPerfil.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnPerfil.setForeground(new java.awt.Color(255, 255, 255));
         btnPerfil.setText("Perfil");
+        btnPerfil.setBorder(null);
         btnPerfil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPerfilActionPerformed(evt);
@@ -285,6 +292,7 @@ public class Principal extends javax.swing.JFrame {
         btnSupp.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnSupp.setForeground(new java.awt.Color(255, 255, 255));
         btnSupp.setText("Suporte");
+        btnSupp.setBorder(null);
         btnSupp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSuppActionPerformed(evt);
@@ -313,7 +321,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(0, 10, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 90, 90));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 90, 90));
 
         Sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/bota_sair.png"))); // NOI18N
         Sair.setMaximumSize(new java.awt.Dimension(120, 83));
@@ -886,6 +894,11 @@ public class Principal extends javax.swing.JFrame {
 
         getContentPane().add(jfPainel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 560, 440));
 
+        principal_UserName.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        principal_UserName.setForeground(new java.awt.Color(255, 255, 255));
+        principal_UserName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(principal_UserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 130, 20));
+
         jLabel1.setBackground(new Color(0,0,0,0));
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/tela_principal.png"))); // NOI18N
@@ -946,13 +959,9 @@ public class Principal extends javax.swing.JFrame {
         escolha = JOptionPane.showConfirmDialog(rootPane, "Você deseja sair?", "Sair", JOptionPane.YES_NO_OPTION, 1, new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/iCON50-50.png")));
 
         if (escolha == 0) {
-            //  System.exit(0);
 
-            Principal princ = new Principal();
-            Login login = new Login();
-
-            princ.setVisible(false);
-            login.setVisible(true);
+            InicioProg.principal.setVisible(false);
+            InicioProg.login.setVisible(true);
 
             dispose();
         }
@@ -1103,6 +1112,17 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_principal_locateByZooTbxActionPerformed
 
+    private void formFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusGained
+        
+    }//GEN-LAST:event_formFocusGained
+
+    public void openWindow(){
+        InicioProg.principal.setVisible(true);
+        principal_UserName.setText(InicioProg.getUserNome(InicioProg.getConnectedUser()) + " " + InicioProg.getUserSobrenome(InicioProg.getConnectedUser()));
+    }
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -1219,6 +1239,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton perfil_NomeBtn;
     private javax.swing.JTextField perfil_NomeTbx;
     private javax.swing.JButton principal_PesquisaBtn;
+    private javax.swing.JLabel principal_UserName;
     private javax.swing.JTextField principal_locateByZooTbx;
     private javax.swing.JLabel selectImg_Perfil;
     private javax.swing.JLabel selectImg_Principal;

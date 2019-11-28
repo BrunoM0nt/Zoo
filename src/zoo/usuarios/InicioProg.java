@@ -5,7 +5,6 @@
  */
 package zoo.usuarios;
 
-import java.awt.List;
 import java.util.ArrayList;
 import java.util.Vector;
 import zoo.telas.*;
@@ -20,6 +19,7 @@ public class InicioProg {
     public static Login login;
     public static Principal principal;
     public static CadUsuarios cadUs;
+    private static int connectedId = -1;
     
     public static void main(String[] args){
         inicializar();
@@ -35,20 +35,47 @@ public class InicioProg {
     
     public static void addUser(Usuarios user){
         usu.add(user);
-        listUsers.add(user.getNome());
+        listUsers.add(user.getNome() + " " + user.getSobrenome());
     }
     
     public static void rmUser(Usuarios user){
         usu.remove(usu);
-        listUsers.remove(user.getNome());
+        listUsers.remove(user.getNome() + " " + user.getSobrenome());
     }
     
-    public static String getUser(int num){
+    public static String getUserNome(int num){
         return usu.get(num).getNome();
+    }
+    
+    public static String getUserSobrenome(int num){
+        return usu.get(num).getSobrenome();
+    }
+    
+    public static String getUserSenha(int num){
+        return usu.get(num).getSenha();
+    }
+    
+    public static String getUserEmail(int num){
+        return usu.get(num).getEmail();
+    }
+    
+    public static String getUserCpf(int num){
+        return usu.get(num).getCpf();
+    }
+    
+    public static int getUserId(int num){
+        return usu.get(num).getId();
     }
     
     public static int getUserLength(){
         return usu.size();
     }
 
+    public static int getConnectedUser(){
+        return connectedId;
+    }
+    
+    public static void setConnectedUser(int connectedId){
+        InicioProg.connectedId = connectedId;
+    }
 }

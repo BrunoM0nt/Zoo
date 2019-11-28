@@ -222,6 +222,7 @@ public class CadUsuarios extends javax.swing.JFrame {
             if (usuario.getSenha().equals(usuario.getConfirmaSenha())) {
                 
                 //Adição de um novo user
+                usuario.setId(InicioProg.getUserLength() + 1);
                 InicioProg.addUser(usuario);
                 InicioProg.cadUs.setVisible(false);
                 
@@ -231,6 +232,12 @@ public class CadUsuarios extends javax.swing.JFrame {
                 jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
                 return;
             }
+            jTextFieldNome.setText("");
+            jTextFieldEmail.setText("");
+            jTextFieldSobrenome.setText("");
+            jTextFieldCPF.setText("");
+            jPasswordFieldSenha.setText("");
+            jPasswordFieldConfirmarSenha.setText("");
             JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
             InicioProg.login.setVisible(true);
             dispose();
