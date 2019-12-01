@@ -123,6 +123,7 @@ public class Login extends javax.swing.JFrame {
         loginSenha.setBackground(new java.awt.Color(204, 204, 204));
         loginSenha.setForeground(new java.awt.Color(102, 102, 102));
         loginSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        loginSenha.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.lightGray));
         loginSenha.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 loginSenhaFocusGained(evt);
@@ -141,6 +142,7 @@ public class Login extends javax.swing.JFrame {
         campo_email.setBackground(new java.awt.Color(204, 204, 204));
         campo_email.setForeground(new java.awt.Color(102, 102, 102));
         campo_email.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        campo_email.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.lightGray));
         campo_email.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 campo_emailFocusGained(evt);
@@ -326,6 +328,8 @@ public class Login extends javax.swing.JFrame {
                 InicioProg.setConnectedUser(IdConnected);
                 InicioProg.principal.openWindow();
                 dispose();
+            }else{
+                JOptionPane.showMessageDialog(null, "Senha ou E-mail Incorreto!");
             }
             
         }
@@ -337,7 +341,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEntrarMouseClicked
 
     private void campo_emailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campo_emailFocusGained
-
+ campo_email.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.LIGHT_GRAY));
     
     }//GEN-LAST:event_campo_emailFocusGained
 
@@ -347,7 +351,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_campo_emailFocusLost
 
     private void loginSenhaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_loginSenhaFocusGained
-
+loginSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.LIGHT_GRAY));
     }//GEN-LAST:event_loginSenhaFocusGained
 
     private void loginSenhaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_loginSenhaFocusLost
