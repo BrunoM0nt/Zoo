@@ -10,10 +10,7 @@ import java.awt.Color;
 import java.awt.Cursor;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
-import javax.swing.JList;
 import javax.swing.JOptionPane;
-import javax.swing.ListModel;
-import zoo.usuarios.*;
 import static zoo.main.InicioProg.listUsers;
 
 /**
@@ -27,7 +24,7 @@ public class Login extends javax.swing.JFrame {
      */
     //ADMindex
     int lastSelectedIndex = -1;
-
+    
     public Login() {
         initComponents();
 
@@ -320,15 +317,30 @@ public class Login extends javax.swing.JFrame {
                     auxEmail = aux;
                 }
             }
-            
+
             if (loginSenha.getText().equals(InicioProg.getUserSenha(auxEmail))) {
-                        auxSenha = auxEmail;
-                    }
-            
+                auxSenha = auxEmail;
+            }
+
             if (auxEmail != -1 && auxSenha != -1 && auxEmail == auxSenha) {
                 InicioProg.login.setVisible(false);
                 IdConnected = auxEmail;
                 InicioProg.setConnectedUser(IdConnected);
+                
+                if (InicioProg.usu.get(InicioProg.getConnectedUser()).getTipoUsr() == 1) {
+                    
+                    InicioProg.setTypeConnectedUsr(1);
+                    
+                } else if (InicioProg.usu.get(InicioProg.getConnectedUser()).getTipoUsr() == 2) {
+                    
+                    InicioProg.setTypeConnectedUsr(2);
+                    
+                } else {
+                    
+                    InicioProg.setTypeConnectedUsr(0);
+                    
+                }
+                
                 InicioProg.principal.openWindow();
                 dispose();
             } else {

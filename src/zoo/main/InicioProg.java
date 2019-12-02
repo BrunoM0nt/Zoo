@@ -21,7 +21,7 @@ public class InicioProg {
 
     public static ArrayList<Usuarios> usu = new ArrayList<>();
     public static ArrayList<AdmZoo> usuzoo = new ArrayList<>();
- 
+
     public static Vector listUsers = new Vector();
     public static Login login;
     public static Principal principal;
@@ -30,18 +30,19 @@ public class InicioProg {
     public static TelaAdmZoo telaAZ;
 
     private static int connectedId = -1;
+    private static int typeConnectedUsr = 0;
     public static int nUsr = 0;
 
     public static void main(String[] args) {
-        
+
         inicializar();
-        AdmZoo admZoo = new AdmZoo("Regin","DonoSóDaMetade","02301700216","1234","admZ");
+        AdmZoo admZoo = new AdmZoo("Regin", "DonoSóDaMetade", "02301700216", "1234", "admZ");
         addUser(admZoo);
-        AdmSistema admSys = new AdmSistema("Regis","DonoDaPorraLoka","02301700216","1234","admS");
+        AdmSistema admSys = new AdmSistema("Regis", "DonoDaPorraLoka", "02301700216", "1234", "admS");
         addUser(admSys);
-        Usuarios usr = new Usuarios("Regis","normal","02301700216","1234","usr");
+        Usuarios usr = new Usuarios("Regis", "normal", "02301700216", "1234", "usr");
         addUser(usr);
-        
+
     }
 
     private static void inicializar() {
@@ -132,6 +133,14 @@ public class InicioProg {
 
     public static int getUsuZooCod(int num) {
         return usuzoo.get(num).getCodUsuZoo();
+    }
+
+    public static int getTypeConnectedUsr() {
+        return typeConnectedUsr;
+    }
+
+    public static void setTypeConnectedUsr(int typeConnectedUsr) {
+        InicioProg.typeConnectedUsr = typeConnectedUsr;
     }
 
 }

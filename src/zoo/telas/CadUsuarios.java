@@ -74,7 +74,7 @@ public class CadUsuarios extends javax.swing.JFrame {
                 jButtonConfirmarCadastroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 360, 70, 60));
+        getContentPane().add(jButtonConfirmarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 70, 70));
 
         jPasswordFieldConfirmarSenha.setBackground(new java.awt.Color(204, 204, 204));
         jPasswordFieldConfirmarSenha.setForeground(new java.awt.Color(102, 102, 102));

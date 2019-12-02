@@ -59,7 +59,7 @@ public class Principal extends javax.swing.JFrame {
         botaoBug.setBackground(new Color(0, 0, 0, 0));
         botaoDenuncia.setBackground(new Color(0, 0, 0, 0));
         botaoDuvida.setBackground(new Color(0, 0, 0, 0));
-        jButton1.setBackground(new Color(0, 0, 0, 0));
+        jConfig.setBackground(new Color(0, 0, 0, 0));
 
         //Configuração inicial do MENU
         selectImg_Principal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/Selected.png")));
@@ -200,7 +200,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
         principal_UserName = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jConfig = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -1020,13 +1020,13 @@ public class Principal extends javax.swing.JFrame {
         principal_UserName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(principal_UserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 180, 20));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/iconAdmin.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/iconAdmin.png"))); // NOI18N
+        jConfig.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jConfigActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 40, 40));
+        getContentPane().add(jConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 40, 40));
 
         jLabel1.setBackground(new Color(0,0,0,0));
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -1242,18 +1242,15 @@ public class Principal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_formFocusGained
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (InicioProg.usu.get(InicioProg.getConnectedUser()).getTipoUsr() == 1) {
-            InicioProg.telaAS.setVisible(false);
-            InicioProg.telaAZ.setVisible(true);
-        } else if (InicioProg.usu.get(InicioProg.getConnectedUser()).getTipoUsr() == 2) {
-            InicioProg.telaAS.setVisible(true);
-            InicioProg.telaAZ.setVisible(false);
-        }else{
-            JOptionPane.showMessageDialog(null, "Você não tem permissão para acessar estas configurações");
-        }
-
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConfigActionPerformed
+        if(InicioProg.getTypeConnectedUsr() == 1){
+                InicioProg.telaAZ.setVisible(true);
+                InicioProg.telaAS.setVisible(false);
+            }else{
+                InicioProg.telaAZ.setVisible(false);
+                InicioProg.telaAS.setVisible(true);
+            }
+    }//GEN-LAST:event_jConfigActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
@@ -1274,6 +1271,16 @@ public class Principal extends javax.swing.JFrame {
     public void openWindow() {
         InicioProg.principal.setVisible(true);
         principal_UserName.setText(InicioProg.getUserNome(InicioProg.getConnectedUser()) + " " + InicioProg.getUserSobrenome(InicioProg.getConnectedUser()));
+        
+        if(InicioProg.getTypeConnectedUsr() == 0){
+        
+            jConfig.setVisible(false);
+        
+        }else {
+        
+            jConfig.setVisible(true);
+            
+        }
     }
 
     /**
@@ -1322,9 +1329,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnPrincipal;
     private javax.swing.JButton btnSupp;
     private javax.swing.JButton btnZoo;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jConfig;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JInternalFrame jInternalFrame2;
     private javax.swing.JLabel jLabel1;
