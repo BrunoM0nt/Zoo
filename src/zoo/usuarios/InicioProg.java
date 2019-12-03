@@ -19,6 +19,7 @@ public class InicioProg {
     public static Login login;
     public static Principal principal;
     public static CadUsuarios cadUs;
+    public static AdmSistem AdmSist;
     private static int connectedId = -1;
     
     public static void main(String[] args){
@@ -51,6 +52,7 @@ public class InicioProg {
         login.setVisible(true);
         principal = new Principal();
         cadUs = new CadUsuarios();  
+        AdmSist = new AdmSistem();
         
     }
     

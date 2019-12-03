@@ -58,6 +58,7 @@ public class Principal extends javax.swing.JFrame {
         botaoBug.setBackground(new Color(0, 0, 0, 0));
         botaoDenuncia.setBackground(new Color(0, 0, 0, 0));
         botaoDuvida.setBackground(new Color(0, 0, 0, 0));
+        jButton1.setBackground(new Color(0, 0, 0, 0));
 
         //Configuração inicial do MENU
         selectImg_Principal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/Selected.png")));
@@ -96,6 +97,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jInternalFrame1 = new javax.swing.JInternalFrame();
         jLabel2 = new javax.swing.JLabel();
+        jInternalFrame2 = new javax.swing.JInternalFrame();
         jPanel2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         btnPrincipal = new javax.swing.JButton();
@@ -179,6 +181,7 @@ public class Principal extends javax.swing.JFrame {
         botaoDuvida = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         principal_UserName = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -219,6 +222,19 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jLabel2.setText("jLabel2");
+
+        jInternalFrame2.setVisible(true);
+
+        javax.swing.GroupLayout jInternalFrame2Layout = new javax.swing.GroupLayout(jInternalFrame2.getContentPane());
+        jInternalFrame2.getContentPane().setLayout(jInternalFrame2Layout);
+        jInternalFrame2Layout.setHorizontalGroup(
+            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jInternalFrame2Layout.setVerticalGroup(
+            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
@@ -899,6 +915,9 @@ public class Principal extends javax.swing.JFrame {
         principal_UserName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(principal_UserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 130, 20));
 
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Bruno\\Downloads\\admin-with-cogwheels (1) (1) (2).png")); // NOI18N
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 40, 40));
+
         jLabel1.setBackground(new Color(0,0,0,0));
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/tela_principal.png"))); // NOI18N
@@ -1102,7 +1121,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_principal_locateByZooTbxFocusGained
 
     private void principal_locateByZooTbxFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_principal_locateByZooTbxFocusLost
-       if (principal_locateByZooTbx.getText().isEmpty()) {
+        if (principal_locateByZooTbx.getText().isEmpty()) {
             principal_locateByZooTbx.setForeground(Color.GRAY);
             principal_locateByZooTbx.setText("Digite sua pesquisa!");
         }
@@ -1113,16 +1132,14 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_principal_locateByZooTbxActionPerformed
 
     private void formFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusGained
-        
+
     }//GEN-LAST:event_formFocusGained
 
-    public void openWindow(){
+    public void openWindow() {
         InicioProg.principal.setVisible(true);
         principal_UserName.setText(InicioProg.getUserNome(InicioProg.getConnectedUser()) + " " + InicioProg.getUserSobrenome(InicioProg.getConnectedUser()));
     }
-    
-    
-    
+
     /**
      * @param args the command line arguments
      */
@@ -1169,7 +1186,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnPrincipal;
     private javax.swing.JButton btnSupp;
     private javax.swing.JButton btnZoo;
+    private javax.swing.JButton jButton1;
     private javax.swing.JInternalFrame jInternalFrame1;
+    private javax.swing.JInternalFrame jInternalFrame2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
