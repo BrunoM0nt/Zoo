@@ -8,27 +8,30 @@ package zoo.usuarios;
 import java.util.ArrayList;
 import java.util.Vector;
 import zoo.telas.*;
-    
+
 /**
  *
  * @author YauYau
  */
 public class InicioProg {
+
     public static ArrayList<Usuarios> usu = new ArrayList<>();
+    public static ArrayList<AdmZoo> usuzoo = new ArrayList<>();
     public static Vector listUsers = new Vector();
     public static Login login;
     public static Principal principal;
     public static CadUsuarios cadUs;
     public static AdmSistem AdmSist;
+
     private static int connectedId = -1;
-    
-    public static void main(String[] args){
-        
+
+    public static void main(String[] args) {
+
         inicializar();
     }
-    
-    private static void inicializar(){
-        
+
+    private static void inicializar() {
+
         //Configuraçao de Tela -- Interface
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -46,59 +49,73 @@ public class InicioProg {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        
+
         //Padrao de iniciaçao
         login = new Login();
         login.setVisible(true);
         principal = new Principal();
-        cadUs = new CadUsuarios();  
+        cadUs = new CadUsuarios();
         AdmSist = new AdmSistem();
-        
+
     }
-    
-    public static void addUser(Usuarios user){
+
+    public static void addUser(Usuarios user) {
         usu.add(user);
         listUsers.add(user.getNome() + " " + user.getSobrenome());
     }
-    
-    public static void rmUser(Usuarios user){
+
+    public static void addUserZoo(AdmZoo CodAdmZoo) {
+        usuzoo.add(CodAdmZoo);
+        
+    }
+
+    public static void rmUser(Usuarios user) {
         usu.remove(usu);
         listUsers.remove(user.getNome() + " " + user.getSobrenome());
     }
-    
-    public static String getUserNome(int num){
+
+    public static String getUserNome(int num) {
         return usu.get(num).getNome();
     }
-    
-    public static String getUserSobrenome(int num){
+
+    public static String getUserSobrenome(int num) {
         return usu.get(num).getSobrenome();
     }
-    
-    public static String getUserSenha(int num){
+
+    public static String getUserSenha(int num) {
         return usu.get(num).getSenha();
     }
-    
-    public static String getUserEmail(int num){
+
+    public static String getUserEmail(int num) {
         return usu.get(num).getEmail();
     }
-    
-    public static String getUserCpf(int num){
+
+    public static String getUserCpf(int num) {
         return usu.get(num).getCpf();
     }
-    
-    public static int getUserId(int num){
+
+    public static int getUserId(int num) {
         return usu.get(num).getId();
     }
-    
-    public static int getUserLength(){
+
+    public static int getUserLength() {
         return usu.size();
     }
 
-    public static int getConnectedUser(){
+    public static int getUsuzooLength() {
+        return usuzoo.size();
+    }
+
+    public static int getConnectedUser() {
         return connectedId;
     }
-    
-    public static void setConnectedUser(int connectedId){
+
+    public static void setConnectedUser(int connectedId) {
         InicioProg.connectedId = connectedId;
     }
+
+    public static int getUsuZooCod(int num) {
+        return usuzoo.get(num).getCodUsuZoo();
+    }
+
 }

@@ -8,16 +8,21 @@ package zoo.usuarios;
  *
  * @author Pc27sala06
  */
-public class AdmZoo extends Usuarios{
-    private int TOKEN;
-    private Zoologicos IDZoo = new Zoologicos();
-    
-    public int getTOKEN() {
-        return TOKEN;
+public class AdmZoo {
+
+   
+  private  int CodUsuZoo;
+
+    public int getCodUsuZoo() {
+        return CodUsuZoo;
     }
 
-    public void setTOKEN(int TOKEN) {
-        this.TOKEN = TOKEN;
+    public void setCodUsuZoo(int CodUsuZoo) {
+        this.CodUsuZoo = CodUsuZoo;
     }
-    
+
+    public static void main(String[] args) {
+        
+
+    }
 }
