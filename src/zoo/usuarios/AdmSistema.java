@@ -9,6 +9,6 @@ package zoo.usuarios;
  *
  * @author Pc27sala06
  */
-public class AdmSistema {
+public class AdmSistema extends AdmZoo{
     
 }
