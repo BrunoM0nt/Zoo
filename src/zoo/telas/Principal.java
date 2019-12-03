@@ -10,6 +10,7 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Image;
 import java.awt.Toolkit;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -916,6 +917,11 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(principal_UserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 130, 20));
 
         jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Bruno\\Downloads\\admin-with-cogwheels (1) (1) (2).png")); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 40, 40));
 
         jLabel1.setBackground(new Color(0,0,0,0));
@@ -1134,6 +1140,10 @@ public class Principal extends javax.swing.JFrame {
     private void formFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusGained
 
     }//GEN-LAST:event_formFocusGained
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+InicioProg.AdmSist.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     public void openWindow() {
         InicioProg.principal.setVisible(true);

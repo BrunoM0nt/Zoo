@@ -6,6 +6,9 @@
 package zoo.telas;
 
 import java.awt.Color;
+import zoo.usuarios.AdmZoo;
+import zoo.usuarios.InicioProg;
+import zoo.usuarios.Usuarios;
 
 /**
  *
@@ -92,6 +95,7 @@ public class AdmSistem extends javax.swing.JFrame {
         jCheckBox4 = new javax.swing.JCheckBox();
         jCheckBox5 = new javax.swing.JCheckBox();
         jCheckBox6 = new javax.swing.JCheckBox();
+        jPanel5 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jButtonCadAdmSistema = new javax.swing.JButton();
@@ -115,13 +119,16 @@ public class AdmSistem extends javax.swing.JFrame {
         jLabel49 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
-        jTextField37 = new javax.swing.JTextField();
+        jTextFieldNomeUsuZoo = new javax.swing.JTextField();
         jTextField38 = new javax.swing.JTextField();
         jTextField39 = new javax.swing.JTextField();
         jTextField40 = new javax.swing.JTextField();
         jTextField41 = new javax.swing.JTextField();
         jButton11 = new javax.swing.JButton();
-        jLabel52 = new javax.swing.JLabel();
+        jTextField15 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jTextField23 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         jPanelCadZoo1.setBackground(new java.awt.Color(255, 255, 255));
@@ -252,7 +259,7 @@ public class AdmSistem extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 102, 0));
         jLabel5.setText("Cadastrar Zoológico");
-        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
+        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 102, 0));
@@ -350,7 +357,22 @@ public class AdmSistem extends javax.swing.JFrame {
 
         jTabbedPane3.addTab("tab1", jPanel4);
 
-        jPanel1.add(jTabbedPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, -20, 410, 440));
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 415, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 392, Short.MAX_VALUE)
+        );
+
+        jTabbedPane3.addTab("tab2", jPanel5);
+
+        jPanel1.add(jTabbedPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 420, 420));
 
         jTabbedPane1.addTab("", jPanel1);
 
@@ -444,57 +466,65 @@ public class AdmSistem extends javax.swing.JFrame {
         jTabbedPane2.addTab("", jPanelCadAdm2);
 
         jPanelCadZoo4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelCadZoo4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204), 2));
+        jPanelCadZoo4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro de Administrador de Zoológico", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(0, 102, 0))); // NOI18N
         jPanelCadZoo4.setForeground(new java.awt.Color(0, 102, 0));
         jPanelCadZoo4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel47.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel47.setForeground(new java.awt.Color(0, 102, 0));
         jLabel47.setText("Nome");
-        jPanelCadZoo4.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, 20));
+        jPanelCadZoo4.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, 20));
 
         jLabel48.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel48.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel48.setText("Código");
-        jPanelCadZoo4.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 104, -1, 20));
+        jLabel48.setText("cpf");
+        jPanelCadZoo4.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, 20));
 
         jLabel49.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel49.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel49.setText("Código Zoológico");
-        jPanelCadZoo4.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 100, 20));
+        jLabel49.setText("Sobrenome");
+        jPanelCadZoo4.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 100, 20));
 
         jLabel50.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel50.setForeground(new java.awt.Color(0, 102, 0));
         jLabel50.setText("Senha");
-        jPanelCadZoo4.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
+        jPanelCadZoo4.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
         jLabel51.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel51.setForeground(new java.awt.Color(0, 102, 0));
         jLabel51.setText("Repetir Senha");
-        jPanelCadZoo4.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
-        jPanelCadZoo4.add(jTextField37, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 220, -1));
-        jPanelCadZoo4.add(jTextField38, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 220, -1));
-        jPanelCadZoo4.add(jTextField39, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 220, -1));
-        jPanelCadZoo4.add(jTextField40, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 220, -1));
+        jPanelCadZoo4.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
+        jPanelCadZoo4.add(jTextFieldNomeUsuZoo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 220, -1));
+        jPanelCadZoo4.add(jTextField38, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 220, -1));
+        jPanelCadZoo4.add(jTextField39, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 220, -1));
+        jPanelCadZoo4.add(jTextField40, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 220, -1));
 
         jTextField41.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField41ActionPerformed(evt);
             }
         });
-        jPanelCadZoo4.add(jTextField41, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 220, -1));
+        jPanelCadZoo4.add(jTextField41, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 220, -1));
 
         jButton11.setText("Cadastrar");
-        jPanelCadZoo4.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, -1, -1));
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        jPanelCadZoo4.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, -1, -1));
+        jPanelCadZoo4.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 220, -1));
 
-        jLabel52.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel52.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel52.setText("Cadastro de Administrador de Zoológico");
-        jPanelCadZoo4.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
+        jLabel4.setText("Email");
+        jPanelCadZoo4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
+
+        jLabel30.setText("Código");
+        jPanelCadZoo4.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
+        jPanelCadZoo4.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 210, -1));
 
         jTabbedPane2.addTab("", jPanelCadZoo4);
 
-        jPanel3.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 390, 360));
+        jPanel3.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 390, 410));
 
         jTabbedPane1.addTab("--", jPanel3);
 
@@ -506,15 +536,6 @@ public class AdmSistem extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonCadAdmZooActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadAdmZooActionPerformed
-        jTabbedPane2.setVisible(true);
-        jTabbedPane2.setSelectedIndex(1);
-    }//GEN-LAST:event_jButtonCadAdmZooActionPerformed
-
-    private void jTabbedPane1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTabbedPane1AncestorAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTabbedPane1AncestorAdded
-
     private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField10ActionPerformed
@@ -523,27 +544,54 @@ public class AdmSistem extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField18ActionPerformed
 
-    private void jButtonCadAdmSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadAdmSistemaActionPerformed
-        jTabbedPane2.setVisible(true);
-        jTabbedPane2.setSelectedIndex(0);
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        jTabbedPane1.setSelectedIndex(2);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-    }//GEN-LAST:event_jButtonCadAdmSistemaActionPerformed
-
-    private void jTextField22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField22ActionPerformed
+    private void jTabbedPane1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTabbedPane1AncestorAdded
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField22ActionPerformed
+    }//GEN-LAST:event_jTabbedPane1AncestorAdded
 
     private void jTextField41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField41ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField41ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        jTabbedPane1.setSelectedIndex(2);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void jTextField22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField22ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField22ActionPerformed
+
+    private void jButtonCadAdmZooActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadAdmZooActionPerformed
+        jTabbedPane2.setVisible(true);
+        jTabbedPane2.setSelectedIndex(1);
+    }//GEN-LAST:event_jButtonCadAdmZooActionPerformed
+
+    private void jButtonCadAdmSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadAdmSistemaActionPerformed
+        jTabbedPane2.setVisible(true);
+        jTabbedPane2.setSelectedIndex(0);
+    }//GEN-LAST:event_jButtonCadAdmSistemaActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+
+        AdmZoo admzoo = new AdmZoo();
+        Usuarios usuario = new Usuarios();
+        usuario.setNome(jTextFieldNomeUsuZoo.getText());
+        usuario.setSobrenome(jTextField15.getText());
+        usuario.setCpf(jTextField38.getText());
+        usuario.setEmail(jTextField39.getText());
+        usuario.setSenha(jTextField40.getText());
+        usuario.setConfirmaSenha(jTextField41.getText());
+        admzoo.setCodUsuZoo(Integer.parseInt(jTextField23.getText()));
+
+        InicioProg.addUser(usuario);
+        InicioProg.addUserZoo(admzoo);
+        InicioProg.login.setVisible(true);
+        
+
+    }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -623,13 +671,14 @@ public class AdmSistem extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -638,6 +687,7 @@ public class AdmSistem extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanelCadAdm1;
     private javax.swing.JPanel jPanelCadAdm2;
     private javax.swing.JPanel jPanelCadZoo1;
@@ -651,6 +701,7 @@ public class AdmSistem extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
@@ -659,8 +710,8 @@ public class AdmSistem extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField22;
+    private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField37;
     private javax.swing.JTextField jTextField38;
     private javax.swing.JTextField jTextField39;
     private javax.swing.JTextField jTextField4;
@@ -671,5 +722,6 @@ public class AdmSistem extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField jTextFieldNomeUsuZoo;
     // End of variables declaration//GEN-END:variables
 }
