@@ -850,17 +850,14 @@ public class AdmSistem extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTabbedPane1AncestorAdded
 
-    Usuarios TOKEN = new Usuarios();
     private void jButtonCadAdmZooActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadAdmZooActionPerformed
         jTabbedPane2.setVisible(true);
         jTabbedPane2.setSelectedIndex(1);
-        TOKEN.setTOKEN(1);
     }//GEN-LAST:event_jButtonCadAdmZooActionPerformed
 
     private void jButtonCadAdmSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadAdmSistemaActionPerformed
         jTabbedPane2.setVisible(true);
         jTabbedPane2.setSelectedIndex(0);
-        TOKEN.setTOKEN(2);
     }//GEN-LAST:event_jButtonCadAdmSistemaActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
@@ -959,10 +956,6 @@ public class AdmSistem extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField60ActionPerformed
 
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton16ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -978,119 +971,130 @@ public class AdmSistem extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonExcluirZooActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        if (TOKEN.getTOKEN() == 1) {
-            AdmZoo usuario = new AdmZoo();
+        AdmSistema usuario = new AdmSistema();
 
-            usuario.setNome(jTextFieldNome.getText());
-            usuario.setSobrenome(jTextFieldSobrenome.getText());
-            usuario.setCpf(jTextFieldCPF.getText());
-            usuario.setEmail(jTextFieldEmail.getText());
-            usuario.setSenha(jPasswordFieldSenha.getText());
-            usuario.setConfirmaSenha(jPasswordFieldConfirmarSenha.getText());
+        usuario.setNome(jTextFieldNome.getText());
+        usuario.setSobrenome(jTextFieldSobrenome.getText());
+        usuario.setCpf(jTextFieldCPF.getText());
+        usuario.setEmail(jTextFieldEmail.getText());
+        usuario.setSenha(jPasswordFieldSenha.getText());
+        usuario.setConfirmaSenha(jPasswordFieldConfirmarSenha.getText());
+        usuario.setTOKEN(2);
 
-            if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || usuario.getConfirmaSenha().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Todos Os Campos Devem Ser Preenchidos");
+        if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || usuario.getConfirmaSenha().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Os Campos Em Vermelho Devem Ser Preenchidos");
 
-                if (usuario.getNome().isEmpty()) {
-                    jTextFieldNome.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-                }
-                if (usuario.getSobrenome().isEmpty()) {
-                    jTextFieldSobrenome.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-                }
-                if (usuario.getCpf().isEmpty()) {
-                    jTextFieldCPF.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-                }
-                if (usuario.getEmail().isEmpty()) {
-                    jTextFieldEmail.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-                }
-                if (usuario.getSenha().isEmpty()) {
-                    jPasswordFieldSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-                }
-                if (usuario.getConfirmaSenha().isEmpty()) {
-                    jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-                }
-            } else {
-                if (usuario.getSenha().equals(usuario.getConfirmaSenha())) {
-
-                    //Adição de um novo user
-                    usuario.setId(InicioProg.getUserLength() + 1);
-                    InicioProg.addUser(usuario);
-                    InicioProg.cadUs.setVisible(false);
-
-                } else {
-                    JOptionPane.showMessageDialog(null, "Senhas nao coincidem!");
-                    jPasswordFieldSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-                    jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-                    return;
-                }
-                jTextFieldNome.setText("");
-                jTextFieldEmail.setText("");
-                jTextFieldSobrenome.setText("");
-                jTextFieldCPF.setText("");
-                jPasswordFieldSenha.setText("");
-                jPasswordFieldConfirmarSenha.setText("");
-                JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
-                InicioProg.login.setVisible(true);
-                dispose();
+            if (usuario.getNome().isEmpty()) {
+                jTextFieldNome.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
-        } else if (TOKEN.getTOKEN() == 2) {
-            AdmSistema usuario = new AdmSistema();
-
-            usuario.setNome(jTextFieldNome.getText());
-            usuario.setSobrenome(jTextFieldSobrenome.getText());
-            usuario.setCpf(jTextFieldCPF.getText());
-            usuario.setEmail(jTextFieldEmail.getText());
-            usuario.setSenha(jPasswordFieldSenha.getText());
-            usuario.setConfirmaSenha(jPasswordFieldConfirmarSenha.getText());
-
-            if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || usuario.getConfirmaSenha().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Todos Os Campos Devem Ser Preenchidos");
-
-                if (usuario.getNome().isEmpty()) {
-                    jTextFieldNome.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-                }
-                if (usuario.getSobrenome().isEmpty()) {
-                    jTextFieldSobrenome.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-                }
-                if (usuario.getCpf().isEmpty()) {
-                    jTextFieldCPF.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-                }
-                if (usuario.getEmail().isEmpty()) {
-                    jTextFieldEmail.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-                }
-                if (usuario.getSenha().isEmpty()) {
-                    jPasswordFieldSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-                }
-                if (usuario.getConfirmaSenha().isEmpty()) {
-                    jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-                }
-            } else {
-                if (usuario.getSenha().equals(usuario.getConfirmaSenha())) {
-
-                    //Adição de um novo user
-                    usuario.setId(InicioProg.getUserLength() + 1);
-                    InicioProg.addUser(usuario);
-                    InicioProg.cadUs.setVisible(false);
-
-                } else {
-                    JOptionPane.showMessageDialog(null, "Senhas nao coincidem!");
-                    jPasswordFieldSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-                    jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-                    return;
-                }
-                jTextFieldNome.setText("");
-                jTextFieldEmail.setText("");
-                jTextFieldSobrenome.setText("");
-                jTextFieldCPF.setText("");
-                jPasswordFieldSenha.setText("");
-                jPasswordFieldConfirmarSenha.setText("");
-                JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
-                InicioProg.login.setVisible(true);
-                dispose();
+            if (usuario.getSobrenome().isEmpty()) {
+                jTextFieldSobrenome.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
+            if (usuario.getCpf().isEmpty()) {
+                jTextFieldCPF.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+            }
+            if (usuario.getEmail().isEmpty()) {
+                jTextFieldEmail.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+            }
+            if (usuario.getSenha().isEmpty()) {
+                jPasswordFieldSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+            }
+            if (usuario.getConfirmaSenha().isEmpty()) {
+                jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+            }
+            if (jTextField34.getText().isEmpty()) {
+                jTextField34.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+            }
+        } else {
+            if (usuario.getSenha().equals(usuario.getConfirmaSenha())) {
+
+                //Adição de um novo user
+                usuario.setId(InicioProg.getUserLength() + 1);
+                InicioProg.addUser(usuario);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Senhas nao coincidem!");
+                jPasswordFieldSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                return;
+            }
+            jTextFieldNome.setText("");
+            jTextFieldEmail.setText("");
+            jTextFieldSobrenome.setText("");
+            jTextFieldCPF.setText("");
+            jPasswordFieldSenha.setText("");
+            jPasswordFieldConfirmarSenha.setText("");
+            jTextField34.setText("");
+            JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
         }
-
     }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        AdmZoo usuario = new AdmZoo();
+
+        usuario.setNome(jTextFieldNomeUsuZoo4.getText());
+        usuario.setSobrenome(jTextField61.getText());
+        usuario.setCpf(jTextField57.getText());
+        usuario.setEmail(jTextField58.getText());
+        usuario.setSenha(jTextField59.getText());
+        usuario.setConfirmaSenha(jTextField60.getText());
+        if (!(jTextField63.getText().isEmpty())) {
+            usuario.setCodUsuZoo(parseInt(jTextField63.getText()));
+        }
+        usuario.setTOKEN(1);
+
+        if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || usuario.getConfirmaSenha().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Os Campos Em Vermelho Devem Ser Preenchidos");
+
+            if (usuario.getNome().isEmpty()) {
+                jTextFieldNomeUsuZoo4.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+            }
+            if (usuario.getSobrenome().isEmpty()) {
+                jTextField61.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+            }
+            if (usuario.getCpf().isEmpty()) {
+                jTextField57.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+            }
+            if (usuario.getEmail().isEmpty()) {
+                jTextField58.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+            }
+            if (usuario.getSenha().isEmpty()) {
+                jTextField59.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+            }
+            if (usuario.getConfirmaSenha().isEmpty()) {
+                jTextField60.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+            }
+            if (jTextField63.getText().isEmpty()) {
+                jTextField63.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+            }
+            if (jTextField62.getText().isEmpty()) {
+                jTextField62.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+            }
+        } else {
+            if (usuario.getSenha().equals(usuario.getConfirmaSenha())) {
+
+                //Adição de um novo user
+                usuario.setId(InicioProg.getUserLength() + 1);
+                InicioProg.addUser(usuario);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Senhas nao coincidem!");
+                jPasswordFieldSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                return;
+            }
+            jTextFieldNomeUsuZoo4.setText("");
+            jTextField61.setText("");
+            jTextField57.setText("");
+            jTextField58.setText("");
+            jTextField59.setText("");
+            jTextField60.setText("");
+            jTextField61.setText("");
+            jTextField62.setText("");
+            jTextField63.setText("");
+            JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
+        }
+    }//GEN-LAST:event_jButton16ActionPerformed
 
     /**
      * @param args the command line arguments
