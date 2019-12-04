@@ -5,6 +5,11 @@
  */
 package zoo.telas;
 
+import java.awt.Color;
+import java.awt.Cursor;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
+import zoo.zoologicos.Animais;
 /**
  *
  * @author Pc27sala06
@@ -31,12 +36,10 @@ public class CadAnimais extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        cadastrarAnimal = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
@@ -48,9 +51,12 @@ public class CadAnimais extends javax.swing.JFrame {
 
         jLabel3.setText("Quantidade:");
 
-        jLabel4.setText("Zoologico de destino:");
-
-        jButton1.setText("Cadastrar");
+        cadastrarAnimal.setText("Cadastrar");
+        cadastrarAnimal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarAnimalActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Cancelar");
 
@@ -67,17 +73,15 @@ public class CadAnimais extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
                             .addComponent(jLabel2)
                             .addComponent(jLabel1))
-                        .addGap(18, 18, 18)
+                        .addGap(80, 80, 80)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(cadastrarAnimal)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton2)))))
                 .addContainerGap(47, Short.MAX_VALUE))
@@ -103,13 +107,9 @@ public class CadAnimais extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(74, 74, 74)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(31, 31, 31)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(cadastrarAnimal)
                     .addComponent(jButton2))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
@@ -127,6 +127,47 @@ public class CadAnimais extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cadastrarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarAnimalActionPerformed
+        // TODO add your handling code here:
+        Animais animais = new Animais();
+        
+            
+        cadastrarAnimal.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        animais.setNome(jTextField4.getText());
+        animais.setEspecie(jTextField3.getText());
+        animais.setQuantidade(jTextField2.getText());
+        
+        /*
+            Aqui o animal cadastrado receberá o ID de seu zoológico automaticamente, mas eu ainda n implementei essa parte ok
+            
+        */
+        if(animais.getNome().isEmpty() || animais.getEspecie().isEmpty() || animais.getQuantidade().isEmpty())  {
+            
+            JOptionPane.showMessageDialog(null, "Todos os campos devem ser preenchidos");
+            
+            if(animais.getNome().isEmpty()){
+                jTextField4.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+            }
+            
+            if(animais.getEspecie().isEmpty()){
+                jTextField3.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+            }
+            
+            if(animais.getQuantidade().isEmpty()){
+                jTextField2.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+            }
+            
+        } else {
+            
+            jTextField4.setText("");
+            jTextField3.setText("");
+            jTextField2.setText("");
+            JOptionPane.showMessageDialog(null, "Cadastro de animal realizado com sucesso");
+        }
+        
+        
+    }//GEN-LAST:event_cadastrarAnimalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,15 +205,13 @@ public class CadAnimais extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton cadastrarAnimal;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
