@@ -218,6 +218,7 @@ public class CadUsuarios extends javax.swing.JFrame {
         usuario.setEmail(jTextFieldEmail.getText());
         usuario.setSenha(jPasswordFieldSenha.getText());
         usuario.setConfirmaSenha(jPasswordFieldConfirmarSenha.getText());
+        usuario.setTOKEN(0);
 
         if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || usuario.getConfirmaSenha().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Todos Os Campos Devem Ser Preenchidos");

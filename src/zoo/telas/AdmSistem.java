@@ -7,11 +7,11 @@ package zoo.telas;
 
 import zoo.zoologicos.Zoologicos;
 import java.awt.Color;
+import java.awt.Cursor;
 import static java.lang.Integer.parseInt;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
-import zoo.usuarios.*;
-import zoo.Adm.AdmZoo;
+import zoo.Adm.*;
 import zoo.main.InicioProg;
 import zoo.usuarios.Usuarios;
 
@@ -27,8 +27,6 @@ public class AdmSistem extends javax.swing.JFrame {
     public AdmSistem() {
         initComponents();
 
-     
-        
         jTabbedPane1.setBackground(new Color(0, 0, 0, 0));
         jTabbedPane2.setBackground(new Color(0, 0, 0, 0));
         jTabbedPane3.setBackground(new Color(0, 0, 0, 0));
@@ -166,13 +164,13 @@ public class AdmSistem extends javax.swing.JFrame {
         jLabel61 = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
-        jTextFieldNomeUsuZoo2 = new javax.swing.JTextField();
-        jTextField48 = new javax.swing.JTextField();
-        jTextField49 = new javax.swing.JTextField();
-        jTextField50 = new javax.swing.JTextField();
-        jTextField51 = new javax.swing.JTextField();
+        jTextFieldNome = new javax.swing.JTextField();
+        jTextFieldCPF = new javax.swing.JTextField();
+        jTextFieldEmail = new javax.swing.JTextField();
+        jPasswordFieldSenha = new javax.swing.JTextField();
+        jPasswordFieldConfirmarSenha = new javax.swing.JTextField();
         jButton14 = new javax.swing.JButton();
-        jTextField33 = new javax.swing.JTextField();
+        jTextFieldSobrenome = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         jTextField34 = new javax.swing.JTextField();
@@ -719,15 +717,20 @@ public class AdmSistem extends javax.swing.JFrame {
         jLabel63.setForeground(new java.awt.Color(0, 102, 0));
         jLabel63.setText("Repetir Senha");
         jPanelCadZoo6.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
-        jPanelCadZoo6.add(jTextFieldNomeUsuZoo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 220, -1));
-        jPanelCadZoo6.add(jTextField48, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 220, -1));
-        jPanelCadZoo6.add(jTextField49, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 220, -1));
-        jPanelCadZoo6.add(jTextField50, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 220, -1));
-        jPanelCadZoo6.add(jTextField51, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 220, -1));
+        jPanelCadZoo6.add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 220, -1));
+        jPanelCadZoo6.add(jTextFieldCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 220, -1));
+        jPanelCadZoo6.add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 220, -1));
+        jPanelCadZoo6.add(jPasswordFieldSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 220, -1));
+        jPanelCadZoo6.add(jPasswordFieldConfirmarSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 220, -1));
 
         jButton14.setText("Cadastrar");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
         jPanelCadZoo6.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, -1, -1));
-        jPanelCadZoo6.add(jTextField33, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 220, -1));
+        jPanelCadZoo6.add(jTextFieldSobrenome, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 220, -1));
 
         jLabel39.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(0, 102, 0));
@@ -847,14 +850,17 @@ public class AdmSistem extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTabbedPane1AncestorAdded
 
+    Usuarios TOKEN = new Usuarios();
     private void jButtonCadAdmZooActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadAdmZooActionPerformed
         jTabbedPane2.setVisible(true);
         jTabbedPane2.setSelectedIndex(1);
+        TOKEN.setTOKEN(1);
     }//GEN-LAST:event_jButtonCadAdmZooActionPerformed
 
     private void jButtonCadAdmSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadAdmSistemaActionPerformed
         jTabbedPane2.setVisible(true);
         jTabbedPane2.setSelectedIndex(0);
+        TOKEN.setTOKEN(2);
     }//GEN-LAST:event_jButtonCadAdmSistemaActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
@@ -970,6 +976,121 @@ public class AdmSistem extends javax.swing.JFrame {
         jTabbedPane3.setVisible(true);
         jTabbedPane3.setSelectedIndex(1);
     }//GEN-LAST:event_jButtonExcluirZooActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        if (TOKEN.getTOKEN() == 1) {
+            AdmZoo usuario = new AdmZoo();
+
+            usuario.setNome(jTextFieldNome.getText());
+            usuario.setSobrenome(jTextFieldSobrenome.getText());
+            usuario.setCpf(jTextFieldCPF.getText());
+            usuario.setEmail(jTextFieldEmail.getText());
+            usuario.setSenha(jPasswordFieldSenha.getText());
+            usuario.setConfirmaSenha(jPasswordFieldConfirmarSenha.getText());
+
+            if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || usuario.getConfirmaSenha().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Todos Os Campos Devem Ser Preenchidos");
+
+                if (usuario.getNome().isEmpty()) {
+                    jTextFieldNome.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                }
+                if (usuario.getSobrenome().isEmpty()) {
+                    jTextFieldSobrenome.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                }
+                if (usuario.getCpf().isEmpty()) {
+                    jTextFieldCPF.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                }
+                if (usuario.getEmail().isEmpty()) {
+                    jTextFieldEmail.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                }
+                if (usuario.getSenha().isEmpty()) {
+                    jPasswordFieldSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                }
+                if (usuario.getConfirmaSenha().isEmpty()) {
+                    jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                }
+            } else {
+                if (usuario.getSenha().equals(usuario.getConfirmaSenha())) {
+
+                    //Adição de um novo user
+                    usuario.setId(InicioProg.getUserLength() + 1);
+                    InicioProg.addUser(usuario);
+                    InicioProg.cadUs.setVisible(false);
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Senhas nao coincidem!");
+                    jPasswordFieldSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                    jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                    return;
+                }
+                jTextFieldNome.setText("");
+                jTextFieldEmail.setText("");
+                jTextFieldSobrenome.setText("");
+                jTextFieldCPF.setText("");
+                jPasswordFieldSenha.setText("");
+                jPasswordFieldConfirmarSenha.setText("");
+                JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
+                InicioProg.login.setVisible(true);
+                dispose();
+            }
+        } else if (TOKEN.getTOKEN() == 2) {
+            AdmSistema usuario = new AdmSistema();
+
+            usuario.setNome(jTextFieldNome.getText());
+            usuario.setSobrenome(jTextFieldSobrenome.getText());
+            usuario.setCpf(jTextFieldCPF.getText());
+            usuario.setEmail(jTextFieldEmail.getText());
+            usuario.setSenha(jPasswordFieldSenha.getText());
+            usuario.setConfirmaSenha(jPasswordFieldConfirmarSenha.getText());
+
+            if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || usuario.getConfirmaSenha().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Todos Os Campos Devem Ser Preenchidos");
+
+                if (usuario.getNome().isEmpty()) {
+                    jTextFieldNome.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                }
+                if (usuario.getSobrenome().isEmpty()) {
+                    jTextFieldSobrenome.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                }
+                if (usuario.getCpf().isEmpty()) {
+                    jTextFieldCPF.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                }
+                if (usuario.getEmail().isEmpty()) {
+                    jTextFieldEmail.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                }
+                if (usuario.getSenha().isEmpty()) {
+                    jPasswordFieldSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                }
+                if (usuario.getConfirmaSenha().isEmpty()) {
+                    jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                }
+            } else {
+                if (usuario.getSenha().equals(usuario.getConfirmaSenha())) {
+
+                    //Adição de um novo user
+                    usuario.setId(InicioProg.getUserLength() + 1);
+                    InicioProg.addUser(usuario);
+                    InicioProg.cadUs.setVisible(false);
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Senhas nao coincidem!");
+                    jPasswordFieldSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                    jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                    return;
+                }
+                jTextFieldNome.setText("");
+                jTextFieldEmail.setText("");
+                jTextFieldSobrenome.setText("");
+                jTextFieldCPF.setText("");
+                jPasswordFieldSenha.setText("");
+                jPasswordFieldConfirmarSenha.setText("");
+                JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
+                InicioProg.login.setVisible(true);
+                dispose();
+            }
+        }
+
+    }//GEN-LAST:event_jButton14ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1115,6 +1236,8 @@ public class AdmSistem extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelCadZoo5;
     private javax.swing.JPanel jPanelCadZoo6;
     private javax.swing.JPanel jPanelCadZoo8;
+    private javax.swing.JTextField jPasswordFieldConfirmarSenha;
+    private javax.swing.JTextField jPasswordFieldSenha;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
@@ -1131,16 +1254,11 @@ public class AdmSistem extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField30;
     private javax.swing.JTextField jTextField31;
     private javax.swing.JTextField jTextField32;
-    private javax.swing.JTextField jTextField33;
     private javax.swing.JTextField jTextField34;
     private javax.swing.JTextField jTextField44;
     private javax.swing.JTextField jTextField45;
     private javax.swing.JTextField jTextField46;
     private javax.swing.JTextField jTextField47;
-    private javax.swing.JTextField jTextField48;
-    private javax.swing.JTextField jTextField49;
-    private javax.swing.JTextField jTextField50;
-    private javax.swing.JTextField jTextField51;
     private javax.swing.JTextField jTextField57;
     private javax.swing.JTextField jTextField58;
     private javax.swing.JTextField jTextField59;
@@ -1152,9 +1270,12 @@ public class AdmSistem extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField jTextFieldCPF;
+    private javax.swing.JTextField jTextFieldEmail;
+    private javax.swing.JTextField jTextFieldNome;
     private javax.swing.JTextField jTextFieldNomeUsuZoo1;
-    private javax.swing.JTextField jTextFieldNomeUsuZoo2;
     private javax.swing.JTextField jTextFieldNomeUsuZoo4;
+    private javax.swing.JTextField jTextFieldSobrenome;
     private javax.swing.JTextField nomeZoo;
     private javax.swing.JTextField nomeZoo1;
     // End of variables declaration//GEN-END:variables

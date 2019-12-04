@@ -9,6 +9,7 @@ public class Usuarios {
     private String senha;
     private String email;
     private String ConfirmaSenha;
+    private int TOKEN = 0;
 
     public String getConfirmaSenha() {
         return ConfirmaSenha;
@@ -65,4 +66,13 @@ public class Usuarios {
     public int getId() {
         return id;
     }
+
+    public int getTOKEN() {
+        return TOKEN;
+    }
+
+    public void setTOKEN(int TOKEN) {
+        this.TOKEN = TOKEN;
+    }
+    
 }
