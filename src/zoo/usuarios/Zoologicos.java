@@ -5,7 +5,6 @@
  */
 package zoo.usuarios;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 /**
  *
@@ -97,5 +96,12 @@ public class Zoologicos {
     public void setValor_entrada(float Valor_entrada) {
         this.Valor_entrada = Valor_entrada;
     }
-    
+
+    public int getQtd_tour() {
+        return Qtd_tour;
+    }
+
+    public void setQtd_tour(int Qtd_tour) {
+        this.Qtd_tour = Qtd_tour;
+    }
 }

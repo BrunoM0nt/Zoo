@@ -877,7 +877,7 @@ public class AdmSistem extends javax.swing.JFrame {
         if (Fecha.getText().isEmpty()) { // verificação de campo vazio
             zoo.setFecha(0);
         } else {
-            zoo.setFecha(parseInt(Abre.getText()));
+            zoo.setFecha(parseInt(Fecha.getText()));
         }
         zoo.setEndereco(endereco.getText());
         zoo.setCidade(cidade.getText());

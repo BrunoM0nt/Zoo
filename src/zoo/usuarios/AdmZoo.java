@@ -4,14 +4,14 @@
  * and open the template in the editor.
  */
 package zoo.usuarios;
+
 /**
  *
  * @author Pc27sala06
  */
-public class AdmZoo {
+public class AdmZoo extends Usuarios {
 
-   
-  private  int CodUsuZoo;
+    private int CodUsuZoo;
 
     public int getCodUsuZoo() {
         return CodUsuZoo;
@@ -22,7 +22,6 @@ public class AdmZoo {
     }
 
     public static void main(String[] args) {
-        
 
     }
 }
