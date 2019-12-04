@@ -5,6 +5,7 @@
  */
 package zoo.telas;
 
+import zoo.main.InicioProg;
 import java.awt.Color;
 import java.awt.Cursor;
 import javax.swing.BorderFactory;
@@ -13,7 +14,7 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.ListModel;
 import zoo.usuarios.*;
-import static zoo.usuarios.InicioProg.listUsers;
+import static zoo.main.InicioProg.listUsers;
 
 /**
  *

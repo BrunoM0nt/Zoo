@@ -16,7 +16,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.LayoutStyle;
 import javax.swing.border.*;
-import zoo.usuarios.InicioProg;
+import zoo.main.InicioProg;
 
 /**
  *

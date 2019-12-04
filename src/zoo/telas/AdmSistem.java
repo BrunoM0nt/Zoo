@@ -5,13 +5,14 @@
  */
 package zoo.telas;
 
+import zoo.zoologicos.Zoologicos;
 import java.awt.Color;
 import static java.lang.Integer.parseInt;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import zoo.usuarios.*;
-import zoo.usuarios.AdmZoo;
-import zoo.usuarios.InicioProg;
+import zoo.Adm.AdmZoo;
+import zoo.main.InicioProg;
 import zoo.usuarios.Usuarios;
 
 /**

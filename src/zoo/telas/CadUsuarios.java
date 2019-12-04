@@ -10,7 +10,7 @@ import java.awt.Cursor;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import zoo.usuarios.InicioProg;
+import zoo.main.InicioProg;
 import zoo.usuarios.Usuarios;
 
 /**

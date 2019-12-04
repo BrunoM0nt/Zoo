@@ -3,11 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package zoo.usuarios;
+package zoo.main;
 
+import zoo.Adm.AdmZoo;
 import java.util.ArrayList;
 import java.util.Vector;
 import zoo.telas.*;
+import zoo.usuarios.Usuarios;
 
 /**
  *
