@@ -26,14 +26,16 @@ public class AdmSistem extends javax.swing.JFrame {
     public AdmSistem() {
         initComponents();
 
-        jTabbedPane2.setVisible(false);
-        jTabbedPane3.setVisible(false);
+     
         
         jTabbedPane1.setBackground(new Color(0, 0, 0, 0));
         jTabbedPane2.setBackground(new Color(0, 0, 0, 0));
         jTabbedPane3.setBackground(new Color(0, 0, 0, 0));
         jButtonCadAdmSistema.setBackground(new Color(0, 0, 0, 0));
+        jButtonCadZoo.setBackground(new Color(0, 0, 0, 0));
+        jButtonExcluirZoo.setBackground(new Color(0, 0, 0, 0));
         jButtonCadAdmZoo.setBackground(new Color(0, 0, 0, 0));
+        jButton17.setBackground(new Color(0, 0, 0, 0));
 
     }
 
@@ -137,8 +139,21 @@ public class AdmSistem extends javax.swing.JFrame {
         endereco1 = new javax.swing.JTextField();
         UF1 = new javax.swing.JTextField();
         cidade1 = new javax.swing.JTextField();
-        jButton7 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
+        jButtonCadZoo = new javax.swing.JButton();
+        jButtonExcluirZoo = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jTextField26 = new javax.swing.JTextField();
+        jButton8 = new javax.swing.JButton();
+        jLabel33 = new javax.swing.JLabel();
+        jTextField27 = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        jTextField28 = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        jTextField29 = new javax.swing.JTextField();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jButtonCadAdmSistema = new javax.swing.JButton();
         jButtonCadAdmZoo = new javax.swing.JButton();
@@ -178,19 +193,6 @@ public class AdmSistem extends javax.swing.JFrame {
         jTextField62 = new javax.swing.JTextField();
         jLabel74 = new javax.swing.JLabel();
         jTextField63 = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        jTextField26 = new javax.swing.JTextField();
-        jButton8 = new javax.swing.JButton();
-        jLabel33 = new javax.swing.JLabel();
-        jTextField27 = new javax.swing.JTextField();
-        jLabel34 = new javax.swing.JLabel();
-        jTextField28 = new javax.swing.JTextField();
-        jLabel35 = new javax.swing.JLabel();
-        jTextField29 = new javax.swing.JTextField();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -503,23 +505,27 @@ public class AdmSistem extends javax.swing.JFrame {
         jCheckBox5.setPreferredSize(new java.awt.Dimension(107, 23));
         jPanel4.add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, -1, 20));
 
-        jButton3.setText("Enviar");
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(0, 102, 0));
+        jButton3.setText("Cadastrar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 70, 30));
+        jPanel4.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 90, 30));
 
         jTabbedPane3.addTab("", jPanel4);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Excluir Zoológico", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(0, 102, 0))); // NOI18N
         jPanel5.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 102, 0));
         jLabel5.setText("Pesquisar Código do Zoologico");
+
+        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/icone_lupa.png"))); // NOI18N
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -564,49 +570,95 @@ public class AdmSistem extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(jButton17)))
-                .addContainerGap(110, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(96, Short.MAX_VALUE))
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 403, Short.MAX_VALUE))
+                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(332, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(335, Short.MAX_VALUE))
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                    .addGap(0, 51, Short.MAX_VALUE)
+                    .addGap(0, 52, Short.MAX_VALUE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jTabbedPane3.addTab("", jPanel5);
 
-        jPanel1.add(jTabbedPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, -11, 410, -1));
+        jPanel1.add(jTabbedPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, -10, 390, -1));
 
-        jButton7.setText("Cadastrar Zoologico");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        jButtonCadZoo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButtonCadZoo.setForeground(new java.awt.Color(0, 102, 0));
+        jButtonCadZoo.setText("Cadastrar Zoologico");
+        jButtonCadZoo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                jButtonCadZooActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 130, -1));
+        jPanel1.add(jButtonCadZoo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 150, -1));
 
-        jButton15.setText("Excluir Zoologico");
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
+        jButtonExcluirZoo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButtonExcluirZoo.setForeground(new java.awt.Color(0, 102, 0));
+        jButtonExcluirZoo.setText("Excluir Zoologico");
+        jButtonExcluirZoo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
+                jButtonExcluirZooActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 130, -1));
+        jPanel1.add(jButtonExcluirZoo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 140, -1));
 
         jTabbedPane1.addTab("", jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.add(jTextField26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 271, 30));
+
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/icone_lupa.png"))); // NOI18N
+        jPanel2.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 40, 30));
+
+        jLabel33.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(0, 102, 0));
+        jLabel33.setText("Nome");
+        jPanel2.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+        jPanel2.add(jTextField27, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 103, -1));
+
+        jLabel34.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(0, 102, 0));
+        jLabel34.setText("E-mail");
+        jPanel2.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+        jPanel2.add(jTextField28, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 103, -1));
+
+        jLabel35.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(0, 102, 0));
+        jLabel35.setText("CPf");
+        jPanel2.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, -1, -1));
+        jPanel2.add(jTextField29, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 130, -1));
+
+        jButton9.setText("Excluir");
+        jPanel2.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, -1, -1));
+
+        jButton10.setText("Bloquear");
+        jPanel2.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, -1, -1));
+
+        jButton12.setText("Desbloquear");
+        jPanel2.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 102, 0));
+        jLabel4.setText("Pesqusiar CPF");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 120, -1));
+
+        jTabbedPane1.addTab("", jPanel2);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -760,48 +812,7 @@ public class AdmSistem extends javax.swing.JFrame {
 
         jPanel3.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, -20, 370, 430));
 
-        jTabbedPane1.addTab("--", jPanel3);
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(jTextField26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 271, -1));
-
-        jButton8.setText("jButton8");
-        jPanel2.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 36, -1));
-
-        jLabel33.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel33.setText("Nome");
-        jPanel2.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
-        jPanel2.add(jTextField27, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 103, -1));
-
-        jLabel34.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel34.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel34.setText("E-mail");
-        jPanel2.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
-        jPanel2.add(jTextField28, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 103, -1));
-
-        jLabel35.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel35.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel35.setText("CPf");
-        jPanel2.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, -1, -1));
-        jPanel2.add(jTextField29, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 130, -1));
-
-        jButton9.setText("Excluir");
-        jPanel2.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, -1, -1));
-
-        jButton10.setText("Bloquear");
-        jPanel2.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, -1, -1));
-
-        jButton12.setText("Desbloquear");
-        jPanel2.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel4.setText("Pesqusiar CPF");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 120, -1));
-
-        jTabbedPane1.addTab("", jPanel2);
+        jTabbedPane1.addTab("", jPanel3);
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 570, 450));
 
@@ -949,15 +960,15 @@ public class AdmSistem extends javax.swing.JFrame {
         jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void jButtonCadZooActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadZooActionPerformed
         jTabbedPane3.setVisible(true);
         jTabbedPane3.setSelectedIndex(0);
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_jButtonCadZooActionPerformed
 
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+    private void jButtonExcluirZooActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirZooActionPerformed
         jTabbedPane3.setVisible(true);
         jTabbedPane3.setSelectedIndex(1);
-    }//GEN-LAST:event_jButton15ActionPerformed
+    }//GEN-LAST:event_jButtonExcluirZooActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1015,7 +1026,6 @@ public class AdmSistem extends javax.swing.JFrame {
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton2;
@@ -1023,11 +1033,12 @@ public class AdmSistem extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JButton jButtonCadAdmSistema;
     private javax.swing.JButton jButtonCadAdmZoo;
+    private javax.swing.JButton jButtonCadZoo;
+    private javax.swing.JButton jButtonExcluirZoo;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
