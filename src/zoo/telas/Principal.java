@@ -295,6 +295,11 @@ public class Principal extends javax.swing.JFrame {
         btnPrincipal.setForeground(new java.awt.Color(255, 255, 255));
         btnPrincipal.setText("Principal");
         btnPrincipal.setBorder(null);
+        btnPrincipal.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                btnPrincipalFocusGained(evt);
+            }
+        });
         btnPrincipal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrincipalActionPerformed(evt);
@@ -1014,7 +1019,7 @@ public class Principal extends javax.swing.JFrame {
         principal_UserName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(principal_UserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 130, 20));
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Bruno\\Downloads\\admin-with-cogwheels (1) (1) (2).png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/iconAdmin.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -1254,6 +1259,10 @@ InicioProg.AdmSist.setVisible(true);
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void btnPrincipalFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnPrincipalFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPrincipalFocusGained
 
     public void openWindow() {
         InicioProg.principal.setVisible(true);

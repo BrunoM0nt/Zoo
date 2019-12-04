@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Vector;
 import zoo.telas.*;
 import zoo.usuarios.Usuarios;
+import zoo.zoologicos.Zoologicos;
 
 /**
  *
@@ -19,6 +20,7 @@ public class InicioProg {
 
     public static ArrayList<Usuarios> usu = new ArrayList<>();
     public static ArrayList<AdmZoo> usuzoo = new ArrayList<>();
+ 
     public static Vector listUsers = new Vector();
     public static Login login;
     public static Principal principal;
@@ -68,7 +70,7 @@ public class InicioProg {
 
     public static void addUserZoo(AdmZoo CodAdmZoo) {
         usuzoo.add(CodAdmZoo);
-        
+
     }
 
     public static void rmUser(Usuarios user) {
