@@ -14,7 +14,7 @@ import zoo.usuarios.Usuarios;
  */
 public class AdmZoo extends Usuarios {
     
-    private int CodUsuZoo;
+    private int CodAdmZoo;
     
     public AdmZoo(){
         id = InicioProg.nUsr;
@@ -28,10 +28,10 @@ public class AdmZoo extends Usuarios {
     }
     
     public int getCodUsuZoo() {
-        return CodUsuZoo;
+        return CodAdmZoo;
     }
 
     public void setCodUsuZoo(int CodUsuZoo) {
-        this.CodUsuZoo = CodUsuZoo;
+        this.CodAdmZoo = CodUsuZoo;
     }
 }

@@ -10,6 +10,8 @@ import zoo.usuarios.Usuarios;
 
 public class AdmSistema extends Usuarios {
 
+    private int CodAdmSys;
+    
     public AdmSistema() {
         id = InicioProg.nUsr;
         tipoUsr = 2;
@@ -20,4 +22,14 @@ public class AdmSistema extends Usuarios {
         id = InicioProg.nUsr;
         tipoUsr = 2;
     }
+
+    public int getCodAdmSys() {
+        return CodAdmSys;
+    }
+
+    public void setCodAdmSys(int CodAdmSys) {
+        this.CodAdmSys = CodAdmSys;
+    }
+    
+    
 }

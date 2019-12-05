@@ -36,11 +36,11 @@ public class InicioProg {
     public static void main(String[] args) {
 
         inicializar();
-        AdmZoo admZoo = new AdmZoo("Regin", "DonoSóDaMetade", "02301700216", "1234", "admZ");
+        AdmZoo admZoo = new AdmZoo("ADM", "ZOO", "12312312311", "15253545", "admZ");
         addUser(admZoo);
-        AdmSistema admSys = new AdmSistema("Regis", "DonoDaPorraLoka", "02301700216", "1234", "admS");
+        AdmSistema admSys = new AdmSistema("ADM", "SISTEMA", "12312312311", "15253545", "admS");
         addUser(admSys);
-        Usuarios usr = new Usuarios("Regis", "normal", "02301700216", "1234", "usr");
+        Usuarios usr = new Usuarios("USUARIO", "NORMAL", "12312312311", "1234", "usr");
         addUser(usr);
 
     }
@@ -55,13 +55,7 @@ public class InicioProg {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
@@ -86,10 +80,10 @@ public class InicioProg {
 
     }
 
-    public static void rmUser(Usuarios user) {
+    /*public static void rmUser(Usuarios user) {
         usu.remove(usu);
         listUsers.remove(user.getNome() + " " + user.getSobrenome());
-    }
+    }*/
 
     public static String getUserNome(int num) {
         return usu.get(num).getNome();

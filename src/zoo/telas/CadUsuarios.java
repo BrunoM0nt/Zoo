@@ -34,6 +34,7 @@ public class CadUsuarios extends javax.swing.JFrame {
 
         //Cursor
         jButtonConfirmarCadastro.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jButtonVoltar.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
     }
 
@@ -74,7 +75,7 @@ public class CadUsuarios extends javax.swing.JFrame {
                 jButtonConfirmarCadastroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 70, 70));
+        getContentPane().add(jButtonConfirmarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 370, 50, 50));
 
         jPasswordFieldConfirmarSenha.setBackground(new java.awt.Color(204, 204, 204));
         jPasswordFieldConfirmarSenha.setForeground(new java.awt.Color(102, 102, 102));
@@ -198,7 +199,7 @@ public class CadUsuarios extends javax.swing.JFrame {
                 jButtonVoltarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 70, 60));
+        getContentPane().add(jButtonVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, 50, 50));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(102, 102, 102));

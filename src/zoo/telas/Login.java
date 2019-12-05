@@ -327,18 +327,16 @@ public class Login extends javax.swing.JFrame {
                 IdConnected = auxEmail;
                 InicioProg.setConnectedUser(IdConnected);
                 
-                if (InicioProg.usu.get(InicioProg.getConnectedUser()).getTipoUsr() == 1) {
-                    
-                    InicioProg.setTypeConnectedUsr(1);
-                    
-                } else if (InicioProg.usu.get(InicioProg.getConnectedUser()).getTipoUsr() == 2) {
-                    
-                    InicioProg.setTypeConnectedUsr(2);
-                    
-                } else {
-                    
-                    InicioProg.setTypeConnectedUsr(0);
-                    
+                switch (InicioProg.usu.get(InicioProg.getConnectedUser()).getTipoUsr()) {
+                    case 1:
+                        InicioProg.setTypeConnectedUsr(1);
+                        break;
+                    case 2:
+                        InicioProg.setTypeConnectedUsr(2);
+                        break;
+                    default:
+                        InicioProg.setTypeConnectedUsr(0);
+                        break;
                 }
                 
                 InicioProg.principal.openWindow();

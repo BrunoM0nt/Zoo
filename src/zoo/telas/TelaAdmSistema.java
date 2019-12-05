@@ -10,6 +10,7 @@ import java.awt.Color;
 import java.awt.Cursor;
 import static java.lang.Integer.parseInt;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import zoo.Adm.*;
 import zoo.main.InicioProg;
@@ -42,6 +43,8 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         selectImg_Zoo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/Selected.png")));
         selectImg_Adm.setIcon(null);
         selectImg_Usu.setIcon(null);
+        
+        this.setIconImage(new ImageIcon(getClass().getResource("/zoo/Imagens/iCON.png")).getImage());
 
     }
 
@@ -186,25 +189,25 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         jTextFieldSobrenome = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
-        jTextField34 = new javax.swing.JTextField();
+        jTextCodAdm = new javax.swing.JTextField();
         jPanelCadZoo8 = new javax.swing.JPanel();
         jLabel69 = new javax.swing.JLabel();
         jLabel70 = new javax.swing.JLabel();
         jLabel71 = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
         jLabel73 = new javax.swing.JLabel();
-        jTextFieldNomeUsuZoo4 = new javax.swing.JTextField();
-        jTextField57 = new javax.swing.JTextField();
-        jTextField58 = new javax.swing.JTextField();
-        jTextField59 = new javax.swing.JTextField();
-        jTextField60 = new javax.swing.JTextField();
+        admZoo_Nome_txf = new javax.swing.JTextField();
+        admZoo_CPF_txf = new javax.swing.JTextField();
+        admZoo_Email_txf = new javax.swing.JTextField();
+        admZoo_senha_txf = new javax.swing.JTextField();
+        admZoo_repetirSenha_txf = new javax.swing.JTextField();
         jButton16 = new javax.swing.JButton();
-        jTextField61 = new javax.swing.JTextField();
+        admZoo_sobreNome_txf = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
-        jTextField62 = new javax.swing.JTextField();
+        admZoo_CodAdmZoo_txf = new javax.swing.JTextField();
         jLabel74 = new javax.swing.JLabel();
-        jTextField63 = new javax.swing.JTextField();
+        admZoo_CodZoo_txf = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -425,10 +428,10 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         getContentPane().add(selectImg_Usu, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 290, 270, 50));
 
         jTabbedPane1.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jTabbedPane1AncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -468,31 +471,33 @@ public class TelaAdmSistema extends javax.swing.JFrame {
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel16.setText("Valor de Entrada ");
-        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, 30));
-        jPanel4.add(nomeZoo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 270, -1));
-        jPanel4.add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 120, -1));
-        jPanel4.add(endereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 270, -1));
-        jPanel4.add(UF, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 120, -1));
-        jPanel4.add(cidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 120, -1));
-        jPanel4.add(Valor_entrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 50, 30));
+        jLabel16.setText("Valor de Entrada : R$");
+        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, -1, 30));
+        jPanel4.add(nomeZoo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 270, -1));
+        jPanel4.add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 120, -1));
+        jPanel4.add(endereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 270, -1));
+        jPanel4.add(UF, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 120, -1));
+        jPanel4.add(cidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 120, -1));
+        jPanel4.add(Valor_entrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 50, 30));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel17.setText("Horario Funcionamento");
-        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 150, 20));
-        jPanel4.add(Abre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 40, 30));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setText("Horario Func.");
+        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 150, 20));
+        jPanel4.add(Abre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 40, 30));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(0, 102, 0));
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setText("Até");
-        jPanel4.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, -1, -1));
-        jPanel4.add(Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 40, 30));
+        jPanel4.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 30, -1));
+        jPanel4.add(Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 40, 30));
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel29.setText("Dias De Funcionamento");
-        jPanel4.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
+        jLabel29.setText("Dias De Func.");
+        jPanel4.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
         jCheckBox1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jCheckBox1.setForeground(new java.awt.Color(0, 102, 0));
@@ -503,44 +508,44 @@ public class TelaAdmSistema extends javax.swing.JFrame {
                 jCheckBox1ActionPerformed(evt);
             }
         });
-        jPanel4.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, -1, 20));
+        jPanel4.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, 20));
 
         jCheckBox2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jCheckBox2.setForeground(new java.awt.Color(0, 102, 0));
         jCheckBox2.setSelected(true);
         jCheckBox2.setText("Terça-Feira");
-        jPanel4.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, -1, -1));
+        jPanel4.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
 
         jCheckBox3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jCheckBox3.setForeground(new java.awt.Color(0, 102, 0));
         jCheckBox3.setSelected(true);
         jCheckBox3.setText("Quarta-Feira");
-        jPanel4.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 340, -1, -1));
+        jPanel4.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
 
         jCheckBox4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jCheckBox4.setForeground(new java.awt.Color(0, 102, 0));
         jCheckBox4.setSelected(true);
         jCheckBox4.setText("Quinta-Feira");
-        jPanel4.add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, -1, -1));
+        jPanel4.add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, -1));
 
         jCheckBox6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jCheckBox6.setForeground(new java.awt.Color(0, 102, 0));
         jCheckBox6.setSelected(true);
         jCheckBox6.setText("Sabado");
-        jPanel4.add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, -1, -1));
+        jPanel4.add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, -1, -1));
 
         jCheckBox7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jCheckBox7.setForeground(new java.awt.Color(0, 102, 0));
         jCheckBox7.setSelected(true);
         jCheckBox7.setText("Domingo");
-        jPanel4.add(jCheckBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, -1, -1));
+        jPanel4.add(jCheckBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, -1));
 
         jCheckBox5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jCheckBox5.setForeground(new java.awt.Color(0, 102, 0));
         jCheckBox5.setSelected(true);
         jCheckBox5.setText("Sexta-feira");
         jCheckBox5.setPreferredSize(new java.awt.Dimension(107, 23));
-        jPanel4.add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, -1, 20));
+        jPanel4.add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, -1, 20));
 
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 102, 0));
@@ -550,7 +555,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 90, 30));
+        jPanel4.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 120, 70));
 
         jTabbedPane3.addTab("", jPanel4);
 
@@ -695,7 +700,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
 
         jButtonCadAdmZoo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButtonCadAdmZoo.setForeground(new java.awt.Color(0, 102, 0));
-        jButtonCadAdmZoo.setText(" Admin de Zoológico");
+        jButtonCadAdmZoo.setText(" Admin de Zoo");
         jButtonCadAdmZoo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCadAdmZooActionPerformed(evt);
@@ -720,7 +725,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
 
         jLabel60.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel60.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel60.setText("cpf");
+        jLabel60.setText("CPF");
         jPanelCadZoo6.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, 20));
 
         jLabel61.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -761,7 +766,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         jLabel40.setForeground(new java.awt.Color(0, 102, 0));
         jLabel40.setText("Código Adm");
         jPanelCadZoo6.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
-        jPanelCadZoo6.add(jTextField34, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 220, -1));
+        jPanelCadZoo6.add(jTextCodAdm, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 220, -1));
 
         jTabbedPane2.addTab("", jPanelCadZoo6);
 
@@ -777,7 +782,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
 
         jLabel70.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel70.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel70.setText("cpf");
+        jLabel70.setText("CPF");
         jPanelCadZoo8.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, 20));
 
         jLabel71.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -788,23 +793,23 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         jLabel72.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel72.setForeground(new java.awt.Color(0, 102, 0));
         jLabel72.setText("Senha");
-        jPanelCadZoo8.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+        jPanelCadZoo8.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
         jLabel73.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel73.setForeground(new java.awt.Color(0, 102, 0));
         jLabel73.setText("Repetir Senha");
-        jPanelCadZoo8.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
-        jPanelCadZoo8.add(jTextFieldNomeUsuZoo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 220, -1));
-        jPanelCadZoo8.add(jTextField57, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 220, -1));
-        jPanelCadZoo8.add(jTextField58, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 220, -1));
-        jPanelCadZoo8.add(jTextField59, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 220, -1));
+        jPanelCadZoo8.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
+        jPanelCadZoo8.add(admZoo_Nome_txf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 220, -1));
+        jPanelCadZoo8.add(admZoo_CPF_txf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 220, -1));
+        jPanelCadZoo8.add(admZoo_Email_txf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 220, -1));
+        jPanelCadZoo8.add(admZoo_senha_txf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 220, -1));
 
-        jTextField60.addActionListener(new java.awt.event.ActionListener() {
+        admZoo_repetirSenha_txf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField60ActionPerformed(evt);
+                admZoo_repetirSenha_txfActionPerformed(evt);
             }
         });
-        jPanelCadZoo8.add(jTextField60, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 220, -1));
+        jPanelCadZoo8.add(admZoo_repetirSenha_txf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 220, -1));
 
         jButton16.setText("Cadastrar");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
@@ -813,7 +818,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
             }
         });
         jPanelCadZoo8.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, -1, -1));
-        jPanelCadZoo8.add(jTextField61, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 220, -1));
+        jPanelCadZoo8.add(admZoo_sobreNome_txf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 220, -1));
 
         jLabel45.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(0, 102, 0));
@@ -822,23 +827,23 @@ public class TelaAdmSistema extends javax.swing.JFrame {
 
         jLabel46.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel46.setText("Código Adm de Zoo");
-        jPanelCadZoo8.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
-        jPanelCadZoo8.add(jTextField62, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 220, -1));
+        jLabel46.setText("Cód. Adm de Zoo");
+        jPanelCadZoo8.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
+        jPanelCadZoo8.add(admZoo_CodAdmZoo_txf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 220, -1));
 
         jLabel74.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel74.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel74.setText("Código do Zoológico");
-        jPanelCadZoo8.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
-        jPanelCadZoo8.add(jTextField63, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 220, -1));
+        jLabel74.setText("Código do Zoo");
+        jPanelCadZoo8.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, -1));
+        jPanelCadZoo8.add(admZoo_CodZoo_txf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 220, -1));
 
         jTabbedPane2.addTab("", jPanelCadZoo8);
 
-        jPanel3.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 370, 420));
+        jPanel3.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 370, 410));
 
         jTabbedPane1.addTab("", jPanel3);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 570, 450));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 570, 440));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/botao_voltar.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -876,11 +881,15 @@ public class TelaAdmSistema extends javax.swing.JFrame {
     }//GEN-LAST:event_jTabbedPane1AncestorAdded
 
     private void jButtonCadAdmZooActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadAdmZooActionPerformed
+        jButtonCadAdmZoo.setText("> Admin de Zoo");
+        jButtonCadAdmSistema.setText("Admin de Sistema");
         jTabbedPane2.setVisible(true);
         jTabbedPane2.setSelectedIndex(1);
     }//GEN-LAST:event_jButtonCadAdmZooActionPerformed
 
     private void jButtonCadAdmSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadAdmSistemaActionPerformed
+        jButtonCadAdmZoo.setText("Admin de Zoo");
+        jButtonCadAdmSistema.setText("> Admin de Sistema");
         jTabbedPane2.setVisible(true);
         jTabbedPane2.setSelectedIndex(0);
     }//GEN-LAST:event_jButtonCadAdmSistemaActionPerformed
@@ -914,6 +923,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         // Definindo os valores na classe Zoologicos
         zoo.setNome(nomeZoo.getText());
         zoo.setID(ID.getText());
+        
         if (Abre.getText().isEmpty()) { // verificação de campo vazio
             zoo.setAbre(0);
         } else {
@@ -924,14 +934,17 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         } else {
             zoo.setFecha(parseInt(Fecha.getText()));
         }
+        
         zoo.setEndereco(endereco.getText());
         zoo.setCidade(cidade.getText());
         zoo.setUF(UF.getText());
+        
         if (Valor_entrada.getText().isEmpty()) { // verificação de campo vazio
             zoo.setValor_entrada(0);
         } else {
             zoo.setValor_entrada(Float.parseFloat(Valor_entrada.getText()));
         }
+        
         zoo.setStatus(status);
 
         if (zoo.getNome().isEmpty() || zoo.getID().isEmpty() || zoo.getAbre() == 0 || zoo.getFecha() == 0 || zoo.getEndereco().isEmpty() || zoo.getCidade().isEmpty() || zoo.getUF().isEmpty() || zoo.getValor_entrada() == 0) {
@@ -985,9 +998,9 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton13ActionPerformed
 
-    private void jTextField60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField60ActionPerformed
+    private void admZoo_repetirSenha_txfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admZoo_repetirSenha_txfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField60ActionPerformed
+    }//GEN-LAST:event_admZoo_repetirSenha_txfActionPerformed
 
     private void jButtonZooActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZooActionPerformed
         jTabbedPane1.setSelectedIndex(0);
@@ -1013,6 +1026,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         jButton14.setCursor(new Cursor(Cursor.HAND_CURSOR));
         AdmSistema usuario = new AdmSistema(jTextFieldNome.getText(), jTextFieldSobrenome.getText(), jTextFieldCPF.getText(), jPasswordFieldSenha.getText(), jTextFieldEmail.getText());
         String confirmaSenha = jPasswordFieldConfirmarSenha.getText();
+        
         if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || confirmaSenha.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Os Campos Em Vermelho Devem Ser Preenchidos");
 
@@ -1034,8 +1048,8 @@ public class TelaAdmSistema extends javax.swing.JFrame {
             if (confirmaSenha.isEmpty()) {
                 jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
-            if (jTextField34.getText().isEmpty()) {
-                jTextField34.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+            if (jTextCodAdm.getText().isEmpty()) {
+                jTextCodAdm.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
         } else {
             if (usuario.getSenha().equals(confirmaSenha)) {
@@ -1056,49 +1070,49 @@ public class TelaAdmSistema extends javax.swing.JFrame {
             jTextFieldCPF.setText("");
             jPasswordFieldSenha.setText("");
             jPasswordFieldConfirmarSenha.setText("");
-            jTextField34.setText("");
+            jTextCodAdm.setText("");
             JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
         }
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        AdmZoo usuario = new AdmZoo(jTextFieldNome.getText(), jTextFieldSobrenome.getText(), jTextFieldCPF.getText(), jPasswordFieldSenha.getText(), jTextFieldEmail.getText());
-        String confirmaSenha = jPasswordFieldConfirmarSenha.getText();
+        AdmZoo usuario = new AdmZoo(admZoo_Nome_txf.getText(), admZoo_sobreNome_txf.getText(), admZoo_CPF_txf.getText(), admZoo_senha_txf.getText(), admZoo_Email_txf.getText());
+        String confirmaSenha = admZoo_repetirSenha_txf.getText();
         
-        if (!(jTextField63.getText().isEmpty())) {
-                usuario.setCodUsuZoo(parseInt(jTextField63.getText()));
-            }
         if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || confirmaSenha.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Os Campos Em Vermelho Devem Ser Preenchidos");
 
             if (usuario.getNome().isEmpty()) {
-                jTextFieldNomeUsuZoo4.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                admZoo_Nome_txf.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
             if (usuario.getSobrenome().isEmpty()) {
-                jTextField61.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                admZoo_sobreNome_txf.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
             if (usuario.getCpf().isEmpty()) {
-                jTextField57.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                admZoo_CPF_txf.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
             if (usuario.getEmail().isEmpty()) {
-                jTextField58.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                admZoo_Email_txf.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
             if (usuario.getSenha().isEmpty()) {
-                jTextField59.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                admZoo_senha_txf.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
             if (confirmaSenha.isEmpty()) {
-                jTextField60.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+                admZoo_repetirSenha_txf.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
-            if (jTextField63.getText().isEmpty()) {
-                jTextField63.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+            if (admZoo_CodZoo_txf.getText().isEmpty()) {
+                admZoo_CodZoo_txf.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
-            if (jTextField62.getText().isEmpty()) {
-                jTextField62.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+            if (admZoo_CodAdmZoo_txf.getText().isEmpty()) {
+                admZoo_CodAdmZoo_txf.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
             
         } else {
             if (usuario.getSenha().equals(confirmaSenha)) {
 
+                
+                usuario.setCodUsuZoo(parseInt(admZoo_CodZoo_txf.getText())); //Codigo de admin
+                
                 //Adição de um novo user
                 usuario.setId(InicioProg.getUserLength() + 1);
                 InicioProg.addUser(usuario);
@@ -1109,15 +1123,15 @@ public class TelaAdmSistema extends javax.swing.JFrame {
                 jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
                 return;
             }
-            jTextFieldNomeUsuZoo4.setText("");
-            jTextField61.setText("");
-            jTextField57.setText("");
-            jTextField58.setText("");
-            jTextField59.setText("");
-            jTextField60.setText("");
-            jTextField61.setText("");
-            jTextField62.setText("");
-            jTextField63.setText("");
+            admZoo_Nome_txf.setText("");
+            admZoo_sobreNome_txf.setText("");
+            admZoo_CPF_txf.setText("");
+            admZoo_Email_txf.setText("");
+            admZoo_senha_txf.setText("");
+            admZoo_repetirSenha_txf.setText("");
+            admZoo_sobreNome_txf.setText("");
+            admZoo_CodAdmZoo_txf.setText("");
+            admZoo_CodZoo_txf.setText("");
             JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
         }
     }//GEN-LAST:event_jButton16ActionPerformed
@@ -1177,6 +1191,14 @@ public class TelaAdmSistema extends javax.swing.JFrame {
     private javax.swing.JTextField UF;
     private javax.swing.JTextField UF1;
     private javax.swing.JTextField Valor_entrada;
+    private javax.swing.JTextField admZoo_CPF_txf;
+    private javax.swing.JTextField admZoo_CodAdmZoo_txf;
+    private javax.swing.JTextField admZoo_CodZoo_txf;
+    private javax.swing.JTextField admZoo_Email_txf;
+    private javax.swing.JTextField admZoo_Nome_txf;
+    private javax.swing.JTextField admZoo_repetirSenha_txf;
+    private javax.swing.JTextField admZoo_senha_txf;
+    private javax.swing.JTextField admZoo_sobreNome_txf;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField cidade;
     private javax.swing.JTextField cidade1;
@@ -1283,6 +1305,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
+    private javax.swing.JTextField jTextCodAdm;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField13;
@@ -1296,19 +1319,11 @@ public class TelaAdmSistema extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField30;
     private javax.swing.JTextField jTextField31;
     private javax.swing.JTextField jTextField32;
-    private javax.swing.JTextField jTextField34;
     private javax.swing.JTextField jTextField44;
     private javax.swing.JTextField jTextField45;
     private javax.swing.JTextField jTextField46;
     private javax.swing.JTextField jTextField47;
-    private javax.swing.JTextField jTextField57;
-    private javax.swing.JTextField jTextField58;
-    private javax.swing.JTextField jTextField59;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField60;
-    private javax.swing.JTextField jTextField61;
-    private javax.swing.JTextField jTextField62;
-    private javax.swing.JTextField jTextField63;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
@@ -1316,7 +1331,6 @@ public class TelaAdmSistema extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldNome;
     private javax.swing.JTextField jTextFieldNomeUsuZoo1;
-    private javax.swing.JTextField jTextFieldNomeUsuZoo4;
     private javax.swing.JTextField jTextFieldSobrenome;
     private javax.swing.JTextField nomeZoo;
     private javax.swing.JTextField nomeZoo1;
