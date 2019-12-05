@@ -1032,7 +1032,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
 
         jButton14.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        AdmSistema usuario = new AdmSistema(jTextFieldNome.getText(), jTextFieldSobrenome.getText(), jTextFieldCPF.getText(), jTextFieldEmail.getText(), jPasswordFieldSenha.getText());
+        AdmSistema usuario = new AdmSistema(jTextFieldNome.getText(), jTextFieldSobrenome.getText(), jTextFieldCPF.getText(), jPasswordFieldSenha.getText(), jTextFieldEmail.getText());
         String confirmaSenha = jPasswordFieldConfirmarSenha.getText();
         if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || confirmaSenha.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Os Campos Em Vermelho Devem Ser Preenchidos");
@@ -1083,9 +1083,12 @@ public class TelaAdmSistema extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        AdmZoo usuario = new AdmZoo(jTextFieldNome.getText(), jTextFieldSobrenome.getText(), jTextFieldCPF.getText(), jTextFieldEmail.getText(), jPasswordFieldSenha.getText());
+        AdmZoo usuario = new AdmZoo(jTextFieldNome.getText(), jTextFieldSobrenome.getText(), jTextFieldCPF.getText(), jPasswordFieldSenha.getText(), jTextFieldEmail.getText());
         String confirmaSenha = jPasswordFieldConfirmarSenha.getText();
-
+        
+        if (!(jTextField63.getText().isEmpty())) {
+                usuario.setCodUsuZoo(parseInt(jTextField63.getText()));
+            }
         if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || confirmaSenha.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Os Campos Em Vermelho Devem Ser Preenchidos");
 
@@ -1113,9 +1116,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
             if (jTextField62.getText().isEmpty()) {
                 jTextField62.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
-            if (!(jTextField63.getText().isEmpty())) {
-                usuario.setCodUsuZoo(parseInt(jTextField63.getText()));
-            }
+            
         } else {
             if (usuario.getSenha().equals(confirmaSenha)) {
 

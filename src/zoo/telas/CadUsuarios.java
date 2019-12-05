@@ -221,7 +221,7 @@ public class CadUsuarios extends javax.swing.JFrame {
     private void jButtonConfirmarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarCadastroActionPerformed
 
         jButtonConfirmarCadastro.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        Usuarios usuario = new Usuarios(jTextFieldNome.getText(),jTextFieldSobrenome.getText(),jTextFieldCPF.getText(),jTextFieldEmail.getText(),jPasswordFieldSenha.getText());
+        Usuarios usuario = new Usuarios(jTextFieldNome.getText(),jTextFieldSobrenome.getText(),jTextFieldCPF.getText(),jPasswordFieldSenha.getText(),jTextFieldEmail.getText());
         String confirmaSenha = jPasswordFieldConfirmarSenha.getText();
 
         if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || confirmaSenha.isEmpty()) {

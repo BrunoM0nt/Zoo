@@ -1088,10 +1088,7 @@ public class Principal extends javax.swing.JFrame {
         escolha = JOptionPane.showConfirmDialog(rootPane, "Você deseja sair?", "Sair", JOptionPane.YES_NO_OPTION, 1, new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/iCON50-50.png")));
 
         if (escolha == 0) {
-
-            InicioProg.principal.setVisible(false);
             InicioProg.login.setVisible(true);
-
             dispose();
         }
     }//GEN-LAST:event_SairActionPerformed
