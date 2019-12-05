@@ -30,6 +30,7 @@ public class CadUsuarios extends javax.swing.JFrame {
 
         //Background
         jButtonConfirmarCadastro.setBackground(new Color(0, 0, 0, 0));
+        jButtonVoltar.setBackground(new Color(0, 0, 0, 0));
 
         //Cursor
         jButtonConfirmarCadastro.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -58,12 +59,14 @@ public class CadUsuarios extends javax.swing.JFrame {
         jTextFieldSobrenome = new javax.swing.JTextField();
         jTextFieldNome = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jButtonVoltar = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonConfirmarCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/botao_confirmar_cadastro.png"))); // NOI18N
+        jButtonConfirmarCadastro.setToolTipText("Cadastrar");
         jButtonConfirmarCadastro.setBorder(null);
         jButtonConfirmarCadastro.setOpaque(false);
         jButtonConfirmarCadastro.addActionListener(new java.awt.event.ActionListener() {
@@ -71,7 +74,7 @@ public class CadUsuarios extends javax.swing.JFrame {
                 jButtonConfirmarCadastroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 70, 70));
+        getContentPane().add(jButtonConfirmarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 360, 70, 60));
 
         jPasswordFieldConfirmarSenha.setBackground(new java.awt.Color(204, 204, 204));
         jPasswordFieldConfirmarSenha.setForeground(new java.awt.Color(102, 102, 102));
@@ -82,12 +85,12 @@ public class CadUsuarios extends javax.swing.JFrame {
                 jPasswordFieldConfirmarSenhaFocusGained(evt);
             }
         });
-        getContentPane().add(jPasswordFieldConfirmarSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, 130, 30));
+        getContentPane().add(jPasswordFieldConfirmarSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 130, 30));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 102, 102));
         jLabel6.setText("Conf. Senha");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, -1, -1));
 
         jPasswordFieldSenha.setBackground(new java.awt.Color(204, 204, 204));
         jPasswordFieldSenha.setForeground(new java.awt.Color(102, 102, 102));
@@ -103,12 +106,12 @@ public class CadUsuarios extends javax.swing.JFrame {
                 jPasswordFieldSenhaActionPerformed(evt);
             }
         });
-        getContentPane().add(jPasswordFieldSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 130, 30));
+        getContentPane().add(jPasswordFieldSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 130, 30));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("Senha");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, -1, -1));
 
         jTextFieldEmail.setBackground(new java.awt.Color(204, 204, 204));
         jTextFieldEmail.setForeground(new java.awt.Color(102, 102, 102));
@@ -119,12 +122,12 @@ public class CadUsuarios extends javax.swing.JFrame {
                 jTextFieldEmailFocusGained(evt);
             }
         });
-        getContentPane().add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 130, 30));
+        getContentPane().add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 130, 30));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("Email");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, -1, -1));
 
         jTextFieldCPF.setBackground(new java.awt.Color(204, 204, 204));
         jTextFieldCPF.setForeground(new java.awt.Color(102, 102, 102));
@@ -138,17 +141,17 @@ public class CadUsuarios extends javax.swing.JFrame {
                 jTextFieldCPFFocusLost(evt);
             }
         });
-        getContentPane().add(jTextFieldCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 130, 30));
+        getContentPane().add(jTextFieldCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 130, 30));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("CPF");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Sobrenome");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, -1, -1));
 
         jTextFieldSobrenome.setBackground(new java.awt.Color(204, 204, 204));
         jTextFieldSobrenome.setForeground(new java.awt.Color(102, 102, 102));
@@ -162,7 +165,7 @@ public class CadUsuarios extends javax.swing.JFrame {
                 jTextFieldSobrenomeFocusLost(evt);
             }
         });
-        getContentPane().add(jTextFieldSobrenome, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 130, 30));
+        getContentPane().add(jTextFieldSobrenome, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 130, 30));
 
         jTextFieldNome.setBackground(new java.awt.Color(204, 204, 204));
         jTextFieldNome.setForeground(new java.awt.Color(102, 102, 102));
@@ -182,12 +185,20 @@ public class CadUsuarios extends javax.swing.JFrame {
                 jTextFieldNomeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 130, 30));
+        getContentPane().add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 130, 30));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Nome");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, -1, -1));
+
+        jButtonVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/botao_voltar.png"))); // NOI18N
+        jButtonVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVoltarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 70, 60));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(102, 102, 102));
@@ -321,6 +332,11 @@ public class CadUsuarios extends javax.swing.JFrame {
         jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.LIGHT_GRAY));
     }//GEN-LAST:event_jPasswordFieldConfirmarSenhaFocusGained
 
+    private void jButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarActionPerformed
+       InicioProg.login.setVisible(true);
+       dispose();
+    }//GEN-LAST:event_jButtonVoltarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -358,6 +374,7 @@ public class CadUsuarios extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonConfirmarCadastro;
+    private javax.swing.JButton jButtonVoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

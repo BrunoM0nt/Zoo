@@ -38,6 +38,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         jButtonAdm.setBackground(new Color(0, 0, 0, 0));
         jButtonUsu.setBackground(new Color(0, 0, 0, 0));
         jButton17.setBackground(new Color(0, 0, 0, 0));
+        jButton1.setBackground(new Color(0, 0, 0, 0));
 
         selectImg_Zoo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/Selected.png")));
         selectImg_Adm.setIcon(null);
@@ -203,6 +204,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         jTextField62 = new javax.swing.JTextField();
         jLabel74 = new javax.swing.JLabel();
         jTextField63 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         jPanelCadZoo1.setBackground(new java.awt.Color(255, 255, 255));
@@ -618,16 +620,16 @@ public class TelaAdmSistema extends javax.swing.JFrame {
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(335, Short.MAX_VALUE))
+                .addContainerGap(322, Short.MAX_VALUE))
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                    .addGap(0, 52, Short.MAX_VALUE)
+                    .addGap(0, 39, Short.MAX_VALUE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jTabbedPane3.addTab("", jPanel5);
 
-        jPanel1.add(jTabbedPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, -10, 390, -1));
+        jPanel1.add(jTabbedPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, -20, 390, 430));
 
         jButtonCadZoo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButtonCadZoo.setForeground(new java.awt.Color(0, 102, 0));
@@ -853,11 +855,19 @@ public class TelaAdmSistema extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("", jPanelCadZoo8);
 
-        jPanel3.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, -20, 370, 430));
+        jPanel3.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, -20, 370, 440));
 
         jTabbedPane1.addTab("", jPanel3);
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 570, 450));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/botao_voltar.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 60, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/tela_principal.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -1132,6 +1142,11 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton16ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        InicioProg.telaAS.setVisible(false);
+        InicioProg.principal.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1187,6 +1202,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
     private javax.swing.JTextField cidade1;
     private javax.swing.JTextField endereco;
     private javax.swing.JTextField endereco1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
