@@ -209,18 +209,11 @@ public class CadUsuarios extends javax.swing.JFrame {
 
     private void jButtonConfirmarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarCadastroActionPerformed
 
-        Usuarios usuario = new Usuarios();
-
         jButtonConfirmarCadastro.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        usuario.setNome(jTextFieldNome.getText());
-        usuario.setSobrenome(jTextFieldSobrenome.getText());
-        usuario.setCpf(jTextFieldCPF.getText());
-        usuario.setEmail(jTextFieldEmail.getText());
-        usuario.setSenha(jPasswordFieldSenha.getText());
-        usuario.setConfirmaSenha(jPasswordFieldConfirmarSenha.getText());
-        usuario.setTOKEN(0);
+        Usuarios usuario = new Usuarios(jTextFieldNome.getText(),jTextFieldSobrenome.getText(),jTextFieldCPF.getText(),jTextFieldEmail.getText(),jPasswordFieldSenha.getText());
+        String confirmaSenha = jPasswordFieldConfirmarSenha.getText();
 
-        if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || usuario.getConfirmaSenha().isEmpty()) {
+        if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || confirmaSenha.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Todos Os Campos Devem Ser Preenchidos");
 
             if (usuario.getNome().isEmpty()) {
@@ -238,11 +231,11 @@ public class CadUsuarios extends javax.swing.JFrame {
             if (usuario.getSenha().isEmpty()) {
                 jPasswordFieldSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
-            if (usuario.getConfirmaSenha().isEmpty()) {
+            if (confirmaSenha.isEmpty()) {
                 jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
         } else {
-            if (usuario.getSenha().equals(usuario.getConfirmaSenha())) {
+            if (usuario.getSenha().equals(confirmaSenha)){
 
                 //Adição de um novo user
                 usuario.setId(InicioProg.getUserLength() + 1);

@@ -5,10 +5,19 @@
  */
 package zoo.Adm;
 
-/**
- *
- * @author Pc27sala06
- */
-public class AdmSistema extends AdmZoo{
-    
+import zoo.main.InicioProg;
+import zoo.usuarios.Usuarios;
+
+public class AdmSistema extends Usuarios {
+
+    public AdmSistema() {
+        id = InicioProg.nUsr;
+        tipoUsr = 2;
+    }
+
+    public AdmSistema(String nome, String sobrenome, String cpf, String senha, String email) {
+        super(nome, sobrenome, cpf, senha, email);
+        id = InicioProg.nUsr;
+        tipoUsr = 2;
+    }
 }

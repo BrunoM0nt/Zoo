@@ -8,6 +8,7 @@ package zoo.main;
 import zoo.Adm.AdmZoo;
 import java.util.ArrayList;
 import java.util.Vector;
+import zoo.Adm.AdmSistema;
 import zoo.telas.*;
 import zoo.usuarios.Usuarios;
 import zoo.zoologicos.Zoologicos;
@@ -25,13 +26,22 @@ public class InicioProg {
     public static Login login;
     public static Principal principal;
     public static CadUsuarios cadUs;
-    public static AdmSistem AdmSist;
+    public static TelaAdmSistema telaAS;
+    public static TelaAdmZoo telaAZ;
 
     private static int connectedId = -1;
+    public static int nUsr = 0;
 
     public static void main(String[] args) {
-
+        
         inicializar();
+        AdmZoo admZoo = new AdmZoo("Regin","DonoSóDaMetade","02301700216","1234","admZ");
+        addUser(admZoo);
+        AdmSistema admSys = new AdmSistema("Regis","DonoDaPorraLoka","02301700216","1234","admS");
+        addUser(admSys);
+        Usuarios usr = new Usuarios("Regis","normal","02301700216","1234","usr");
+        addUser(usr);
+        
     }
 
     private static void inicializar() {
@@ -59,12 +69,14 @@ public class InicioProg {
         login.setVisible(true);
         principal = new Principal();
         cadUs = new CadUsuarios();
-        AdmSist = new AdmSistem();
+        telaAS = new TelaAdmSistema();
+        telaAZ = new TelaAdmZoo();
 
     }
 
     public static void addUser(Usuarios user) {
         usu.add(user);
+        nUsr++;
         listUsers.add(user.getNome() + " " + user.getSobrenome());
     }
 

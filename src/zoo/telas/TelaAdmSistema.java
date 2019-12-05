@@ -19,12 +19,12 @@ import zoo.usuarios.Usuarios;
  *
  * @author Bruno
  */
-public class AdmSistem extends javax.swing.JFrame {
+public class TelaAdmSistema extends javax.swing.JFrame {
 
     /**
      * Creates new form CadZoologicos
      */
-    public AdmSistem() {
+    public TelaAdmSistema() {
         initComponents();
 
         jTabbedPane1.setBackground(new Color(0, 0, 0, 0));
@@ -973,7 +973,7 @@ public class AdmSistem extends javax.swing.JFrame {
                 Valor_entrada.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
         } else {
-           
+
             nomeZoo.setText("");
             ID.setText("");
             Abre.setText("");
@@ -984,7 +984,7 @@ public class AdmSistem extends javax.swing.JFrame {
             Valor_entrada.setText("");
 
             JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
-           
+
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -1020,17 +1020,11 @@ public class AdmSistem extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonExcluirZooActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        AdmSistema usuario = new AdmSistema();
 
-        usuario.setNome(jTextFieldNome.getText());
-        usuario.setSobrenome(jTextFieldSobrenome.getText());
-        usuario.setCpf(jTextFieldCPF.getText());
-        usuario.setEmail(jTextFieldEmail.getText());
-        usuario.setSenha(jPasswordFieldSenha.getText());
-        usuario.setConfirmaSenha(jPasswordFieldConfirmarSenha.getText());
-        usuario.setTOKEN(2);
-
-        if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || usuario.getConfirmaSenha().isEmpty()) {
+        jButton14.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        AdmSistema usuario = new AdmSistema(jTextFieldNome.getText(), jTextFieldSobrenome.getText(), jTextFieldCPF.getText(), jTextFieldEmail.getText(), jPasswordFieldSenha.getText());
+        String confirmaSenha = jPasswordFieldConfirmarSenha.getText();
+        if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || confirmaSenha.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Os Campos Em Vermelho Devem Ser Preenchidos");
 
             if (usuario.getNome().isEmpty()) {
@@ -1048,14 +1042,14 @@ public class AdmSistem extends javax.swing.JFrame {
             if (usuario.getSenha().isEmpty()) {
                 jPasswordFieldSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
-            if (usuario.getConfirmaSenha().isEmpty()) {
+            if (confirmaSenha.isEmpty()) {
                 jPasswordFieldConfirmarSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
             if (jTextField34.getText().isEmpty()) {
                 jTextField34.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
         } else {
-            if (usuario.getSenha().equals(usuario.getConfirmaSenha())) {
+            if (usuario.getSenha().equals(confirmaSenha)) {
 
                 //Adição de um novo user
                 usuario.setId(InicioProg.getUserLength() + 1);
@@ -1079,20 +1073,10 @@ public class AdmSistem extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        AdmZoo usuario = new AdmZoo();
+        AdmZoo usuario = new AdmZoo(jTextFieldNome.getText(), jTextFieldSobrenome.getText(), jTextFieldCPF.getText(), jTextFieldEmail.getText(), jPasswordFieldSenha.getText());
+        String confirmaSenha = jPasswordFieldConfirmarSenha.getText();
 
-        usuario.setNome(jTextFieldNomeUsuZoo4.getText());
-        usuario.setSobrenome(jTextField61.getText());
-        usuario.setCpf(jTextField57.getText());
-        usuario.setEmail(jTextField58.getText());
-        usuario.setSenha(jTextField59.getText());
-        usuario.setConfirmaSenha(jTextField60.getText());
-        if (!(jTextField63.getText().isEmpty())) {
-            usuario.setCodUsuZoo(parseInt(jTextField63.getText()));
-        }
-        usuario.setTOKEN(1);
-
-        if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || usuario.getConfirmaSenha().isEmpty()) {
+        if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || confirmaSenha.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Os Campos Em Vermelho Devem Ser Preenchidos");
 
             if (usuario.getNome().isEmpty()) {
@@ -1110,7 +1094,7 @@ public class AdmSistem extends javax.swing.JFrame {
             if (usuario.getSenha().isEmpty()) {
                 jTextField59.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
-            if (usuario.getConfirmaSenha().isEmpty()) {
+            if (confirmaSenha.isEmpty()) {
                 jTextField60.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
             if (jTextField63.getText().isEmpty()) {
@@ -1119,8 +1103,11 @@ public class AdmSistem extends javax.swing.JFrame {
             if (jTextField62.getText().isEmpty()) {
                 jTextField62.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
+            if (!(jTextField63.getText().isEmpty())) {
+                usuario.setCodUsuZoo(parseInt(jTextField63.getText()));
+            }
         } else {
-            if (usuario.getSenha().equals(usuario.getConfirmaSenha())) {
+            if (usuario.getSenha().equals(confirmaSenha)) {
 
                 //Adição de um novo user
                 usuario.setId(InicioProg.getUserLength() + 1);
@@ -1162,14 +1149,18 @@ public class AdmSistem extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdmSistem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAdmSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdmSistem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAdmSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdmSistem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAdmSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdmSistem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAdmSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -1178,7 +1169,7 @@ public class AdmSistem extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdmSistem().setVisible(true);
+                new TelaAdmSistema().setVisible(true);
             }
         });
     }

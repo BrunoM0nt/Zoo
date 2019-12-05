@@ -27,7 +27,7 @@ public class Login extends javax.swing.JFrame {
      */
     //ADMindex
     int lastSelectedIndex = -1;
-    
+
     public Login() {
         initComponents();
 
@@ -40,7 +40,7 @@ public class Login extends javax.swing.JFrame {
         //Cursor
         jLabelCriarConta.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jButtonEntrar.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        
+
         //ADM
         painelUser.setVisible(false);
     }
@@ -301,7 +301,7 @@ public class Login extends javax.swing.JFrame {
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
         int aux, auxEmail = -1, auxSenha = -1, IdConnected;
-        
+
         if (loginSenha.getText().equals("") || campo_email.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Todos os campos devem ser preenchidos");
             if (loginSenha.getText().equals("")) {
@@ -309,30 +309,32 @@ public class Login extends javax.swing.JFrame {
 
             }
             if (campo_email.getText().equals("")) {
-                
+
                 campo_email.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-                
+
             }
-            
+
         } else {
-            for(aux = 0; aux < InicioProg.getUserLength(); aux++){
-                if(campo_email.getText().equals(InicioProg.getUserEmail(aux))){
+            for (aux = 0; aux < InicioProg.nUsr; aux++) {
+                if (campo_email.getText().equals(InicioProg.getUserEmail(aux))) {
                     auxEmail = aux;
                 }
-                if(loginSenha.getText().equals(InicioProg.getUserSenha(aux))){
-                    auxSenha = aux;
-                }
-        } 
-            if(auxEmail != -1 && auxSenha != -1 && auxEmail == auxSenha){
+            }
+            
+            if (loginSenha.getText().equals(InicioProg.getUserSenha(auxEmail))) {
+                        auxSenha = auxEmail;
+                    }
+            
+            if (auxEmail != -1 && auxSenha != -1 && auxEmail == auxSenha) {
                 InicioProg.login.setVisible(false);
                 IdConnected = auxEmail;
                 InicioProg.setConnectedUser(IdConnected);
                 InicioProg.principal.openWindow();
                 dispose();
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "Senha ou E-mail Incorreto!");
             }
-            
+
         }
 
     }//GEN-LAST:event_jButtonEntrarActionPerformed
@@ -342,17 +344,17 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEntrarMouseClicked
 
     private void campo_emailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campo_emailFocusGained
- campo_email.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.LIGHT_GRAY));
-    
+        campo_email.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.LIGHT_GRAY));
+
     }//GEN-LAST:event_campo_emailFocusGained
 
     private void campo_emailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campo_emailFocusLost
 
-    
+
     }//GEN-LAST:event_campo_emailFocusLost
 
     private void loginSenhaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_loginSenhaFocusGained
-loginSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.LIGHT_GRAY));
+        loginSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.LIGHT_GRAY));
     }//GEN-LAST:event_loginSenhaFocusGained
 
     private void loginSenhaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_loginSenhaFocusLost
@@ -360,49 +362,49 @@ loginSenha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.LIGHT_GRA
     }//GEN-LAST:event_loginSenhaFocusLost
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        String TOKEN;        
+        String TOKEN;
         TOKEN = JOptionPane.showInputDialog("Digite o TOKEN:");
-        if(TOKEN.equals("token")){
-            try{
-                
+        if (TOKEN.equals("token")) {
+            try {
+
                 jList.setListData(listUsers);
                 scrollPainel.setViewportView(jList);
-                painelUser.setVisible(true);                
-            }catch (Exception e){
-                
-                JOptionPane.showMessageDialog(null, "Erro!");        
-                
+                painelUser.setVisible(true);
+            } catch (Exception e) {
+
+                JOptionPane.showMessageDialog(null, "Erro!");
+
             }
-        }else{
-            
-            JOptionPane.showMessageDialog(null, "Token Incorreto!\nContate o ADM"); 
-            
+        } else {
+
+            JOptionPane.showMessageDialog(null, "Token Incorreto!\nContate o ADM");
+
         }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
-    
-    
+
+
     private void jListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListValueChanged
         //JOptionPane.showMessageDialog(null, evt);
     }//GEN-LAST:event_jListValueChanged
 
     private void jListFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jListFocusGained
-   
+
     }//GEN-LAST:event_jListFocusGained
 
     private void jListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListMouseClicked
-               if(lastSelectedIndex != jList.getSelectedIndex()){
-            try{
+        if (lastSelectedIndex != jList.getSelectedIndex()) {
+            try {
                 lastSelectedIndex = jList.getSelectedIndex();
                 login_ADM_Senha.setText(InicioProg.getUserSenha(lastSelectedIndex));
                 login_ADM_Email.setText(InicioProg.getUserEmail(lastSelectedIndex));
                 login_ADM_Cpf.setText(InicioProg.getUserCpf(lastSelectedIndex));
                 login_ADM_Id.setText(Integer.toString(InicioProg.getUserId(lastSelectedIndex)));
-            }catch(Exception e){
+            } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e);
             }
-            
+
         }
-         
+
     }//GEN-LAST:event_jListMouseClicked
 
     /**

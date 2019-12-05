@@ -1017,7 +1017,7 @@ public class Principal extends javax.swing.JFrame {
         principal_UserName.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         principal_UserName.setForeground(new java.awt.Color(255, 255, 255));
         principal_UserName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(principal_UserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 130, 20));
+        getContentPane().add(principal_UserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 180, 20));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/iconAdmin.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -1245,7 +1245,16 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_formFocusGained
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-InicioProg.AdmSist.setVisible(true);
+        if (InicioProg.usu.get(InicioProg.getConnectedUser()).getTipoUsr() == 1) {
+            InicioProg.telaAS.setVisible(false);
+            InicioProg.telaAZ.setVisible(true);
+        } else if (InicioProg.usu.get(InicioProg.getConnectedUser()).getTipoUsr() == 2) {
+            InicioProg.telaAS.setVisible(true);
+            InicioProg.telaAZ.setVisible(false);
+        }else{
+            JOptionPane.showMessageDialog(null, "Você não tem permissão para acessar estas configurações");
+        }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -1253,7 +1262,7 @@ InicioProg.AdmSist.setVisible(true);
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-      jfPainel.setSelectedIndex(4);
+        jfPainel.setSelectedIndex(4);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed

@@ -1,22 +1,35 @@
 package zoo.usuarios;
 
+import zoo.main.InicioProg;
+
 public class Usuarios {
 
-    private int id;
-    private String nome;
-    private String sobrenome;
-    private String cpf;
-    private String senha;
-    private String email;
-    private String ConfirmaSenha;
-    private int TOKEN = 0;
+    protected int id;
+    protected String nome;
+    protected String sobrenome;
+    protected String cpf;
+    protected String senha;
+    protected String email;
+    protected int tipoUsr;
 
-    public String getConfirmaSenha() {
-        return ConfirmaSenha;
+    public Usuarios(){
+        id = InicioProg.nUsr;
+        nome = "";
+        sobrenome = "";
+        cpf = "";
+        senha = "";
+        email = "";
+        tipoUsr = 0;
     }
 
-    public void setConfirmaSenha(String ConfirmaSenha) {
-        this.ConfirmaSenha = ConfirmaSenha;
+    public Usuarios(String nome, String sobrenome, String cpf, String senha, String email) {
+        id = InicioProg.nUsr;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.cpf = cpf;
+        this.senha = senha;
+        this.email = email;
+        this.tipoUsr = 0;
     }
 
     public String getEmail() {
@@ -66,13 +79,8 @@ public class Usuarios {
     public int getId() {
         return id;
     }
-
-    public int getTOKEN() {
-        return TOKEN;
-    }
-
-    public void setTOKEN(int TOKEN) {
-        this.TOKEN = TOKEN;
-    }
     
+    public int getTipoUsr(){
+        return tipoUsr;
+    }
 }
