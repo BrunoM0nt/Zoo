@@ -227,18 +227,18 @@ public class Login extends javax.swing.JFrame {
             .addGroup(painelUserLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(painelUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollPainel, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
-                    .addComponent(login_ADM_Senha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(scrollPainel)
                     .addComponent(login_ADM_Cpf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(login_ADM_Email, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(login_ADM_Id, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(login_ADM_Senha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(painelUserLayout.createSequentialGroup()
                         .addGroup(painelUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
                             .addComponent(jLabel6)
                             .addComponent(jLabel4)
                             .addComponent(jLabel8)
-                            .addComponent(jLabel9))
+                            .addComponent(jLabel9)
+                            .addComponent(login_ADM_Id, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -250,22 +250,22 @@ public class Login extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(scrollPainel, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addGap(5, 5, 5)
-                .addComponent(login_ADM_Senha, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel8)
+                .addGap(2, 2, 2)
+                .addComponent(login_ADM_Email, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(2, 2, 2)
                 .addComponent(login_ADM_Cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(login_ADM_Email, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addGap(1, 1, 1)
+                .addComponent(login_ADM_Senha, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(login_ADM_Id, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(93, 93, 93))
+                .addGap(102, 102, 102))
         );
 
         getContentPane().add(painelUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 210, 370));
@@ -313,12 +313,12 @@ public class Login extends javax.swing.JFrame {
 
         } else {
             for (aux = 0; aux < InicioProg.nUsr; aux++) {
-                if (campo_email.getText().equals(InicioProg.getUserEmail(aux))) {
+                if (campo_email.getText().equals(InicioProg.usu.get(aux).getEmail())) {
                     auxEmail = aux;
                 }
             }
 
-            if (loginSenha.getText().equals(InicioProg.getUserSenha(auxEmail))) {
+            if (loginSenha.getText().equals(InicioProg.usu.get(aux).getSenha())) {
                 auxSenha = auxEmail;
             }
 
@@ -405,10 +405,10 @@ public class Login extends javax.swing.JFrame {
         if (lastSelectedIndex != jList.getSelectedIndex()) {
             try {
                 lastSelectedIndex = jList.getSelectedIndex();
-                login_ADM_Senha.setText(InicioProg.getUserSenha(lastSelectedIndex));
-                login_ADM_Email.setText(InicioProg.getUserEmail(lastSelectedIndex));
-                login_ADM_Cpf.setText(InicioProg.getUserCpf(lastSelectedIndex));
-                login_ADM_Id.setText(Integer.toString(InicioProg.getUserId(lastSelectedIndex)));
+                login_ADM_Senha.setText(InicioProg.usu.get(lastSelectedIndex).getSenha());
+                login_ADM_Email.setText(InicioProg.usu.get(lastSelectedIndex).getEmail());
+                login_ADM_Cpf.setText(InicioProg.usu.get(lastSelectedIndex).getCpf());
+                login_ADM_Id.setText(Integer.toString(InicioProg.usu.get(lastSelectedIndex).getId()));
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e);
             }

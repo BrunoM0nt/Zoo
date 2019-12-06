@@ -43,7 +43,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         selectImg_Zoo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/Selected.png")));
         selectImg_Adm.setIcon(null);
         selectImg_Usu.setIcon(null);
-        
+
         this.setIconImage(new ImageIcon(getClass().getResource("/zoo/Imagens/iCON.png")).getImage());
 
     }
@@ -126,9 +126,9 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         cidade = new javax.swing.JTextField();
         Valor_entrada = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        Abre = new javax.swing.JTextField();
+        jText_Abre = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        Fecha = new javax.swing.JTextField();
+        jText_Fecha = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
@@ -485,14 +485,14 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("Horario Func.");
         jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 150, 20));
-        jPanel4.add(Abre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 40, 30));
+        jPanel4.add(jText_Abre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 40, 30));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(0, 102, 0));
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setText("Até");
         jPanel4.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 30, -1));
-        jPanel4.add(Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 40, 30));
+        jPanel4.add(jText_Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 40, 30));
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(0, 102, 0));
@@ -922,45 +922,70 @@ public class TelaAdmSistema extends javax.swing.JFrame {
 
         // Definindo os valores na classe Zoologicos
         zoo.setNome(nomeZoo.getText());
-        zoo.setID(ID.getText());
-        
-        if (Abre.getText().isEmpty()) { // verificação de campo vazio
-            zoo.setAbre(0);
+        if (ID.getText().isEmpty()) {
+            zoo.setID(-1);
         } else {
-            zoo.setAbre(parseInt(Abre.getText()));
+            try {
+                zoo.setID(Integer.parseInt(ID.getText()));
+            } catch (Exception e) {
+                zoo.setID(-1);
+            }
+
         }
-        if (Fecha.getText().isEmpty()) { // verificação de campo vazio
-            zoo.setFecha(0);
+
+        if (jText_Abre.getText().isEmpty()) { // verificação de campo vazio
+            zoo.setAbre(-1);
         } else {
-            zoo.setFecha(parseInt(Fecha.getText()));
+            try {
+                zoo.setAbre(parseInt(jText_Abre.getText()));
+            } catch (Exception e) {
+                zoo.setAbre(-1);
+            }
+        }
+        if (jText_Fecha.getText().isEmpty()) { // verificação de campo vazio
+            zoo.setFecha(-1);
+        } else {
+            try {
+                zoo.setFecha(parseInt(jText_Fecha.getText()));
+            } catch (Exception e) {
+                zoo.setFecha(-1);
+            }
+
         }
         
+        if (Valor_entrada.getText().isEmpty()) { // verificação de campo vazio
+            zoo.setValor_entrada(-1);
+        } else {
+            try{
+                zoo.setValor_entrada(Float.parseFloat(Valor_entrada.getText()));
+            }catch(Exception e){
+                zoo.setValor_entrada(-1);
+            }
+            
+        }
+
         zoo.setEndereco(endereco.getText());
         zoo.setCidade(cidade.getText());
         zoo.setUF(UF.getText());
+
         
-        if (Valor_entrada.getText().isEmpty()) { // verificação de campo vazio
-            zoo.setValor_entrada(0);
-        } else {
-            zoo.setValor_entrada(Float.parseFloat(Valor_entrada.getText()));
-        }
-        
+
         zoo.setStatus(status);
 
-        if (zoo.getNome().isEmpty() || zoo.getID().isEmpty() || zoo.getAbre() == 0 || zoo.getFecha() == 0 || zoo.getEndereco().isEmpty() || zoo.getCidade().isEmpty() || zoo.getUF().isEmpty() || zoo.getValor_entrada() == 0) {
+        if (zoo.getNome().isEmpty() || zoo.getID() == -1 || zoo.getAbre() == 0 || zoo.getFecha() == 0 || zoo.getEndereco().isEmpty() || zoo.getCidade().isEmpty() || zoo.getUF().isEmpty() || zoo.getValor_entrada() == 0) {
             JOptionPane.showMessageDialog(null, "Os Campos Em Vermelho Ficaram Em Branco E Devem Ser Preenchidos");
 
             if (zoo.getNome().isEmpty()) {
                 nomeZoo.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
-            if (zoo.getID().isEmpty()) {
+            if (zoo.getID() == -1) {
                 ID.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
-            if (zoo.getAbre() == 0) {
-                Abre.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+            if (zoo.getAbre() == -1) {
+                jText_Abre.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
-            if (zoo.getFecha() == 0) {
-                Fecha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
+            if (zoo.getFecha() == -1) {
+                jText_Fecha.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
             if (zoo.getEndereco().isEmpty()) {
                 endereco.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
@@ -976,10 +1001,12 @@ public class TelaAdmSistema extends javax.swing.JFrame {
             }
         } else {
 
+            InicioProg.zoos.add(zoo);
+
             nomeZoo.setText("");
             ID.setText("");
-            Abre.setText("");
-            Fecha.setText("");
+            jText_Abre.setText("");
+            jText_Fecha.setText("");
             endereco.setText("");
             cidade.setText("");
             UF.setText("");
@@ -1026,7 +1053,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         jButton14.setCursor(new Cursor(Cursor.HAND_CURSOR));
         AdmSistema usuario = new AdmSistema(jTextFieldNome.getText(), jTextFieldSobrenome.getText(), jTextFieldCPF.getText(), jPasswordFieldSenha.getText(), jTextFieldEmail.getText());
         String confirmaSenha = jPasswordFieldConfirmarSenha.getText();
-        
+
         if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || confirmaSenha.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Os Campos Em Vermelho Devem Ser Preenchidos");
 
@@ -1078,7 +1105,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         AdmZoo usuario = new AdmZoo(admZoo_Nome_txf.getText(), admZoo_sobreNome_txf.getText(), admZoo_CPF_txf.getText(), admZoo_senha_txf.getText(), admZoo_Email_txf.getText());
         String confirmaSenha = admZoo_repetirSenha_txf.getText();
-        
+
         if (usuario.getNome().isEmpty() || usuario.getSobrenome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getEmail().isEmpty() || usuario.getSenha().isEmpty() || confirmaSenha.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Os Campos Em Vermelho Devem Ser Preenchidos");
 
@@ -1106,13 +1133,12 @@ public class TelaAdmSistema extends javax.swing.JFrame {
             if (admZoo_CodAdmZoo_txf.getText().isEmpty()) {
                 admZoo_CodAdmZoo_txf.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
-            
+
         } else {
             if (usuario.getSenha().equals(confirmaSenha)) {
 
-                
                 usuario.setCodUsuZoo(parseInt(admZoo_CodZoo_txf.getText())); //Codigo de admin
-                
+
                 //Adição de um novo user
                 usuario.setId(InicioProg.getUserLength() + 1);
                 InicioProg.addUser(usuario);
@@ -1184,8 +1210,6 @@ public class TelaAdmSistema extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Abre;
-    private javax.swing.JTextField Fecha;
     private javax.swing.JTextField ID;
     private javax.swing.JTextField ID1;
     private javax.swing.JTextField UF;
@@ -1332,6 +1356,8 @@ public class TelaAdmSistema extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldNome;
     private javax.swing.JTextField jTextFieldNomeUsuZoo1;
     private javax.swing.JTextField jTextFieldSobrenome;
+    private javax.swing.JTextField jText_Abre;
+    private javax.swing.JTextField jText_Fecha;
     private javax.swing.JTextField nomeZoo;
     private javax.swing.JTextField nomeZoo1;
     private javax.swing.JLabel selectImg_Adm;

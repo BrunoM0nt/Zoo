@@ -6,6 +6,7 @@
 package zoo.zoologicos;
 
 import java.util.ArrayList;
+import zoo.main.InicioProg;
 /**
  *
  * @author Pc27sala06
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 public class Zoologicos {
 
     private String Nome;
-    private String ID;
+    private int ID;
     private int Abre;
     private int Fecha;
     private String Endereco;
@@ -24,12 +25,18 @@ public class Zoologicos {
     private int Qtd_tour;
 
     ArrayList<Animais> listaAnimais = new ArrayList();
+    
+    public Zoologicos(){
+        ID = InicioProg.nZoo + 1;
+    }
 
+    
+    
     public String getNome(){
         return Nome;
     }
     
-    public String getID() {
+    public int getID() {
         return ID;
     }
 
@@ -65,7 +72,7 @@ public class Zoologicos {
         this.Nome = Nome;
     }
 
-    public void setID(String ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
 
