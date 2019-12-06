@@ -45,7 +45,14 @@ public class InicioProg {
         addUser(admSys);
         Usuarios usr = new Usuarios("USUARIO", "NORMAL", "12312312311", "1234", "usr");
         addUser(usr);
-
+        Zoologicos zoo = new Zoologicos("Abc", "aa", 1, 1, "A", "b", "c", 1);
+        addZoo(zoo);
+        zoo = new Zoologicos("Rdscq", "aa", 1, 1, "A", "b", "c", 1);
+        addZoo(zoo);
+        zoo = new Zoologicos("Oasko", "aa", 1, 1, "A", "b", "c", 1);
+        addZoo(zoo);
+        zoo = new Zoologicos("Asko", "aa", 1, 1, "A", "b", "c", 1);
+        addZoo(zoo);
     }
 
     private static void inicializar() {

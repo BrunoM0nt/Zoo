@@ -26,6 +26,21 @@ public class Zoologicos {
 
     ArrayList<Animais> listaAnimais = new ArrayList();
     
+    public Zoologicos(){
+        
+    }
+
+    public Zoologicos(String Nome, String ID, int Abre, int Fecha, String Endereco, String Cidade, String UF, float Valor_entrada) {
+        this.Nome = Nome;
+        this.ID = ID;
+        this.Abre = Abre;
+        this.Fecha = Fecha;
+        this.Endereco = Endereco;
+        this.Cidade = Cidade;
+        this.UF = UF;
+        this.Valor_entrada = Valor_entrada;
+    }
+    
     
     public String getNome(){
         return Nome;
