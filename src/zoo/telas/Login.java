@@ -339,6 +339,7 @@ public class Login extends javax.swing.JFrame {
                         break;
                 }
                 
+                painelUser.setVisible(false);
                 InicioProg.principal.openWindow();
                 dispose();
             } else {

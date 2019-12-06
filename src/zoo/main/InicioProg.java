@@ -45,13 +45,13 @@ public class InicioProg {
         addUser(admSys);
         Usuarios usr = new Usuarios("USUARIO", "NORMAL", "12312312311", "1234", "usr");
         addUser(usr);
-        Zoologicos zoo = new Zoologicos("Abc", "aa", 1, 1, "A", "b", "c", 1);
+        Zoologicos zoo = new Zoologicos("Borby Zoo", 1, 1, "Eu n sei", "Ananindeua", "PA", 1);
         addZoo(zoo);
-        zoo = new Zoologicos("Rdscq", "aa", 1, 1, "A", "b", "c", 1);
+        zoo = new Zoologicos("Ronluy Zoo", 1, 1, "Nunca Vi", "Belem", "PA", 1);
         addZoo(zoo);
-        zoo = new Zoologicos("Oasko", "aa", 1, 1, "A", "b", "c", 1);
+        zoo = new Zoologicos("Oasko Zoo", 1, 1, "N faço ideia", "Sao Paulo", "SP", 1);
         addZoo(zoo);
-        zoo = new Zoologicos("Asko", "aa", 1, 1, "A", "b", "c", 1);
+        zoo = new Zoologicos("Arag Zoo", 1, 1, "Olha no mapa q tu descobre", "Belo Horizonte", "BH", 1);
         addZoo(zoo);
     }
 
@@ -83,10 +83,6 @@ public class InicioProg {
     public static void addUser(Usuarios user) {
         usu.add(user);
         listUsers.add(user.getNome() + " " + user.getSobrenome());
-    }
-
-    public static int getUserLength() {
-        return usu.size();
     }
 
     public static int getConnectedUser() {

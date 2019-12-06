@@ -118,13 +118,11 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         nomeZoo = new javax.swing.JTextField();
-        ID = new javax.swing.JTextField();
         endereco = new javax.swing.JTextField();
         UF = new javax.swing.JTextField();
         cidade = new javax.swing.JTextField();
@@ -453,35 +451,29 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         jLabel6.setText("Nome ");
         jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel7.setText("Código ");
-        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
-
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 102, 0));
         jLabel8.setText("Endereço ");
-        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 102, 0));
         jLabel14.setText("Estado ");
-        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
+        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(0, 102, 0));
         jLabel15.setText("Cidade ");
-        jPanel4.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
+        jPanel4.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(0, 102, 0));
         jLabel16.setText("Valor de Entrada : R$");
         jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, -1, 30));
         jPanel4.add(nomeZoo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 270, -1));
-        jPanel4.add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 120, -1));
-        jPanel4.add(endereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 270, -1));
-        jPanel4.add(UF, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 120, -1));
-        jPanel4.add(cidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 120, -1));
+        jPanel4.add(endereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 270, -1));
+        jPanel4.add(UF, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 120, -1));
+        jPanel4.add(cidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 120, -1));
         jPanel4.add(Valor_entrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 50, 30));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -926,7 +918,6 @@ public class TelaAdmSistema extends javax.swing.JFrame {
 
         // Definindo os valores na classe Zoologicos
         zoo.setNome(nomeZoo.getText());
-        zoo.setID(ID.getText());
 
         if (jText_Abre.getText().isEmpty()) { // verificação de campo vazio
             zoo.setAbre(-1);
@@ -967,14 +958,11 @@ public class TelaAdmSistema extends javax.swing.JFrame {
 
         zoo.setStatus(status);
 
-        if (zoo.getNome().isEmpty() || zoo.getID().isEmpty() || zoo.getAbre() == 0 || zoo.getFecha() == 0 || zoo.getEndereco().isEmpty() || zoo.getCidade().isEmpty() || zoo.getUF().isEmpty() || zoo.getValor_entrada() == 0) {
+        if (zoo.getNome().isEmpty() || zoo.getAbre() == 0 || zoo.getFecha() == 0 || zoo.getEndereco().isEmpty() || zoo.getCidade().isEmpty() || zoo.getUF().isEmpty() || zoo.getValor_entrada() == 0) {
             JOptionPane.showMessageDialog(null, "Os Campos Em Vermelho Ficaram Em Branco E Devem Ser Preenchidos");
 
             if (zoo.getNome().isEmpty()) {
                 nomeZoo.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
-            }
-            if (zoo.getID().isEmpty()) {
-                ID.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
             if (zoo.getAbre() == -1) {
                 jText_Abre.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
@@ -999,7 +987,6 @@ public class TelaAdmSistema extends javax.swing.JFrame {
             InicioProg.addZoo(zoo);
             
             nomeZoo.setText("");
-            ID.setText("");
             jText_Abre.setText("");
             jText_Fecha.setText("");
             endereco.setText("");
@@ -1077,7 +1064,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
             if (usuario.getSenha().equals(confirmaSenha)) {
 
                 //Adição de um novo user
-                usuario.setId(InicioProg.getUserLength() + 1);
+                usuario.setId(InicioProg.usu.size() + 1);
                 InicioProg.addUser(usuario);
 
             } else {
@@ -1135,7 +1122,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
                 usuario.setCodUsuZoo(parseInt(admZoo_CodZoo_txf.getText())); //Codigo de admin
 
                 //Adição de um novo user
-                usuario.setId(InicioProg.getUserLength() + 1);
+                usuario.setId(InicioProg.usu.size() + 1);
                 InicioProg.addUser(usuario);
 
             } else {
@@ -1205,7 +1192,6 @@ public class TelaAdmSistema extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField ID;
     private javax.swing.JTextField ID1;
     private javax.swing.JTextField UF;
     private javax.swing.JTextField UF1;
@@ -1300,7 +1286,6 @@ public class TelaAdmSistema extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel69;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;

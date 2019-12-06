@@ -14,7 +14,7 @@ import zoo.main.InicioProg;
 public class Zoologicos {
 
     private String Nome;
-    private String ID;
+    private int Id;
     private int Abre;
     private int Fecha;
     private String Endereco;
@@ -27,18 +27,18 @@ public class Zoologicos {
     ArrayList<Animais> listaAnimais = new ArrayList();
     
     public Zoologicos(){
-        
+        this.Id = InicioProg.zoos.size();
     }
 
-    public Zoologicos(String Nome, String ID, int Abre, int Fecha, String Endereco, String Cidade, String UF, float Valor_entrada) {
+    public Zoologicos(String Nome, int Abre, int Fecha, String Endereco, String Cidade, String UF, float Valor_entrada) {
         this.Nome = Nome;
-        this.ID = ID;
         this.Abre = Abre;
         this.Fecha = Fecha;
         this.Endereco = Endereco;
         this.Cidade = Cidade;
         this.UF = UF;
         this.Valor_entrada = Valor_entrada;
+        this.Id = InicioProg.zoos.size();
     }
     
     
@@ -46,8 +46,8 @@ public class Zoologicos {
         return Nome;
     }
     
-    public String getID() {
-        return ID;
+    public int getId() {
+        return Id;
     }
 
     public int getAbre() {
@@ -80,10 +80,6 @@ public class Zoologicos {
 
     public void setNome(String Nome) {
         this.Nome = Nome;
-    }
-
-    public void setID(String ID) {
-        this.ID = ID;
     }
 
     public void setAbre(int Abre) {

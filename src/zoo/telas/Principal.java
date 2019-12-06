@@ -10,9 +10,9 @@ import java.awt.Cursor;
 import java.util.Vector;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.border.*;
 import zoo.main.InicioProg;
-import static zoo.main.InicioProg.listUsers;
 import static zoo.main.InicioProg.listZoos;
 
 /**
@@ -24,6 +24,9 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form principal
      */
+    int z = 0;
+    int[] allIds;
+
     public Principal() {
         //Borda default Pesquisa de Zoo
         CompoundBorder innerCompound = null;
@@ -77,6 +80,7 @@ public class Principal extends javax.swing.JFrame {
         jLabelAlterarSenha.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jLabelAlterarImagem.setCursor(new Cursor(Cursor.HAND_CURSOR));
         Sair.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
     }
 
     /**
@@ -721,7 +725,16 @@ public class Principal extends javax.swing.JFrame {
 
         principal_ScrollPaneZoo.setBackground(new java.awt.Color(255, 255, 255));
 
-        principal_ZooLists.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        principal_ZooLists.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { " " };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        principal_ZooLists.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                principal_ZooListsMouseClicked(evt);
+            }
+        });
         principal_ScrollPaneZoo.setViewportView(principal_ZooLists);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -758,7 +771,7 @@ public class Principal extends javax.swing.JFrame {
                                                 .addComponent(zoo_locateByCityTbx, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(zoo_locateByUfCity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 274, Short.MAX_VALUE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())))
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel6Layout.createSequentialGroup()
@@ -1110,25 +1123,26 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_zoo_LocateByUfTbxKeyTyped
 
     private void zoo_locateByZooActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zoo_locateByZooActionPerformed
-        int x = 0, y = 0;
+        int x = 0, y = 0, z = 0;
 
         Vector auxVector = new Vector();
-        Vector id = new Vector();
-        int z = 0;
+        allIds = new int[InicioProg.zoos.size()];
 
         if (!(zoo_locateByZooTbx.getText().isEmpty())) {
-            for (x = 0; x < InicioProg.listZoos.size(); x++) {
+            
+            for (x = 0; x < InicioProg.zoos.size(); x++) {
 
                 if (zoo_locateByZooTbx.getText().equals(InicioProg.listZoos.get(x).toString())) {
-
                     auxVector.add(InicioProg.listZoos.get(x));
                     principal_ZooLists.setListData(auxVector);
                     principal_ScrollPaneZoo.setViewportView(principal_ZooLists);
+                    allIds[0] = InicioProg.zoos.get(x).getId();
                     return;
 
                 } else if (zoo_locateByZooTbx.getText().charAt(0) == InicioProg.listZoos.get(x).toString().charAt(0)) {
-
                     auxVector.add(InicioProg.listZoos.get(x));
+                    allIds[z] = InicioProg.zoos.get(x).getId();
+                    z++;
 
                 }
             }
@@ -1136,7 +1150,10 @@ public class Principal extends javax.swing.JFrame {
             principal_ScrollPaneZoo.setViewportView(principal_ZooLists);
 
         } else {
-
+            for (x = 0; x < InicioProg.listZoos.size(); x++) {
+                allIds[z] = InicioProg.zoos.get(x).getId();
+                z++;
+            }
             principal_ZooLists.setListData(InicioProg.listZoos);
             principal_ScrollPaneZoo.setViewportView(principal_ZooLists);
 
@@ -1182,9 +1199,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_perfil_EmailTbxActionPerformed
 
     private void zoo_locateByUfCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zoo_locateByUfCityActionPerformed
-        if (!(zoo_LocateByUfTbx.getText().isEmpty())) {
-            JOptionPane.showMessageDialog(null, zoo_LocateByUfTbx.getText().charAt(0) + " and " + InicioProg.listZoos.get(0).toString().charAt(0));
-        }
+        
     }//GEN-LAST:event_zoo_locateByUfCityActionPerformed
 
     private void principal_PesquisaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_principal_PesquisaBtnActionPerformed
@@ -1310,6 +1325,17 @@ public class Principal extends javax.swing.JFrame {
     private void btnPrincipalFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnPrincipalFocusGained
         // TODO add your handling code here:
     }//GEN-LAST:event_btnPrincipalFocusGained
+
+    private void principal_ZooListsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_principal_ZooListsMouseClicked
+        try{
+            JOptionPane.showMessageDialog(null, "Nome: " + InicioProg.zoos.get(allIds[principal_ZooLists.getSelectedIndex()]).getNome() + 
+                    "\nCidade: " + InicioProg.zoos.get(allIds[principal_ZooLists.getSelectedIndex()]).getCidade() +
+                    "\nRua: " + InicioProg.zoos.get(allIds[principal_ZooLists.getSelectedIndex()]).getEndereco());
+        }catch(Exception e){
+            
+        }
+        
+    }//GEN-LAST:event_principal_ZooListsMouseClicked
 
     public void openWindow() {
         InicioProg.principal.setVisible(true);
