@@ -24,6 +24,10 @@ public class TelaAdmSistema extends javax.swing.JFrame {
     /**
      * Creates new form CadZoologicos
      */
+    
+    //ZooIndex
+    int lastSelectedIndex = -1;
+    
     public TelaAdmSistema() {
         initComponents();
 
@@ -992,8 +996,8 @@ public class TelaAdmSistema extends javax.swing.JFrame {
             }
         } else {
 
-            InicioProg.zoos.add(zoo);
-            JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
+            InicioProg.addZoo(zoo);
+            
             nomeZoo.setText("");
             ID.setText("");
             jText_Abre.setText("");

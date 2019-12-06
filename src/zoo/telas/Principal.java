@@ -7,10 +7,12 @@ package zoo.telas;
 
 import java.awt.Color;
 import java.awt.Cursor;
+import java.util.Vector;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.border.*;
 import zoo.main.InicioProg;
+import static zoo.main.InicioProg.listUsers;
 import static zoo.main.InicioProg.listZoos;
 
 /**
@@ -154,7 +156,8 @@ public class Principal extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         zoo_locateByUfCity = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jScrollPane = new javax.swing.JScrollPane();
+        principal_ScrollPaneZoo = new javax.swing.JScrollPane();
+        principal_ZooLists = new javax.swing.JList();
         jPanelZoo = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabelAlterarImagem = new javax.swing.JLabel();
@@ -716,7 +719,9 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jScrollPane.setBackground(new java.awt.Color(255, 255, 255));
+        principal_ScrollPaneZoo.setBackground(new java.awt.Color(255, 255, 255));
+
+        principal_ScrollPaneZoo.setViewportView(principal_ZooLists);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -731,7 +736,7 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jLabel14))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane)
+                            .addComponent(principal_ScrollPaneZoo)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel6Layout.createSequentialGroup()
@@ -782,7 +787,7 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(zoo_locateByCityTbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(zoo_locateByUfCity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                .addComponent(principal_ScrollPaneZoo, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1104,7 +1109,34 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_zoo_LocateByUfTbxKeyTyped
 
     private void zoo_locateByZooActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zoo_locateByZooActionPerformed
-        
+        int x = 0, y = 0;
+
+        Vector auxVector = new Vector();
+        Vector id = new Vector();
+        int z = 0;
+
+        if (!(zoo_locateByZooTbx.getText().isEmpty())) {
+            for (x = 0; x <= zoo_locateByZoo.getText().length(); x++) {
+
+                for (y = 0; y < InicioProg.listZoos.size(); y++) {
+
+                    if (zoo_locateByZooTbx.getText().charAt(x) == InicioProg.listZoos.get(y).toString().charAt(x)) {
+
+                        auxVector.add(InicioProg.listZoos.get(y));
+                    }
+                }
+            }
+            principal_ZooLists.setListData(auxVector);
+            principal_ScrollPaneZoo.setViewportView(principal_ZooLists);
+
+        } else {
+
+            principal_ZooLists.setListData(InicioProg.listZoos);
+            principal_ScrollPaneZoo.setViewportView(principal_ZooLists);
+
+        }
+
+
     }//GEN-LAST:event_zoo_locateByZooActionPerformed
 
     private void botaoDenunciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDenunciaActionPerformed
@@ -1144,7 +1176,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_perfil_EmailTbxActionPerformed
 
     private void zoo_locateByUfCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zoo_locateByUfCityActionPerformed
-        // TODO add your handling code here:
+        if(!(zoo_LocateByUfTbx.getText().isEmpty()))
+        JOptionPane.showMessageDialog(null, zoo_LocateByUfTbx.getText().charAt(0) + " and " + InicioProg.listZoos.get(0).toString().charAt(0));
     }//GEN-LAST:event_zoo_locateByUfCityActionPerformed
 
     private void principal_PesquisaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_principal_PesquisaBtnActionPerformed
@@ -1405,7 +1438,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelZoo;
     private javax.swing.JPanel jPanelZoo1;
     private javax.swing.JPanel jPanelZoo2;
-    private javax.swing.JScrollPane jScrollPane;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
@@ -1423,7 +1455,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton perfil_NomeBtn;
     private javax.swing.JTextField perfil_NomeTbx;
     private javax.swing.JButton principal_PesquisaBtn;
+    private javax.swing.JScrollPane principal_ScrollPaneZoo;
     private javax.swing.JLabel principal_UserName;
+    private javax.swing.JList principal_ZooLists;
     private javax.swing.JTextField principal_locateByZooTbx;
     private javax.swing.JLabel selectImg_Perfil;
     private javax.swing.JLabel selectImg_Principal;
