@@ -24,10 +24,9 @@ public class TelaAdmSistema extends javax.swing.JFrame {
     /**
      * Creates new form CadZoologicos
      */
-    
     //ZooIndex
     int lastSelectedIndex = -1;
-    
+
     public TelaAdmSistema() {
         initComponents();
 
@@ -43,6 +42,9 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         jButtonUsu.setBackground(new Color(0, 0, 0, 0));
         jButton17.setBackground(new Color(0, 0, 0, 0));
         jButton1.setBackground(new Color(0, 0, 0, 0));
+        jButton14.setBackground(new Color(0, 0, 0, 0));
+        jButton3.setBackground(new Color(0, 0, 0, 0));
+        jButton16.setBackground(new Color(0, 0, 0, 0));
 
         selectImg_Zoo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/Selected.png")));
         selectImg_Adm.setIcon(null);
@@ -50,6 +52,12 @@ public class TelaAdmSistema extends javax.swing.JFrame {
 
         this.setIconImage(new ImageIcon(getClass().getResource("/zoo/Imagens/iCON.png")).getImage());
 
+        jButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jButton3.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jButton14.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jButton16.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jButtonCadZoo.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jButtonExcluirZoo.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
 
     /**
@@ -546,12 +554,13 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 102, 0));
         jButton3.setText("Cadastrar");
+        jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 120, 70));
+        jPanel4.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 90, 40));
 
         jTabbedPane3.addTab("", jPanel4);
 
@@ -619,7 +628,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
                 jButtonCadZooActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonCadZoo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 150, -1));
+        jPanel1.add(jButtonCadZoo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 160, -1));
 
         jButtonExcluirZoo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButtonExcluirZoo.setForeground(new java.awt.Color(0, 102, 0));
@@ -692,7 +701,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
                 jButtonCadAdmSistemaActionPerformed(evt);
             }
         });
-        jPanel3.add(jButtonCadAdmSistema, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 170, -1));
+        jPanel3.add(jButtonCadAdmSistema, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 150, -1));
 
         jButtonCadAdmZoo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButtonCadAdmZoo.setForeground(new java.awt.Color(0, 102, 0));
@@ -702,7 +711,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
                 jButtonCadAdmZooActionPerformed(evt);
             }
         });
-        jPanel3.add(jButtonCadAdmZoo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 170, -1));
+        jPanel3.add(jButtonCadAdmZoo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 130, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 102, 0));
@@ -744,13 +753,15 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         jPanelCadZoo6.add(jPasswordFieldSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 220, -1));
         jPanelCadZoo6.add(jPasswordFieldConfirmarSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 220, -1));
 
+        jButton14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton14.setForeground(new java.awt.Color(0, 102, 0));
         jButton14.setText("Cadastrar");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton14ActionPerformed(evt);
             }
         });
-        jPanelCadZoo6.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, -1, -1));
+        jPanelCadZoo6.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 100, 30));
         jPanelCadZoo6.add(jTextFieldSobrenome, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 220, -1));
 
         jLabel39.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -807,13 +818,15 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         });
         jPanelCadZoo8.add(admZoo_repetirSenha_txf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 220, -1));
 
+        jButton16.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton16.setForeground(new java.awt.Color(0, 102, 0));
         jButton16.setText("Cadastrar");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton16ActionPerformed(evt);
             }
         });
-        jPanelCadZoo8.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, -1, -1));
+        jPanelCadZoo8.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, -1, -1));
         jPanelCadZoo8.add(admZoo_sobreNome_txf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 220, -1));
 
         jLabel45.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -835,7 +848,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("", jPanelCadZoo8);
 
-        jPanel3.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 370, 410));
+        jPanel3.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 380, 400));
 
         jTabbedPane1.addTab("", jPanel3);
 
@@ -938,23 +951,21 @@ public class TelaAdmSistema extends javax.swing.JFrame {
             }
 
         }
-        
+
         if (Valor_entrada.getText().isEmpty()) { // verificação de campo vazio
             zoo.setValor_entrada(-1);
         } else {
-            try{
+            try {
                 zoo.setValor_entrada(Float.parseFloat(Valor_entrada.getText()));
-            }catch(Exception e){
+            } catch (Exception e) {
                 zoo.setValor_entrada(-1);
             }
-            
+
         }
 
         zoo.setEndereco(endereco.getText());
         zoo.setCidade(cidade.getText());
         zoo.setUF(UF.getText());
-
-        
 
         zoo.setStatus(status);
 
@@ -985,7 +996,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         } else {
 
             InicioProg.addZoo(zoo);
-            
+
             nomeZoo.setText("");
             jText_Abre.setText("");
             jText_Fecha.setText("");

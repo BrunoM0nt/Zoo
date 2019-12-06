@@ -79,6 +79,7 @@ public class Principal extends javax.swing.JFrame {
         perfil_CpfBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jLabelAlterarSenha.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jLabelAlterarImagem.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jConfig.setCursor(new Cursor(Cursor.HAND_CURSOR));
         Sair.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
     }

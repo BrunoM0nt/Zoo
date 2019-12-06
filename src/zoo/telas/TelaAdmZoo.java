@@ -65,6 +65,11 @@ public class TelaAdmZoo extends javax.swing.JFrame {
         selectImg_Zoo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/Selected.png")));
         selectImg_Zoo2.setIcon(null);
         selectImg_Zoo3.setIcon(null);
+        
+        
+        jButton6.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jButton13.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jButton14.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
 
     /**
