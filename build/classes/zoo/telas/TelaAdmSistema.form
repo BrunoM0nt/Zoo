@@ -1608,7 +1608,7 @@
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                         <TitledBorder title="Cadastro de Administrador">
-                          <Font PropertyName="font" name="Tahoma" size="11" style="1"/>
+                          <Font PropertyName="font" name="Tahoma" size="12" style="1"/>
                           <Color PropertyName="color" blue="0" green="66" red="0" type="rgb"/>
                         </TitledBorder>
                       </Border>
@@ -1813,7 +1813,7 @@
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                         <TitledBorder title="Cadastro de Administrador de Zool&#xf3;gico">
-                          <Font PropertyName="font" name="Tahoma" size="11" style="1"/>
+                          <Font PropertyName="font" name="Tahoma" size="12" style="1"/>
                           <Color PropertyName="color" blue="0" green="66" red="0" type="rgb"/>
                         </TitledBorder>
                       </Border>

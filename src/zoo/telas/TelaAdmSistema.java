@@ -428,10 +428,10 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         getContentPane().add(selectImg_Usu, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 290, 270, 50));
 
         jTabbedPane1.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jTabbedPane1AncestorAdded(evt);
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -714,7 +714,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         jPanelCadZoo6.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelCadZoo6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro de Administrador", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(0, 102, 0))); // NOI18N
+        jPanelCadZoo6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro de Administrador", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(0, 102, 0))); // NOI18N
         jPanelCadZoo6.setForeground(new java.awt.Color(0, 102, 0));
         jPanelCadZoo6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -771,7 +771,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         jTabbedPane2.addTab("", jPanelCadZoo6);
 
         jPanelCadZoo8.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelCadZoo8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro de Administrador de Zoológico", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(0, 102, 0))); // NOI18N
+        jPanelCadZoo8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro de Administrador de Zoológico", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(0, 102, 0))); // NOI18N
         jPanelCadZoo8.setForeground(new java.awt.Color(0, 102, 0));
         jPanelCadZoo8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
