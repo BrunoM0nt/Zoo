@@ -312,13 +312,13 @@ public class Login extends javax.swing.JFrame {
             }
 
         } else {
-            for (aux = 0; aux < InicioProg.nUsr; aux++) {
+            for (aux = 0; aux < InicioProg.usu.size(); aux++) {
                 if (campo_email.getText().equals(InicioProg.usu.get(aux).getEmail())) {
                     auxEmail = aux;
                 }
             }
 
-            if (loginSenha.getText().equals(InicioProg.usu.get(aux).getSenha())) {
+            if (loginSenha.getText().equals(InicioProg.usu.get(auxEmail).getSenha())) {
                 auxSenha = auxEmail;
             }
 

@@ -3,13 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/rgnwld/Documentos/NetBeanProjects/Zoo/src/zoo/Adm/AdmZoo.java</file>
-            <file>file:/home/rgnwld/Documentos/NetBeanProjects/Zoo/src/zoo/main/InicioProg.java</file>
-            <file>file:/home/rgnwld/Documentos/NetBeanProjects/Zoo/src/zoo/telas/Login.java</file>
-            <file>file:/home/rgnwld/Documentos/NetBeanProjects/Zoo/src/zoo/telas/TelaAdmSistema.java</file>
-            <file>file:/home/rgnwld/Documentos/NetBeanProjects/Zoo/src/zoo/Adm/AdmSistema.java</file>
-            <file>file:/home/rgnwld/Documentos/NetBeanProjects/Zoo/src/zoo/telas/Principal.java</file>
-            <file>file:/home/rgnwld/Documentos/NetBeanProjects/Zoo/src/zoo/telas/CadUsuarios.java</file>
+            <file>file:/C:/Yau_Desktop/Desktop/NetBeans/Zoo/src/zoo/telas/Login.java</file>
+            <file>file:/C:/Yau_Desktop/Desktop/NetBeans/Zoo/src/zoo/telas/Principal.java</file>
+            <file>file:/C:/Yau_Desktop/Desktop/NetBeans/Zoo/src/zoo/zoologicos/Zoologicos.java</file>
+            <file>file:/C:/Yau_Desktop/Desktop/NetBeans/Zoo/src/zoo/main/InicioProg.java</file>
+            <file>file:/C:/Yau_Desktop/Desktop/NetBeans/Zoo/src/zoo/telas/TelaAdmSistema.java</file>
+            <file>file:/C:/Yau_Desktop/Desktop/NetBeans/Zoo/src/zoo/usuarios/Usuarios.java</file>
+            <file>file:/C:/Yau_Desktop/Desktop/NetBeans/Zoo/src/zoo/telas/CadUsuarios.java</file>
+            <file>file:/C:/Yau_Desktop/Desktop/NetBeans/Zoo/src/zoo/Adm/AdmSistema.java</file>
+            <file>file:/C:/Yau_Desktop/Desktop/NetBeans/Zoo/src/zoo/Adm/AdmZoo.java</file>
         </group>
     </open-files>
 </project-private>

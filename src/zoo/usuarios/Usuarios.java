@@ -13,7 +13,7 @@ public class Usuarios {
     protected int tipoUsr;
 
     public Usuarios(){
-        id = InicioProg.nUsr;
+        id = InicioProg.usu.size();
         nome = "";
         sobrenome = "";
         cpf = "";
@@ -23,7 +23,7 @@ public class Usuarios {
     }
 
     public Usuarios(String nome, String sobrenome, String cpf, String senha, String email) {
-        id = InicioProg.nUsr;
+        id = InicioProg.usu.size();
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.cpf = cpf;

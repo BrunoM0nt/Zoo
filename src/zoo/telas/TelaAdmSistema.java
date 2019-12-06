@@ -922,16 +922,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
 
         // Definindo os valores na classe Zoologicos
         zoo.setNome(nomeZoo.getText());
-        if (ID.getText().isEmpty()) {
-            zoo.setID(-1);
-        } else {
-            try {
-                zoo.setID(Integer.parseInt(ID.getText()));
-            } catch (Exception e) {
-                zoo.setID(-1);
-            }
-
-        }
+        zoo.setID(ID.getText());
 
         if (jText_Abre.getText().isEmpty()) { // verificação de campo vazio
             zoo.setAbre(-1);
@@ -972,13 +963,13 @@ public class TelaAdmSistema extends javax.swing.JFrame {
 
         zoo.setStatus(status);
 
-        if (zoo.getNome().isEmpty() || zoo.getID() == -1 || zoo.getAbre() == 0 || zoo.getFecha() == 0 || zoo.getEndereco().isEmpty() || zoo.getCidade().isEmpty() || zoo.getUF().isEmpty() || zoo.getValor_entrada() == 0) {
+        if (zoo.getNome().isEmpty() || zoo.getID().isEmpty() || zoo.getAbre() == 0 || zoo.getFecha() == 0 || zoo.getEndereco().isEmpty() || zoo.getCidade().isEmpty() || zoo.getUF().isEmpty() || zoo.getValor_entrada() == 0) {
             JOptionPane.showMessageDialog(null, "Os Campos Em Vermelho Ficaram Em Branco E Devem Ser Preenchidos");
 
             if (zoo.getNome().isEmpty()) {
                 nomeZoo.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
-            if (zoo.getID() == -1) {
+            if (zoo.getID().isEmpty()) {
                 ID.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
             if (zoo.getAbre() == -1) {
@@ -1002,7 +993,7 @@ public class TelaAdmSistema extends javax.swing.JFrame {
         } else {
 
             InicioProg.zoos.add(zoo);
-
+            JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
             nomeZoo.setText("");
             ID.setText("");
             jText_Abre.setText("");

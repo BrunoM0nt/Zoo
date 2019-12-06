@@ -23,9 +23,7 @@ public class InicioProg {
     public static Vector listUsers = new Vector();
     public static ArrayList<Zoologicos> zoos = new ArrayList<>();
     public static Vector listZoos = new Vector();
-    public static int nUsr = 0;
-    public static int nZoo = 0;
-    
+   
     public static Login login;
     public static Principal principal;
     public static CadUsuarios cadUs;
@@ -75,7 +73,6 @@ public class InicioProg {
     //Configurações de USUARIO {
     public static void addUser(Usuarios user) {
         usu.add(user);
-        nUsr++;
         listUsers.add(user.getNome() + " " + user.getSobrenome());
     }
 
@@ -104,10 +101,7 @@ public class InicioProg {
     //Configurações de ZOOS {
     public static void addZoo(Zoologicos zoo) {
         zoos.add(zoo);
-        nZoo++;
         listZoos.add(zoo.getNome());
     }
-    
-   
     //Fim das configurações de ZOOS }
 }

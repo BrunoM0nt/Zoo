@@ -13,13 +13,13 @@ public class AdmSistema extends Usuarios {
     private int CodAdmSys;
     
     public AdmSistema() {
-        id = InicioProg.nUsr;
+        id = InicioProg.usu.size();
         tipoUsr = 2;
     }
 
     public AdmSistema(String nome, String sobrenome, String cpf, String senha, String email) {
         super(nome, sobrenome, cpf, senha, email);
-        id = InicioProg.nUsr;
+        id = InicioProg.usu.size();
         tipoUsr = 2;
     }
 

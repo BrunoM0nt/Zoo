@@ -250,7 +250,7 @@ public class CadUsuarios extends javax.swing.JFrame {
             if (usuario.getSenha().equals(confirmaSenha)){
 
                 //Adição de um novo user
-                usuario.setId(InicioProg.getUserLength() + 1);
+                usuario.setId(InicioProg.getUserLength());
                 InicioProg.addUser(usuario);
                 InicioProg.cadUs.setVisible(false);
 

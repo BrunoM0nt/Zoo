@@ -155,7 +155,6 @@ public class Principal extends javax.swing.JFrame {
         zoo_locateByUfCity = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane = new javax.swing.JScrollPane();
-        jList = new javax.swing.JList();
         jPanelZoo = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabelAlterarImagem = new javax.swing.JLabel();
@@ -719,13 +718,6 @@ public class Principal extends javax.swing.JFrame {
 
         jScrollPane.setBackground(new java.awt.Color(255, 255, 255));
 
-        jList.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane.setViewportView(jList);
-
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -1112,8 +1104,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_zoo_LocateByUfTbxKeyTyped
 
     private void zoo_locateByZooActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zoo_locateByZooActionPerformed
-        jList.setListData(listZoos);
-        jScrollPane.setViewportView(jList);
+        
     }//GEN-LAST:event_zoo_locateByZooActionPerformed
 
     private void botaoDenunciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDenunciaActionPerformed
@@ -1384,7 +1375,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelAlterarImagem;
     private javax.swing.JLabel jLabelAlterarSenha;
     private javax.swing.JLabel jLabelEnviar;
-    private javax.swing.JList jList;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;

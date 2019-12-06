@@ -17,13 +17,13 @@ public class AdmZoo extends Usuarios {
     private int CodAdmZoo;
     
     public AdmZoo(){
-        id = InicioProg.nUsr;
+        id = InicioProg.usu.size();
         tipoUsr = 1;
     }
 
     public AdmZoo(String nome, String sobrenome, String cpf, String senha, String email) {
         super(nome, sobrenome, cpf, senha, email);
-        id = InicioProg.nUsr;
+        id = InicioProg.usu.size();
         tipoUsr = 1;
     }
     

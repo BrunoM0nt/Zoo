@@ -14,7 +14,7 @@ import zoo.main.InicioProg;
 public class Zoologicos {
 
     private String Nome;
-    private int ID;
+    private String ID;
     private int Abre;
     private int Fecha;
     private String Endereco;
@@ -26,17 +26,12 @@ public class Zoologicos {
 
     ArrayList<Animais> listaAnimais = new ArrayList();
     
-    public Zoologicos(){
-        ID = InicioProg.nZoo + 1;
-    }
-
-    
     
     public String getNome(){
         return Nome;
     }
     
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
@@ -72,7 +67,7 @@ public class Zoologicos {
         this.Nome = Nome;
     }
 
-    public void setID(int ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 
