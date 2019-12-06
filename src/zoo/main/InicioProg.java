@@ -47,7 +47,7 @@ public class InicioProg {
         addZoo(zoo);
         zoo = new Zoologicos("Rdscq", "aa", 1, 1, "A", "b", "c", 1);
         addZoo(zoo);
-        zoo = new Zoologicos("oasko", "aa", 1, 1, "A", "b", "c", 1);
+        zoo = new Zoologicos("Oasko", "aa", 1, 1, "A", "b", "c", 1);
         addZoo(zoo);
         zoo = new Zoologicos("Asko", "aa", 1, 1, "A", "b", "c", 1);
         addZoo(zoo);

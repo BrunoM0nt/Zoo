@@ -721,6 +721,7 @@ public class Principal extends javax.swing.JFrame {
 
         principal_ScrollPaneZoo.setBackground(new java.awt.Color(255, 255, 255));
 
+        principal_ZooLists.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         principal_ScrollPaneZoo.setViewportView(principal_ZooLists);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -1116,14 +1117,19 @@ public class Principal extends javax.swing.JFrame {
         int z = 0;
 
         if (!(zoo_locateByZooTbx.getText().isEmpty())) {
-            for (x = 0; x <= zoo_locateByZoo.getText().length(); x++) {
+            for (x = 0; x < InicioProg.listZoos.size(); x++) {
 
-                for (y = 0; y < InicioProg.listZoos.size(); y++) {
+                if (zoo_locateByZooTbx.getText().equals(InicioProg.listZoos.get(x).toString())) {
 
-                    if (zoo_locateByZooTbx.getText().charAt(x) == InicioProg.listZoos.get(y).toString().charAt(x)) {
+                    auxVector.add(InicioProg.listZoos.get(x));
+                    principal_ZooLists.setListData(auxVector);
+                    principal_ScrollPaneZoo.setViewportView(principal_ZooLists);
+                    return;
 
-                        auxVector.add(InicioProg.listZoos.get(y));
-                    }
+                } else if (zoo_locateByZooTbx.getText().charAt(0) == InicioProg.listZoos.get(x).toString().charAt(0)) {
+
+                    auxVector.add(InicioProg.listZoos.get(x));
+
                 }
             }
             principal_ZooLists.setListData(auxVector);
@@ -1176,8 +1182,9 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_perfil_EmailTbxActionPerformed
 
     private void zoo_locateByUfCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zoo_locateByUfCityActionPerformed
-        if(!(zoo_LocateByUfTbx.getText().isEmpty()))
-        JOptionPane.showMessageDialog(null, zoo_LocateByUfTbx.getText().charAt(0) + " and " + InicioProg.listZoos.get(0).toString().charAt(0));
+        if (!(zoo_LocateByUfTbx.getText().isEmpty())) {
+            JOptionPane.showMessageDialog(null, zoo_LocateByUfTbx.getText().charAt(0) + " and " + InicioProg.listZoos.get(0).toString().charAt(0));
+        }
     }//GEN-LAST:event_zoo_locateByUfCityActionPerformed
 
     private void principal_PesquisaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_principal_PesquisaBtnActionPerformed
