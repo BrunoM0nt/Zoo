@@ -49,7 +49,9 @@ public class InicioProg {
         addZoo(zoo);
         zoo = new Zoologicos("Ronluy Zoo", 1, 1, "Nunca Vi", "Belem", "PA", 1);
         addZoo(zoo);
-        zoo = new Zoologicos("Oasko Zoo", 1, 1, "N faço ideia", "Sao Paulo", "SP", 1);
+        zoo = new Zoologicos("Oskly Zoo", 1, 1, "Nunca Vi", "QualquerCidadeDoPR", "PR", 1);
+        addZoo(zoo);        
+        zoo = new Zoologicos("Oaco Zoo", 1, 1, "N faço ideia", "Sao Paulo", "SP", 1);
         addZoo(zoo);
         zoo = new Zoologicos("Arag Zoo", 1, 1, "Olha no mapa q tu descobre", "Belo Horizonte", "BH", 1);
         addZoo(zoo);

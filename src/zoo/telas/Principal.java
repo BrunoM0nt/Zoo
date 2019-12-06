@@ -1129,22 +1129,33 @@ public class Principal extends javax.swing.JFrame {
         allIds = new int[InicioProg.zoos.size()];
 
         if (!(zoo_locateByZooTbx.getText().isEmpty())) {
-            
+
             for (x = 0; x < InicioProg.zoos.size(); x++) {
 
-                if (zoo_locateByZooTbx.getText().equals(InicioProg.listZoos.get(x).toString())) {
-                    auxVector.add(InicioProg.listZoos.get(x));
+                for (x = 0; x < InicioProg.zoos.size(); x++) {
+
+                if (zoo_locateByZooTbx.getText().equals(InicioProg.zoos.get(x).getNome())) {
+                    auxVector.add(InicioProg.zoos.get(x).getNome());
                     principal_ZooLists.setListData(auxVector);
                     principal_ScrollPaneZoo.setViewportView(principal_ZooLists);
-                    allIds[0] = InicioProg.zoos.get(x).getId();
-                    return;
-
-                } else if (zoo_locateByZooTbx.getText().charAt(0) == InicioProg.listZoos.get(x).toString().charAt(0)) {
-                    auxVector.add(InicioProg.listZoos.get(x));
                     allIds[z] = InicioProg.zoos.get(x).getId();
                     z++;
+                }
+                if(x == (InicioProg.zoos.size() - 1) && !auxVector.isEmpty()){
+                    return;
+                }
+            }
+            for (x = 0; x < InicioProg.zoos.size(); x++) {
+
+                if (zoo_locateByZooTbx.getText().charAt(0) == InicioProg.zoos.get(x).getNome().charAt(0)) {
+                    auxVector.add(InicioProg.zoos.get(x).getNome());
+                    allIds[z] = InicioProg.zoos.get(x).getId();
+                    z++;
+                    principal_ZooLists.setListData(auxVector);
+                    principal_ScrollPaneZoo.setViewportView(principal_ZooLists);
 
                 }
+            }
             }
             principal_ZooLists.setListData(auxVector);
             principal_ScrollPaneZoo.setViewportView(principal_ZooLists);
@@ -1199,7 +1210,70 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_perfil_EmailTbxActionPerformed
 
     private void zoo_locateByUfCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zoo_locateByUfCityActionPerformed
-        
+        int x = 0, y = 0, z = 0;
+
+        Vector auxVector = new Vector();
+        allIds = new int[InicioProg.zoos.size()];
+
+        if (!(zoo_LocateByUfTbx.getText().isEmpty())) {
+            for (x = 0; x < InicioProg.zoos.size(); x++) {
+
+                if (zoo_LocateByUfTbx.getText().equals(InicioProg.zoos.get(x).getUF())) {
+                    auxVector.add(InicioProg.zoos.get(x).getNome());
+                    principal_ZooLists.setListData(auxVector);
+                    principal_ScrollPaneZoo.setViewportView(principal_ZooLists);
+                    allIds[z] = InicioProg.zoos.get(x).getId();
+                    z++;
+                }
+                if(x == (InicioProg.zoos.size() - 1) && !auxVector.isEmpty()){
+                    return;
+                }
+            }
+            for (x = 0; x < InicioProg.zoos.size(); x++) {
+
+                if (zoo_LocateByUfTbx.getText().charAt(0) == InicioProg.zoos.get(x).getUF().charAt(0)) {
+                    auxVector.add(InicioProg.zoos.get(x).getNome());
+                    allIds[z] = InicioProg.zoos.get(x).getId();
+                    z++;
+                    principal_ZooLists.setListData(auxVector);
+                    principal_ScrollPaneZoo.setViewportView(principal_ZooLists);
+
+                }
+            }
+        } else if (!(zoo_locateByCityTbx.getText().isEmpty())) {
+            for (x = 0; x < InicioProg.zoos.size(); x++) {
+
+                if (zoo_locateByCityTbx.getText().equals(InicioProg.zoos.get(x).getCidade())) {
+                    auxVector.add(InicioProg.zoos.get(x).getNome());
+                    principal_ZooLists.setListData(auxVector);
+                    principal_ScrollPaneZoo.setViewportView(principal_ZooLists);
+                    allIds[z] = InicioProg.zoos.get(x).getId();
+                    z++;
+                }
+                if(x == (InicioProg.zoos.size() - 1) && !auxVector.isEmpty()){
+                    return;
+                }
+            }
+            for (x = 0; x < InicioProg.zoos.size(); x++) {
+
+                if (zoo_locateByCityTbx.getText().charAt(0) == InicioProg.zoos.get(x).getCidade().toString().charAt(0)) {
+                    auxVector.add(InicioProg.zoos.get(x).getNome());
+                    allIds[z] = InicioProg.zoos.get(x).getId();
+                    z++;
+                    principal_ZooLists.setListData(auxVector);
+                    principal_ScrollPaneZoo.setViewportView(principal_ZooLists);
+
+                }
+            }
+        } else {
+            for (x = 0; x < InicioProg.listZoos.size(); x++) {
+                allIds[z] = InicioProg.zoos.get(x).getId();
+                z++;
+            }
+            principal_ZooLists.setListData(InicioProg.listZoos);
+            principal_ScrollPaneZoo.setViewportView(principal_ZooLists);
+
+        }
     }//GEN-LAST:event_zoo_locateByUfCityActionPerformed
 
     private void principal_PesquisaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_principal_PesquisaBtnActionPerformed
@@ -1327,14 +1401,15 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPrincipalFocusGained
 
     private void principal_ZooListsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_principal_ZooListsMouseClicked
-        try{
-            JOptionPane.showMessageDialog(null, "Nome: " + InicioProg.zoos.get(allIds[principal_ZooLists.getSelectedIndex()]).getNome() + 
-                    "\nCidade: " + InicioProg.zoos.get(allIds[principal_ZooLists.getSelectedIndex()]).getCidade() +
-                    "\nRua: " + InicioProg.zoos.get(allIds[principal_ZooLists.getSelectedIndex()]).getEndereco());
-        }catch(Exception e){
-            
+        try {
+            JOptionPane.showMessageDialog(null, "Nome: " + InicioProg.zoos.get(allIds[principal_ZooLists.getSelectedIndex()]).getNome()
+                    + "\nCidade: " + InicioProg.zoos.get(allIds[principal_ZooLists.getSelectedIndex()]).getCidade()
+                    + "\nRua: " + InicioProg.zoos.get(allIds[principal_ZooLists.getSelectedIndex()]).getEndereco()
+                    + "\nUF: " + InicioProg.zoos.get(allIds[principal_ZooLists.getSelectedIndex()]).getUF());
+        } catch (Exception e) {
+
         }
-        
+
     }//GEN-LAST:event_principal_ZooListsMouseClicked
 
     public void openWindow() {
