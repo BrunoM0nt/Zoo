@@ -186,6 +186,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 320, -1));
+        jToggleButton1.setVisible(false);
 
         jList.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "A" };
@@ -330,12 +331,15 @@ public class Login extends javax.swing.JFrame {
                 switch (InicioProg.usu.get(InicioProg.getConnectedUser()).getTipoUsr()) {
                     case 1:
                         InicioProg.setTypeConnectedUsr(1);
+                        jToggleButton1.setVisible(false);
                         break;
                     case 2:
                         InicioProg.setTypeConnectedUsr(2);
+                        jToggleButton1.setVisible(true);
                         break;
                     default:
                         InicioProg.setTypeConnectedUsr(0);
+                        jToggleButton1.setVisible(false);
                         break;
                 }
                 

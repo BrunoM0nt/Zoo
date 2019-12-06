@@ -1378,9 +1378,11 @@ public class Principal extends javax.swing.JFrame {
         if (InicioProg.getTypeConnectedUsr() == 1) {
             InicioProg.telaAZ.setVisible(true);
             InicioProg.telaAS.setVisible(false);
+            dispose();
         } else {
             InicioProg.telaAZ.setVisible(false);
             InicioProg.telaAS.setVisible(true);
+            dispose();
         }
     }//GEN-LAST:event_jConfigActionPerformed
 

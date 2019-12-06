@@ -622,6 +622,8 @@ public class TelaAdmZoo extends javax.swing.JFrame {
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jList1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jList1.setForeground(new java.awt.Color(0, 102, 0));
         jList1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jList1MouseClicked(evt);
