@@ -5,18 +5,13 @@
  */
 package zoo.telas;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
-import java.awt.Image;
-import java.awt.Toolkit;
-import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.LayoutStyle;
 import javax.swing.border.*;
 import zoo.main.InicioProg;
+import static zoo.main.InicioProg.listZoos;
 
 /**
  *
@@ -55,7 +50,6 @@ public class Principal extends javax.swing.JFrame {
         btnSupp.setBackground(new Color(0, 0, 0, 0));
         btnZoo.setBackground(new Color(0, 0, 0, 0));
         Sair.setBackground(new Color(0, 0, 0, 0));
-        Sair.setCursor(new Cursor(Cursor.HAND_CURSOR));
         botaoBug.setBackground(new Color(0, 0, 0, 0));
         botaoDenuncia.setBackground(new Color(0, 0, 0, 0));
         botaoDuvida.setBackground(new Color(0, 0, 0, 0));
@@ -71,14 +65,16 @@ public class Principal extends javax.swing.JFrame {
         jTextFieldSuporte.setVisible(false);
         jLabelEnviar.setVisible(false);
 
-        // configuração inicia de perfil
-        perfil_CpfBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        jLabelAlterarSenha.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        jLabelAlterarImagem.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        //Configuração inicia de perfil
         perfil_EmailBtn.setBackground(new Color(0, 0, 0, 0));
         perfil_NomeBtn.setBackground(new Color(0, 0, 0, 0));
         perfil_CpfBtn.setBackground(new Color(0, 0, 0, 0));
 
+        //Cursor
+        perfil_CpfBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jLabelAlterarSenha.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jLabelAlterarImagem.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        Sair.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
 
     /**
@@ -158,6 +154,8 @@ public class Principal extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         zoo_locateByUfCity = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jScrollPane = new javax.swing.JScrollPane();
+        jList = new javax.swing.JList();
         jPanelZoo = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabelAlterarImagem = new javax.swing.JLabel();
@@ -719,40 +717,51 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jScrollPane.setBackground(new java.awt.Color(255, 255, 255));
+
+        jList.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane.setViewportView(jList);
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel14))
             .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel14))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(zoo_locateByZooTbx, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(zoo_locateByZoo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel4)
+                            .addComponent(jScrollPane)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel11)
                                     .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addComponent(jLabel8)
+                                        .addComponent(zoo_locateByZooTbx, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(zoo_LocateByUfTbx, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel9)
+                                        .addComponent(zoo_locateByZoo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel4)
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel11)
+                                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                                .addComponent(jLabel8)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(zoo_LocateByUfTbx, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jLabel9)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(zoo_locateByCityTbx, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(zoo_locateByCityTbx, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(zoo_locateByUfCity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(jButton2)))
-                .addContainerGap(284, Short.MAX_VALUE))
+                                        .addComponent(zoo_locateByUfCity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 274, Short.MAX_VALUE)))
+                        .addContainerGap())))
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel6Layout.createSequentialGroup()
                     .addGap(0, 275, Short.MAX_VALUE)
@@ -780,10 +789,12 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(zoo_LocateByUfTbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(zoo_locateByCityTbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(zoo_locateByUfCity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(84, 84, 84)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
-                .addComponent(jLabel14))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel6Layout.createSequentialGroup()
                     .addGap(0, 205, Short.MAX_VALUE)
@@ -1101,8 +1112,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_zoo_LocateByUfTbxKeyTyped
 
     private void zoo_locateByZooActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zoo_locateByZooActionPerformed
-        jTextFieldSuporte.setVisible(true);
-        jLabelEnviar.setVisible(true);
+        jList.setListData(listZoos);
+        jScrollPane.setViewportView(jList);
     }//GEN-LAST:event_zoo_locateByZooActionPerformed
 
     private void botaoDenunciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDenunciaActionPerformed
@@ -1244,13 +1255,13 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_formFocusGained
 
     private void jConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConfigActionPerformed
-        if(InicioProg.getTypeConnectedUsr() == 1){
-                InicioProg.telaAZ.setVisible(true);
-                InicioProg.telaAS.setVisible(false);
-            }else{
-                InicioProg.telaAZ.setVisible(false);
-                InicioProg.telaAS.setVisible(true);
-            }
+        if (InicioProg.getTypeConnectedUsr() == 1) {
+            InicioProg.telaAZ.setVisible(true);
+            InicioProg.telaAS.setVisible(false);
+        } else {
+            InicioProg.telaAZ.setVisible(false);
+            InicioProg.telaAS.setVisible(true);
+        }
     }//GEN-LAST:event_jConfigActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -1271,16 +1282,16 @@ public class Principal extends javax.swing.JFrame {
 
     public void openWindow() {
         InicioProg.principal.setVisible(true);
-        principal_UserName.setText(InicioProg.getUserNome(InicioProg.getConnectedUser()) + " " + InicioProg.getUserSobrenome(InicioProg.getConnectedUser()));
-        
-        if(InicioProg.getTypeConnectedUsr() == 0){
-        
+        principal_UserName.setText(InicioProg.usu.get(InicioProg.getConnectedUser()).getNome() + " " + InicioProg.usu.get(InicioProg.getConnectedUser()).getSobrenome());
+
+        if (InicioProg.getTypeConnectedUsr() == 0) {
+
             jConfig.setVisible(false);
-        
-        }else {
-        
+
+        } else {
+
             jConfig.setVisible(true);
-            
+
         }
     }
 
@@ -1373,6 +1384,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelAlterarImagem;
     private javax.swing.JLabel jLabelAlterarSenha;
     private javax.swing.JLabel jLabelEnviar;
+    private javax.swing.JList jList;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -1403,6 +1415,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelZoo;
     private javax.swing.JPanel jPanelZoo1;
     private javax.swing.JPanel jPanelZoo2;
+    private javax.swing.JScrollPane jScrollPane;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;

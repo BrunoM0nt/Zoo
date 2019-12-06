@@ -922,7 +922,11 @@ public class TelaAdmSistema extends javax.swing.JFrame {
 
         // Definindo os valores na classe Zoologicos
         zoo.setNome(nomeZoo.getText());
-        zoo.setID(ID.getText());
+        try{
+            zoo.setID(Integer.parseInt(ID.getText()));
+        }catch(Exception e){
+        }
+        
         
         if (Abre.getText().isEmpty()) { // verificação de campo vazio
             zoo.setAbre(0);
@@ -975,7 +979,9 @@ public class TelaAdmSistema extends javax.swing.JFrame {
                 Valor_entrada.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.red));
             }
         } else {
-
+            
+            InicioProg.zoos.add(zoo);
+            
             nomeZoo.setText("");
             ID.setText("");
             Abre.setText("");

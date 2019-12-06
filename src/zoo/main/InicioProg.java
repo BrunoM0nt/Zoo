@@ -20,9 +20,12 @@ import zoo.zoologicos.Zoologicos;
 public class InicioProg {
 
     public static ArrayList<Usuarios> usu = new ArrayList<>();
-    public static ArrayList<AdmZoo> usuzoo = new ArrayList<>();
-
     public static Vector listUsers = new Vector();
+    public static ArrayList<Zoologicos> zoos = new ArrayList<>();
+    public static Vector listZoos = new Vector();
+    public static int nUsr = 0;
+    public static int nZoo = 0;
+    
     public static Login login;
     public static Principal principal;
     public static CadUsuarios cadUs;
@@ -31,7 +34,7 @@ public class InicioProg {
 
     private static int connectedId = -1;
     private static int typeConnectedUsr = 0;
-    public static int nUsr = 0;
+    
 
     public static void main(String[] args) {
 
@@ -69,52 +72,15 @@ public class InicioProg {
 
     }
 
+    //Configurações de USUARIO {
     public static void addUser(Usuarios user) {
         usu.add(user);
         nUsr++;
         listUsers.add(user.getNome() + " " + user.getSobrenome());
     }
 
-    public static void addUserZoo(AdmZoo CodAdmZoo) {
-        usuzoo.add(CodAdmZoo);
-
-    }
-
-    /*public static void rmUser(Usuarios user) {
-        usu.remove(usu);
-        listUsers.remove(user.getNome() + " " + user.getSobrenome());
-    }*/
-
-    public static String getUserNome(int num) {
-        return usu.get(num).getNome();
-    }
-
-    public static String getUserSobrenome(int num) {
-        return usu.get(num).getSobrenome();
-    }
-
-    public static String getUserSenha(int num) {
-        return usu.get(num).getSenha();
-    }
-
-    public static String getUserEmail(int num) {
-        return usu.get(num).getEmail();
-    }
-
-    public static String getUserCpf(int num) {
-        return usu.get(num).getCpf();
-    }
-
-    public static int getUserId(int num) {
-        return usu.get(num).getId();
-    }
-
     public static int getUserLength() {
         return usu.size();
-    }
-
-    public static int getUsuzooLength() {
-        return usuzoo.size();
     }
 
     public static int getConnectedUser() {
@@ -125,10 +91,6 @@ public class InicioProg {
         InicioProg.connectedId = connectedId;
     }
 
-    public static int getUsuZooCod(int num) {
-        return usuzoo.get(num).getCodUsuZoo();
-    }
-
     public static int getTypeConnectedUsr() {
         return typeConnectedUsr;
     }
@@ -137,4 +99,15 @@ public class InicioProg {
         InicioProg.typeConnectedUsr = typeConnectedUsr;
     }
 
+    //Fim das conficurações de USUARIO }
+    
+    //Configurações de ZOOS {
+    public static void addZoo(Zoologicos zoo) {
+        zoos.add(zoo);
+        nZoo++;
+        listZoos.add(zoo.getNome());
+    }
+    
+   
+    //Fim das configurações de ZOOS }
 }
