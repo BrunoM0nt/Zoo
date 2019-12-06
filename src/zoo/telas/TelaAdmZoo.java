@@ -190,6 +190,7 @@ public class TelaAdmZoo extends javax.swing.JFrame {
         jTextField24 = new javax.swing.JTextField();
         jButton17 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         jTextField10.setText("jTextField10");
@@ -805,6 +806,11 @@ public class TelaAdmZoo extends javax.swing.JFrame {
         });
         getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 60, 60));
 
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("Administrador de Zoológico");
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 200, 20));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/tela_principal.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -882,7 +888,7 @@ public class TelaAdmZoo extends javax.swing.JFrame {
         tour.setNparticipantes(Integer.parseInt(NTour.getText()));
         tour.setDescricao(DescTour.getText());
         InicioProg.addTour(tour);
-        JOptionPane.showMessageDialog(null, "foi");
+        JOptionPane.showMessageDialog(null, "Cadastro Realizado Com Sucesso");
 
     }//GEN-LAST:event_jButton9ActionPerformed
 
@@ -1010,6 +1016,7 @@ public class TelaAdmZoo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
