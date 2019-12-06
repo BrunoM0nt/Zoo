@@ -6,6 +6,13 @@
 package zoo.telas;
 
 import java.awt.Color;
+import java.awt.Cursor;
+import static java.util.logging.Level.parse;
+import javax.swing.JOptionPane;
+import zoo.main.InicioProg;
+import static zoo.main.InicioProg.listTour;
+import static zoo.main.InicioProg.listUsers;
+import zoo.zoologicos.Tour;
 
 /**
  *
@@ -13,11 +20,15 @@ import java.awt.Color;
  */
 public class TelaAdmZoo extends javax.swing.JFrame {
 
+    int lastSelectedIndex = -1;
+
     /**
      * Creates new form AdmZoo
      */
     public TelaAdmZoo() {
+
         initComponents();
+        //-- Definido tranparencia para o elementos
         jButton8.setBackground(new Color(0, 0, 0, 0));
         jButton9.setBackground(new Color(0, 0, 0, 0));
         jTabbedPane2.setBackground(new Color(0, 0, 0, 0));
@@ -25,6 +36,8 @@ public class TelaAdmZoo extends javax.swing.JFrame {
         jButton17.setBackground(new Color(0, 0, 0, 0));
         jButton18.setBackground(new Color(0, 0, 0, 0));
         jButton19.setBackground(new Color(0, 0, 0, 0));
+        jButton14.setBackground(new Color(0, 0, 0, 0));
+        jButton13.setBackground(new Color(0, 0, 0, 0));
 
         jTabbedPane4.setBackground(new Color(0, 0, 0, 0));
         jButton22.setBackground(new Color(0, 0, 0, 0));
@@ -38,7 +51,17 @@ public class TelaAdmZoo extends javax.swing.JFrame {
         jButton1.setBackground(new Color(0, 0, 0, 0));
         jButton4.setBackground(new Color(0, 0, 0, 0));
         jButton5.setBackground(new Color(0, 0, 0, 0));
+        jButton12.setBackground(new Color(0, 0, 0, 0));
 
+        jButton8.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jButton10.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jButton13.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jButton6.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jButton12.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jButton14.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jButton9.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
+        //--
         selectImg_Zoo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/Selected.png")));
         selectImg_Zoo2.setIcon(null);
         selectImg_Zoo3.setIcon(null);
@@ -114,18 +137,18 @@ public class TelaAdmZoo extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        NomeTour = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        PrecoTour = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        HorarioTour = new javax.swing.JTextField();
+        DataTour = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        NTour = new javax.swing.JTextField();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
-        jTextField6 = new javax.swing.JTextField();
+        DescTour = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -136,7 +159,25 @@ public class TelaAdmZoo extends javax.swing.JFrame {
         jTextField8 = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList();
+        TourNome = new javax.swing.JTextField();
+        TourPreco = new javax.swing.JTextField();
+        TourHorario = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        TourNpart = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        TourDesc = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        TourData = new javax.swing.JTextField();
+        jButton14 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
         jPanel13 = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
@@ -148,6 +189,7 @@ public class TelaAdmZoo extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         jTextField24 = new javax.swing.JTextField();
         jButton17 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         jTextField10.setText("jTextField10");
@@ -445,6 +487,7 @@ public class TelaAdmZoo extends javax.swing.JFrame {
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton6.setForeground(new java.awt.Color(0, 102, 0));
         jButton6.setText("Cadastrar Tour");
+        jButton6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -474,19 +517,19 @@ public class TelaAdmZoo extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 102, 0));
         jLabel2.setText("Nome");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, 20));
-        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 140, -1));
+        jPanel3.add(NomeTour, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 140, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 102, 0));
         jLabel3.setText("Preço");
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, -1, 20));
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        PrecoTour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                PrecoTourActionPerformed(evt);
             }
         });
-        jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 140, -1));
+        jPanel3.add(PrecoTour, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 140, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 102, 0));
@@ -497,20 +540,20 @@ public class TelaAdmZoo extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 102, 0));
         jLabel5.setText("Data");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, -1, 20));
-        jPanel3.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 140, -1));
-        jPanel3.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 140, -1));
+        jPanel3.add(HorarioTour, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 140, -1));
+        jPanel3.add(DataTour, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 140, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 102, 0));
         jLabel6.setText("Nº de participantes");
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, 20));
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        NTour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                NTourActionPerformed(evt);
             }
         });
-        jPanel3.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 60, -1));
+        jPanel3.add(NTour, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 60, -1));
 
         jButton8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton8.setForeground(new java.awt.Color(0, 102, 0));
@@ -520,8 +563,14 @@ public class TelaAdmZoo extends javax.swing.JFrame {
         jButton9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton9.setForeground(new java.awt.Color(0, 102, 0));
         jButton9.setText("Cadastrar");
-        jPanel3.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, -1, 40));
-        jPanel3.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 240, 90));
+        jButton9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 80, 50));
+        jPanel3.add(DescTour, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 240, 90));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 102, 0));
@@ -565,12 +614,90 @@ public class TelaAdmZoo extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("", jPanel6);
 
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jList1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList1MouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(jList1);
+
+        jPanel7.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 310, 50));
+        jPanel7.add(TourNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 130, 30));
+        jPanel7.add(TourPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 130, 30));
+        jPanel7.add(TourHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 130, 30));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 102, 0));
+        jLabel12.setText("Nome");
+        jPanel7.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, 20));
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 102, 0));
+        jLabel13.setText("Preco");
+        jPanel7.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, 20));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 102, 0));
+        jLabel14.setText("Horario");
+        jPanel7.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, 20));
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 102, 0));
+        jLabel15.setText("Nº de participantes");
+        jPanel7.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, -1, -1));
+        jPanel7.add(TourNpart, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 130, 30));
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 102, 0));
+        jLabel16.setText("Descrição");
+        jPanel7.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
+        jPanel7.add(TourDesc, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 180, 60));
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 102, 0));
+        jLabel17.setText("Data");
+        jPanel7.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
+        jPanel7.add(TourData, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 130, 30));
+
+        jPanel4.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 340, 360));
+
+        jButton14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton14.setForeground(new java.awt.Color(0, 102, 0));
+        jButton14.setText("Exibir Tours Cadastrados");
+        jButton14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 190, 30));
+
+        jTabbedPane2.addTab("", jPanel4);
+
         jButton10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton10.setForeground(new java.awt.Color(0, 102, 0));
         jButton10.setText("Solicitações de Tour");
+        jButton10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
+            }
+        });
+
+        jButton13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton13.setForeground(new java.awt.Color(0, 102, 0));
+        jButton13.setText("Consultar Tours");
+        jButton13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
             }
         });
 
@@ -579,25 +706,32 @@ public class TelaAdmZoo extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(19, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jButton6)
-                .addGap(29, 29, 29)
-                .addComponent(jButton10)
+                .addGap(46, 46, 46)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 431, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -663,6 +797,14 @@ public class TelaAdmZoo extends javax.swing.JFrame {
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, -20, 570, 470));
 
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/botao_voltar.png"))); // NOI18N
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 60, 60));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoo/Imagens/tela_principal.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -695,13 +837,13 @@ public class TelaAdmZoo extends javax.swing.JFrame {
         jTabbedPane2.setSelectedIndex(1);
     }//GEN-LAST:event_jButton10ActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void NTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NTourActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_NTourActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void PrecoTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrecoTourActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_PrecoTourActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         jTabbedPane2.setSelectedIndex(0);
@@ -730,6 +872,58 @@ public class TelaAdmZoo extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jTabbedPane4.setSelectedIndex(0);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        Tour tour = new Tour();
+        tour.setNome(NomeTour.getText());
+        tour.setPreco(Float.parseFloat(PrecoTour.getText()));
+        tour.setHora(HorarioTour.getText());
+        tour.setData(DataTour.getText());
+        tour.setNparticipantes(Integer.parseInt(NTour.getText()));
+        tour.setDescricao(DescTour.getText());
+        InicioProg.addTour(tour);
+        JOptionPane.showMessageDialog(null, "foi");
+
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        InicioProg.telaAZ.setVisible(false);
+        InicioProg.principal.setVisible(true);
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        try {
+
+            jList1.setListData(listTour);
+            jScrollPane2.setViewportView(jList1);
+            jPanel7.setVisible(true);
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, "Erro!");
+
+        }
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
+        if (lastSelectedIndex != jList1.getSelectedIndex()) {
+            try {
+                lastSelectedIndex = jList1.getSelectedIndex();
+                TourNome.setText(InicioProg.tours.get(lastSelectedIndex).getNome());
+                TourPreco.setText(Float.toString(InicioProg.tours.get(lastSelectedIndex).getPreco()));
+                TourHorario.setText(InicioProg.tours.get(lastSelectedIndex).getHora());
+                TourData.setText(InicioProg.tours.get(lastSelectedIndex).getData());
+                TourNpart.setText(Integer.toString(InicioProg.tours.get(lastSelectedIndex).getNparticipantes()));
+                TourDesc.setText(InicioProg.tours.get(lastSelectedIndex).getDescricao());
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+        }
+    }//GEN-LAST:event_jList1MouseClicked
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        jTabbedPane2.setSelectedIndex(2);
+    }//GEN-LAST:event_jButton13ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -768,9 +962,24 @@ public class TelaAdmZoo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField DataTour;
+    private javax.swing.JTextField DescTour;
+    private javax.swing.JTextField HorarioTour;
+    private javax.swing.JTextField NTour;
+    private javax.swing.JTextField NomeTour;
+    private javax.swing.JTextField PrecoTour;
+    private javax.swing.JTextField TourData;
+    private javax.swing.JTextField TourDesc;
+    private javax.swing.JTextField TourHorario;
+    private javax.swing.JTextField TourNome;
+    private javax.swing.JTextField TourNpart;
+    private javax.swing.JTextField TourPreco;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
@@ -795,6 +1004,12 @@ public class TelaAdmZoo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -818,6 +1033,7 @@ public class TelaAdmZoo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JList jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
@@ -830,15 +1046,16 @@ public class TelaAdmZoo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane4;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField22;
     private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField jTextField24;
@@ -847,16 +1064,12 @@ public class TelaAdmZoo extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField27;
     private javax.swing.JTextField jTextField28;
     private javax.swing.JTextField jTextField29;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField30;
     private javax.swing.JTextField jTextField31;
     private javax.swing.JTextField jTextField32;
     private javax.swing.JTextField jTextField33;
     private javax.swing.JTextField jTextField34;
     private javax.swing.JTextField jTextField35;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;

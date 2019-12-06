@@ -268,7 +268,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(102, 102, 102))
         );
 
-        getContentPane().add(painelUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 210, 370));
+        getContentPane().add(painelUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 220, 400));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));

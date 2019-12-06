@@ -11,6 +11,7 @@ import java.util.Vector;
 import zoo.Adm.AdmSistema;
 import zoo.telas.*;
 import zoo.usuarios.Usuarios;
+import zoo.zoologicos.Tour;
 import zoo.zoologicos.Zoologicos;
 
 /**
@@ -23,7 +24,9 @@ public class InicioProg {
     public static Vector listUsers = new Vector();
     public static ArrayList<Zoologicos> zoos = new ArrayList<>();
     public static Vector listZoos = new Vector();
-   
+    public static ArrayList<Tour> tours = new ArrayList<>();
+    public static Vector listTour = new Vector();
+
     public static Login login;
     public static Principal principal;
     public static CadUsuarios cadUs;
@@ -32,7 +35,6 @@ public class InicioProg {
 
     private static int connectedId = -1;
     private static int typeConnectedUsr = 0;
-    
 
     public static void main(String[] args) {
 
@@ -97,11 +99,18 @@ public class InicioProg {
     }
 
     //Fim das conficurações de USUARIO }
-    
     //Configurações de ZOOS {
     public static void addZoo(Zoologicos zoo) {
         zoos.add(zoo);
         listZoos.add(zoo.getNome());
     }
+
     //Fim das configurações de ZOOS }
+
+    
+    public static void addTour(Tour tour) {
+        tours.add(tour);
+        listTour.add(tour.getNome());
+        System.out.println(tours.size());
+    }
 }
